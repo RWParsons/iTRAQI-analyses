@@ -21,5 +21,14 @@ tar_source()
 
 # Replace the target list below with your own:
 list(
-  
+  # acute times data
+  tar_target(
+    acute_times_file,
+    "data/Qld_towns_RSQ pathways.xlsx",
+    format = "file"
+  ),
+  tar_target(
+    d_acute,
+    read_acute_pathways(acute_times_file)
+  )
 )
