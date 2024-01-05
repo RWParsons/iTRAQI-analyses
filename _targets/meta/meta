@@ -35,7 +35,10 @@ future_gold_locs|object|9fbf3a058503ac86|||||||||||||||
 get_df_times|function|fca685b813947715|||||||||||||||
 get_ids|function|3c3272d4c3149174|||||||||||||||
 get_island_times|function|196ef6db78f9ade7|||||||||||||||
+get_travel_times|function|f815cc3b6187e921|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
+l_all_drive_times|stem|863290ab751782f0|322c9834645b4160|7cdfb0cf9ae7937a|1979637785||t19727.699503603s|19a7a986c137792d|69482|rds|local|vector|||0.625||
+l_travel_times|stem|372d4483525e59da|8d7b12920e0335bc|a9562d4999e5c6d4|880071042||t19727.7226253598s|db43c53ae60d7b0b|39264|rds|local|vector|||0.688||
 platinum_locs|object|aaa08b5f88f3a54f|||||||||||||||
 qld_locations_file|stem|371950c86cc87bec|1ec6722829c44405|ef46db3751d8e999|1094260305|data/QLDLocations3422.csv|t19409.0793635134s|8e55589b30e156b7|15655|file|local|vector|||0.704||
 read_acute_pathways|function|01c74c27dd638fef|||||||||||||||

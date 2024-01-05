@@ -1374,6 +1374,27 @@
       ],
       "Hash": "15b594369e70b975ba9f064295983499"
     },
+    "tarchetypes": {
+      "Package": "tarchetypes",
+      "Version": "0.7.10",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "digest",
+        "dplyr",
+        "fs",
+        "parallel",
+        "rlang",
+        "targets",
+        "tibble",
+        "tidyselect",
+        "utils",
+        "vctrs",
+        "withr"
+      ],
+      "Hash": "ddb09b32a3ac61f8e36cdc78a4df3c01"
+    },
     "targets": {
       "Package": "targets",
       "Version": "1.4.0",

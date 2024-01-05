@@ -98,5 +98,19 @@ list(
       v_centres = future_gold_and_cairns_locs,
       d_islands = d_island_rehab_times
     )
+  ),
+  tar_target(
+    l_all_drive_times,
+    list(
+      d_silver = d_silver,
+      d_gold = d_gold,
+      d_future_gold = d_future_gold,
+      d_platinum = d_platinum,
+      d_future_gold_and_cairns = d_future_gold_and_cairns
+    )
+  ),
+  tar_target(
+    l_travel_times,
+    get_travel_times(d_acute, d_drive_times, d_island_rehab_times, l_all_drive_times)
   )
 )
