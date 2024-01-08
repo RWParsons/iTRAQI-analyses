@@ -3,7 +3,7 @@ library(tarchetypes)
 
 # Set target options:
 tar_option_set(
-  packages = c("tidyverse"), # packages that your targets need to run
+  packages = c("tidyverse", "sf"), # packages that your targets need to run
   format = "rds", # Optionally set the default storage format. qs is fast.
   controller = crew::crew_controller_local(workers = 4)
 )
@@ -112,5 +112,9 @@ list(
   tar_target(
     l_travel_times,
     get_travel_times(d_acute, d_drive_times, d_island_rehab_times, l_all_drive_times)
+  ),
+  tar_target(
+    d_input_shapes,
+    get_input_shapes(agg_grid_cellsize = 0.01, raster_grid_cellsize = 0.03)
   )
 )
