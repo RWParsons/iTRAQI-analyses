@@ -115,6 +115,50 @@ list(
   ),
   tar_target(
     d_input_shapes,
-    get_input_shapes(agg_grid_cellsize = 0.01, raster_grid_cellsize = 0.03)
+    get_input_shapes(agg_grid_cellsize = 0.1, raster_grid_cellsize = 0.3)
+  ),
+
+  # acute
+  tar_target(
+    d_acute_kriged_raster,
+    do_kriging_model(
+      points = d_input_shapes$qld_pt_raster_grid,
+      data = l_travel_times$d_times,
+      formula = acute_time ~ 1,
+      grid_crs = d_input_shapes$grid_crs,
+      get_raster = TRUE
+    )
+  ),
+  tar_target(
+    d_acute_kriged_for_agg,
+    do_kriging_model(
+      points = d_input_shapes$qld_pt_agg_grid,
+      data = l_travel_times$d_times,
+      formula = acute_time ~ 1,
+      grid_crs = d_input_shapes$grid_crs,
+      get_raster = FALSE
+    )
+  ),
+
+  # rehab
+  tar_target(
+    d_rehab_kriged_raster,
+    do_kriging_model(
+      points = d_input_shapes$qld_pt_raster_grid,
+      data = l_travel_times$d_times,
+      formula = rehab_time ~ 1,
+      grid_crs = d_input_shapes$grid_crs,
+      get_raster = TRUE
+    )
+  ),
+  tar_target(
+    d_rehab_kriged_for_agg,
+    do_kriging_model(
+      points = d_input_shapes$qld_pt_agg_grid,
+      data = l_travel_times$d_times,
+      formula = rehab_time ~ 1,
+      grid_crs = d_input_shapes$grid_crs,
+      get_raster = FALSE
+    )
   )
 )

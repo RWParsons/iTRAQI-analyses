@@ -55,13 +55,13 @@ get_travel_times <- function(d_acute,
       rename(weighted_rehab_times, rehab_time = minutes),
       by = "town_name"
     ) |>
-    rename(location=town_name) |>
+    rename(location = town_name) |>
     mutate(acute_care_transit_location = ifelse(
       acute_care_transit_location == acute_care_centre,
       NA,
       acute_care_transit_location
     ))
-  
+
   list(
     acute_drive_times_all = acute_drive_times_all,
     d_times = d_times,
