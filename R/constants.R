@@ -39,3 +39,8 @@ gold_locs <- c(
 platinum_locs <- c(
   "Brain Injury Rehabilitation Unit"
 )
+
+crs_for_analyses <- list(
+  crs_num = 4326,
+  proj4str = "+proj=lcc +lat_0=-32 +lon_0=135 +lat_1=-28 +lat_2=-36 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"
+)

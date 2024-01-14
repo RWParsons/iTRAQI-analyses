@@ -188,5 +188,107 @@ list(
   tar_target(
     l_remoteness_dlist,
     get_remoteness_data(remoteness_files)
+  ),
+
+  # summarise kriging model within ASGS areas
+
+  # SA2s
+  tar_target(
+    d_sa2_2011_acute_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA2",
+      ASGS_year = "2011"
+    )
+  ),
+  tar_target(
+    d_sa2_2011_rehab_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA2",
+      ASGS_year = "2011"
+    )
+  ),
+  tar_target(
+    d_sa2_2016_acute_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA2",
+      ASGS_year = "2016"
+    )
+  ),
+  tar_target(
+    d_sa2_2016_rehab_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA2",
+      ASGS_year = "2016"
+    )
+  ),
+  tar_target(
+    d_sa2_2021_acute_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA2",
+      ASGS_year = "2021"
+    )
+  ),
+  tar_target(
+    d_sa2_2021_rehab_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA2",
+      ASGS_year = "2021"
+    )
+  ),
+
+  # SA1s
+  tar_target(
+    d_sa1_2011_acute_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA1",
+      ASGS_year = "2011"
+    )
+  ),
+  tar_target(
+    d_sa1_2011_rehab_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA1",
+      ASGS_year = "2011"
+    )
+  ),
+  tar_target(
+    d_sa1_2016_acute_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA1",
+      ASGS_year = "2016"
+    )
+  ),
+  tar_target(
+    d_sa1_2016_rehab_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA1",
+      ASGS_year = "2016"
+    )
+  ),
+  tar_target(
+    d_sa1_2021_acute_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA1",
+      ASGS_year = "2021"
+    )
+  ),
+  tar_target(
+    d_sa1_2021_rehab_time,
+    aggregate_kriging_model_to_ASGS(
+      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      ASGS_level = "SA1",
+      ASGS_year = "2021"
+    )
   )
 )
