@@ -160,5 +160,19 @@ list(
       grid_crs = d_input_shapes$grid_crs,
       get_raster = FALSE
     )
+  ),
+
+  # load and wrangle SEIFA data
+  tar_files_input(
+    seifa_files,
+    files = list.files(
+      "data/remoteness_and_seifa_data/",
+      pattern = "*.xls",
+      full.names = TRUE
+    )
+  ),
+  tar_target(
+    l_seifa_dlist,
+    get_seifa_data(seifa_files)
   )
 )

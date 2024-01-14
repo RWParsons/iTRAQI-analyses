@@ -11,7 +11,7 @@ d_future_gold|stem|bc7996fdcae9cd32|c77db3416ebf6474|6d61eac7ead947f7|-558288781
 d_future_gold_and_cairns|stem|92219bcf8bbd625f|fd189496a91fdff9|ab842e8202fa2e9d|-1156415650||t19726.9505732958s|7867f1217739a530|14131|rds|local|vector|||0.906||
 d_gold|stem|74d1a8e343dec6d4|8b8e8f6ffa166651|36c6e4cd0f9c16fe|-935275553||t19726.9505757193s|ddd0408079e2dc8e|13976|rds|local|vector|||0.859||
 d_ids|stem|1782e1b767970e83|1b0c8077b236fe68|92b00325d6d18e16|903306592||t19726.9406033454s|e75851ec39bae34e|10174|rds|local|vector|||0.641||
-d_input_shapes|stem|ca4ebb7c8e705ac7|3dfc19f819aaa620|b4f0d9578ba2f5f6|-1192428375||t19730.8948186843s|c85e967d709fca68|4725992|rds|local|vector|||16.625|getData will be removed in a future version of raster. Please use the geodata package instead. st_point_on_surface assumes attributes are constant over geometries. st_point_on_surface may not give correct results for longitudelatitude data|
+d_input_shapes|stem|ca4ebb7c8e705ac7|3dfc19f819aaa620|77c0f319c4d83470|-1192428375||t19736.6907211863s|c85e967d709fca68|4725992|rds|local|vector|||17.859|getData will be removed in a future version of raster. Please use the geodata package instead. st_point_on_surface assumes attributes are constant over geometries. st_point_on_surface may not give correct results for longitudelatitude data|
 d_island_rehab_times|stem|8ddd4b5124426c94|6ea470b6917cb0cf|35eba598d6572605|89475984||t19726.9406041286s|bea4075b4710d630|650|rds|local|vector|||0.016||
 d_platinum|stem|675162360140f704|9f33f8a3f801fd4b|efdc5863f8325f2b|1644826141||t19726.9505696771s|65f4728944f92cf9|13941|rds|local|vector|||0.922||
 d_rehab_kriged_for_agg|stem|dc833a077b6cede9|127080367aed54f7|4f45525af0eb518a|-101763484||t19730.9060934539s|1b6b9c8fc3e71624|368384|rds|local|vector|||5.266|No convergence after 200 iterations try different initial values. No convergence after 200 iterations try different initial values|
@@ -43,15 +43,25 @@ future_gold_and_cairns_locs|object|5a73f5be67c7bca3|||||||||||||||
 future_gold_locs|object|9fbf3a058503ac86|||||||||||||||
 get_df_times|function|fca685b813947715|||||||||||||||
 get_ids|function|3c3272d4c3149174|||||||||||||||
-get_input_shapes|function|d54065bd6d90aa40|||||||||||||||
+get_input_shapes|function|c9c9162d6e97ba06|||||||||||||||
 get_island_times|function|196ef6db78f9ade7|||||||||||||||
+get_seifa_data|function|8d3b4fd6e2bc8488|||||||||||||||
 get_travel_times|function|40b8ccb161d09656|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
 l_all_drive_times|stem|863290ab751782f0|322c9834645b4160|7cdfb0cf9ae7937a|1979637785||t19727.699503603s|19a7a986c137792d|69482|rds|local|vector|||0.625||
+l_seifa_dlist|stem|45730e58a55217ae|b4bdfccb4b029dcc|fe3c5c3deba62f95|-1224354568||t19736.7134363671s|8517f0262a8e20a9|885133|rds|local|vector|||6.031|Expecting numeric in A55036  R55036C1 got  Commonwealth of Australia 2018. Expecting numeric in K2187  R2187C11 got NA. Expecting numeric in L2187  R2187C12 got NA. Expecting numeric in M2187  R2187C13 got NA. Expecting numeric in K2188  R2188C11 got NA. Expecting numeric in L2188  R2188C12 got NA. Expecting numeric in M2188  R2188C13 got NA. Expecting numeric in K2189  R2189C11 got NA. Expecting numeric in L2189  R2189C12 got NA. Expecting numeric in M2189  R2189C13 got NA. Expecting numeric in K2190  R2190C11 got NA. Expecting numeric in L2190  R2190C12 got NA. Expecting numeric in M2190  R2190C13 got NA. Expecting numeric in A2192  R2192C1 got  Commonwealth of Australia 2018. Expecting numeric in A56319  R56319C1 got  Commonwealth of Australia 2013. Expecting numeric in K52574  R52574C11 got NA. Expecting numeric in L52574  R52574C12 got NA. Expecting numeric in K52575  R52575C11 got NA. Expecting numeric in L52575  R52575C12 got NA. Expecting numeric in K52576  R52576C11 got NA. Expecting numeric in L52576  R52576C12 got NA. Expecting numeric in K52577  R52577C11 got NA. Expecting numeric in L52577  R52577C12 got NA. Expecting numeric in K52578  R52578C11 got NA. Expecting numeric in L52578  R52578C12 got NA. Expecting numeric in K52579  R52579C11 got NA. Expecting numeric in L52579  R52579C12 got NA. Expecting numeric in K52580  R52580C11 got NA. Expecting numeric in L52580  R52580C12 got NA. Expecting numeric in A52583  R52583C1 got  Commonwealth of Australia 2013. Detected an unexpected manytomany relationship between x and y.ℹ Row 70 of x matches multiple rows in y.ℹ Row 56312 of y matches multiple rows in x.ℹ If a manytomany relationship is expected, set relationship   manytomany to silence this warning.. There were 2 warnings in mutate.The first warning wasℹ In argument acrossall_ofcdecile, percentile, as.numeric.Caused by warning|
 l_travel_times|stem|1adff8a89bfe267b|8d7b12920e0335bc|3eade36c8876c6f5|880071042||t19730.7166961157s|fad3411ab137d8d4|70235|rds|local|vector|||1.266||
+make_seifas_df|function|a173722530b35302|||||||||||||||
 partition_pnts|function|160bf8bcef341dc5|||||||||||||||
 platinum_locs|object|aaa08b5f88f3a54f|||||||||||||||
 qld_locations_file|stem|371950c86cc87bec|1ec6722829c44405|ef46db3751d8e999|1094260305|data/QLDLocations3422.csv|t19409.0793635134s|8e55589b30e156b7|15655|file|local|vector|||0.704||
+quintile_from_decile|function|bc270d6e6e422eb2|||||||||||||||
 read_acute_pathways|function|01c74c27dd638fef|||||||||||||||
 read_rehab_data|function|a09cb307a4d6a798|||||||||||||||
+seifa_files|pattern|5cfc04b4c3634603|887c54425a6ada27||-1920692518||||112005632|file|local|vector||seifa_files_0fd258b0*seifa_files_3df8e749*seifa_files_b0acac7a*seifa_files_cab70577|0.016||
+seifa_files_0fd258b0|branch|ca67916bf2742b10|887c54425a6ada27|ef46db3751d8e999|927023566|data/remoteness_and_seifa_data/2011_sa1_seifa.xls|t19409.0793720087s|c62dc507448a4207|53460992|file|local|vector|seifa_files||0||
+seifa_files_3df8e749|branch|fbea7dee06d6d9d0|887c54425a6ada27|ef46db3751d8e999|56803531|data/remoteness_and_seifa_data/2011_sa2_seifa.xls|t19409.0793722171s|7c6c151c2bab7198|2412544|file|local|vector|seifa_files||0.016||
+seifa_files_b0acac7a|branch|b5e556e507134893|887c54425a6ada27|ef46db3751d8e999|309424726|data/remoteness_and_seifa_data/2016_sa1_seifa.xls|t19409.07937518s|c28695aedb990632|54134784|file|local|vector|seifa_files||0||
+seifa_files_cab70577|branch|41a0e4b1c1180c59|887c54425a6ada27|ef46db3751d8e999|-973884529|data/remoteness_and_seifa_data/2016_sa2_seifa.xls|t19409.0793753539s|a7fed4e7b47695f0|1997312|file|local|vector|seifa_files||0||
+seifa_files_files|stem|92a6bd0e048be9f5|a03078bd0f3ea3f6|ef46db3751d8e999|1567115929||t19736.7001155751s|bf0d8caacacad815|112|rds|local|list||seifa_files_files_b8e0c22c*seifa_files_files_e491d188*seifa_files_files_62b7ff49*seifa_files_files_146326d6|0||
 silver_locs|object|fc5aaa3d2a561f0c|||||||||||||||
