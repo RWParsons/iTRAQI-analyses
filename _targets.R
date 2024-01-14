@@ -174,5 +174,19 @@ list(
   tar_target(
     l_seifa_dlist,
     get_seifa_data(seifa_files)
+  ),
+
+  # load and wrangle remoteness data
+  tar_files_input(
+    remoteness_files,
+    files = list.files(
+      "data/remoteness_and_seifa_data/",
+      pattern = "*.dta",
+      full.names = TRUE
+    )
+  ),
+  tar_target(
+    l_remoteness_dlist,
+    get_remoteness_data(remoteness_files)
   )
 )
