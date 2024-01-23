@@ -1,9 +1,7 @@
 read_acute_pathways <- function(file) {
   df_acute_addons <- data.frame(
-    # add brisbane as 8 minutes for acute care
-    # add rbwh as 0 minutes
     town_name = c("Brisbane", "RBWH"),
-    acute_time = c(8, 0),
+    acute_time = c(45, 35),
     acute_care_transit_location = rep("Brisbane (PAH/RBWH)", 2),
     acute_care_centre = rep("Brisbane (PAH/RBWH)", 2)
   )
