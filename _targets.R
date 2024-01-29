@@ -290,5 +290,23 @@ list(
       ASGS_level = "SA1",
       ASGS_year = "2021"
     )
+  ),
+  tar_target(
+    app_polygons,
+    create_app_polygons(
+      data = list(
+        sa1_acute = d_sa1_2016_acute_time,
+        sa2_acute = d_sa2_2016_acute_time,
+        sa1_rehab = d_sa1_2016_rehab_time,
+        sa2_rehab = d_sa2_2016_rehab_time,
+        sa1_seifa = l_seifa_dlist$seifa_2016_sa1,
+        sa2_seifa = l_seifa_dlist$seifa_2016_sa2,
+        sa1_ra = l_remoteness_dlist$asgs_2016_sa1,
+        sa2_ra = l_remoteness_dlist$asgs_2016_sa2
+      ),
+      asgs_year = 2016,
+      simplify_keep = 0.1
+    ),
+    format = "file"
   )
 )

@@ -1,8 +1,10 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|a4f5eb66866a1dfa|||||||||||||||
+app_polygons|stem|176b5545db6b6e5c|6aa6863e4a8b5fdc|ab817512472d1733|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19751.2733693538s|887db7fede421fc7|1455953|file|local|vector|||12.5||
 centre_renaming|function|d61b6b45dcc868b6|||||||||||||||
 clean_acute_centre|function|75df2008a64da3da|||||||||||||||
+create_app_polygons|function|b6fd965052918112|||||||||||||||
 crs_for_analyses|object|fe82103152f115e2|||||||||||||||
 d_acute|stem|67d5ad81c2771409|ccdab38e1eb4f139|914043714e556400|-916123321||t19745.2668215612s|b6caf4b88c88ffc1|5816|rds|local|vector|||1.047||
 d_acute_kriged_for_agg|stem|c9bdb2a10e62aa23|3cde109066d112e5|1c0e1b80cdafd619|1692583633||t19745.2669910694s|651530adca2eb50e|1471822|rds|local|vector|||9.782||
@@ -59,6 +61,7 @@ get_df_times|function|fca685b813947715|||||||||||||||
 get_ids|function|3c3272d4c3149174|||||||||||||||
 get_input_shapes|function|c9e647ed750f1d52|||||||||||||||
 get_island_times|function|196ef6db78f9ade7|||||||||||||||
+get_popup_glue|function|01fa0b75b87617d2|||||||||||||||
 get_remoteness_data|function|4bddf823d6b6d2ad|||||||||||||||
 get_seifa_data|function|8d3b4fd6e2bc8488|||||||||||||||
 get_travel_times|function|40b8ccb161d09656|||||||||||||||
@@ -68,6 +71,7 @@ l_remoteness_dlist|stem|f720df0a70c3c28b|7505d2c62235815e|1077b6d55016f622|10343
 l_seifa_dlist|stem|45730e58a55217ae|b4bdfccb4b029dcc|fe3c5c3deba62f95|-1224354568||t19736.7134363671s|8517f0262a8e20a9|885133|rds|local|vector|||6.031|Expecting numeric in A55036  R55036C1 got  Commonwealth of Australia 2018. Expecting numeric in K2187  R2187C11 got NA. Expecting numeric in L2187  R2187C12 got NA. Expecting numeric in M2187  R2187C13 got NA. Expecting numeric in K2188  R2188C11 got NA. Expecting numeric in L2188  R2188C12 got NA. Expecting numeric in M2188  R2188C13 got NA. Expecting numeric in K2189  R2189C11 got NA. Expecting numeric in L2189  R2189C12 got NA. Expecting numeric in M2189  R2189C13 got NA. Expecting numeric in K2190  R2190C11 got NA. Expecting numeric in L2190  R2190C12 got NA. Expecting numeric in M2190  R2190C13 got NA. Expecting numeric in A2192  R2192C1 got  Commonwealth of Australia 2018. Expecting numeric in A56319  R56319C1 got  Commonwealth of Australia 2013. Expecting numeric in K52574  R52574C11 got NA. Expecting numeric in L52574  R52574C12 got NA. Expecting numeric in K52575  R52575C11 got NA. Expecting numeric in L52575  R52575C12 got NA. Expecting numeric in K52576  R52576C11 got NA. Expecting numeric in L52576  R52576C12 got NA. Expecting numeric in K52577  R52577C11 got NA. Expecting numeric in L52577  R52577C12 got NA. Expecting numeric in K52578  R52578C11 got NA. Expecting numeric in L52578  R52578C12 got NA. Expecting numeric in K52579  R52579C11 got NA. Expecting numeric in L52579  R52579C12 got NA. Expecting numeric in K52580  R52580C11 got NA. Expecting numeric in L52580  R52580C12 got NA. Expecting numeric in A52583  R52583C1 got  Commonwealth of Australia 2013. Detected an unexpected manytomany relationship between x and y.ℹ Row 70 of x matches multiple rows in y.ℹ Row 56312 of y matches multiple rows in x.ℹ If a manytomany relationship is expected, set relationship   manytomany to silence this warning.. There were 2 warnings in mutate.The first warning wasℹ In argument acrossall_ofcdecile, percentile, as.numeric.Caused by warning|
 l_travel_times|stem|89633cd7b43debad|8d7b12920e0335bc|5c9b399301d1371f|880071042||t19745.2668232455s|61234cae4c0aeef5|70237|rds|local|vector|||0.094||
 make_seifas_df|function|a173722530b35302|||||||||||||||
+output_dir|object|84f147b697db2e10|||||||||||||||
 partition_pnts|function|160bf8bcef341dc5|||||||||||||||
 platinum_locs|object|aaa08b5f88f3a54f|||||||||||||||
 qld_locations_file|stem|371950c86cc87bec|1ec6722829c44405|ef46db3751d8e999|1094260305|data/QLDLocations3422.csv|t19409.0793635134s|8e55589b30e156b7|15655|file|local|vector|||0.704||
@@ -86,4 +90,5 @@ seifa_files_3df8e749|branch|fbea7dee06d6d9d0|887c54425a6ada27|ef46db3751d8e999|5
 seifa_files_b0acac7a|branch|b5e556e507134893|887c54425a6ada27|ef46db3751d8e999|309424726|data/remoteness_and_seifa_data/2016_sa1_seifa.xls|t19409.07937518s|c28695aedb990632|54134784|file|local|vector|seifa_files||0||
 seifa_files_cab70577|branch|41a0e4b1c1180c59|887c54425a6ada27|ef46db3751d8e999|-973884529|data/remoteness_and_seifa_data/2016_sa2_seifa.xls|t19409.0793753539s|a7fed4e7b47695f0|1997312|file|local|vector|seifa_files||0||
 seifa_files_files|stem|92a6bd0e048be9f5|a03078bd0f3ea3f6|ef46db3751d8e999|1567115929||t19736.7001155751s|bf0d8caacacad815|112|rds|local|list||seifa_files_files_b8e0c22c*seifa_files_files_e491d188*seifa_files_files_62b7ff49*seifa_files_files_146326d6|0||
+seifa_scale_to_text|function|9654adcfacd5dc4b|||||||||||||||
 silver_locs|object|fc5aaa3d2a561f0c|||||||||||||||
