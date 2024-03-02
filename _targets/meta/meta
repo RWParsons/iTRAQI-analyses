@@ -2,6 +2,9 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
 app_polygons|stem|176b5545db6b6e5c|6aa6863e4a8b5fdc|252778f2c582a506|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19784.3037484635s|887db7fede421fc7|1455953|file|local|vector|||10.328||
+cell_size_agg|object|e9200b1fe25d1e1c|||||||||||||||
+CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
+cell_size_raster|object|970a687b44b4bf24|||||||||||||||
 centre_renaming|function|d61b6b45dcc868b6|||||||||||||||
 clean_acute_centre|function|75df2008a64da3da|||||||||||||||
 create_app_polygons|function|9748f0c0f64e5ccd|||||||||||||||

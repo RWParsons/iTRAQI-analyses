@@ -48,3 +48,9 @@ crs_for_analyses <- list(
 output_dir <- here::here("output")
 
 dl_file_frontpages_dir <- "data/downloadable_data_templates/"
+
+
+# make cell sizes 1 per square km for aggregations and 1 per 3 square km for raster (for faster loading)
+CELL_SIZE_METERS <- 1000
+cell_size_agg <- CELL_SIZE_METERS / 111320
+cell_size_raster <- cell_size_agg * 3
