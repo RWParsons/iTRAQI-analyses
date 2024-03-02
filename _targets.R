@@ -115,8 +115,7 @@ list(
   ),
   tar_target(
     d_input_shapes,
-    # get_input_shapes(agg_grid_cellsize = cell_size_agg, raster_grid_cellsize = cell_size_raster)
-    get_input_shapes(agg_grid_cellsize = 0.1, raster_grid_cellsize = 0.3)
+    get_input_shapes(agg_grid_cellsize = cell_size_agg, raster_grid_cellsize = cell_size_raster)
   ),
 
   # acute
@@ -376,5 +375,16 @@ list(
       d_acute = d_sa2_2021_acute_time,
       d_rehab = d_sa2_2021_rehab_time
     )
+  ),
+  
+  # visualisations
+  tar_target(
+    centre_coords_file,
+    "data/inputs-for-visualisations/centres.csv",
+    format = "file"
+  ),
+  tar_target(
+    d_centre_coords,
+    read.csv(centre_coords_file)
   )
 )
