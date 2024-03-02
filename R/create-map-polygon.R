@@ -24,7 +24,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     mutate(SA2_CODE = as.character(SA2_CODE))
 
 
-  sa1_poly <- strayr::read_absmap(glue::glue("sa1{asgs_year}")) |>
+  sa1_poly <- strayr::read_absmap(glue("sa1{asgs_year}")) |>
     (\(d) {
       names(d)[1] <- "SA1_CODE"
       names(d)[str_detect(names(d), "sa2_name_")] <- "SA2_NAME"
@@ -42,7 +42,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     as_tibble() |>
     left_join(data$sa1_rehab) |>
     mutate(
-      popup_rehab = glue::glue(get_popup_glue("SA1", "rehab"))
+      popup_rehab = glue(get_popup_glue("SA1", "rehab"))
     ) |>
     select(SA1_CODE, value_rehab = value, popup_rehab)
 
@@ -50,12 +50,12 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     as_tibble() |>
     left_join(data$sa1_acute) |>
     mutate(
-      popup_acute = glue::glue(get_popup_glue("SA1", "acute"))
+      popup_acute = glue(get_popup_glue("SA1", "acute"))
     ) |>
     select(SA1_CODE, value_acute = value, popup_acute)
 
 
-  sa2_poly <- strayr::read_absmap(glue::glue("sa2{asgs_year}")) |>
+  sa2_poly <- strayr::read_absmap(glue("sa2{asgs_year}")) |>
     (\(d) {
       names(d)[1] <- "SA2_CODE"
       names(d)[str_detect(names(d), "sa2_name_")] <- "SA2_NAME"
@@ -74,7 +74,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     as_tibble() |>
     left_join(data$sa2_rehab) |>
     mutate(
-      popup_rehab = glue::glue(get_popup_glue("SA2", "rehab"))
+      popup_rehab = glue(get_popup_glue("SA2", "rehab"))
     ) |>
     select(SA2_CODE, value_rehab = value, popup_rehab)
 
@@ -82,7 +82,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     as_tibble() |>
     left_join(data$sa2_acute) |>
     mutate(
-      popup_acute = glue::glue(get_popup_glue("SA2", "acute"))
+      popup_acute = glue(get_popup_glue("SA2", "acute"))
     ) |>
     select(SA2_CODE, value_acute = value, popup_acute)
 
@@ -118,7 +118,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
 
 
 get_popup_glue <- function(asgs, care_type) {
-  glue::glue(
+  glue(
     .open = "@", .close = "^",
     "<b>SA2 Region: </b> {SA2_NAME} <br>",
     "<b>@asgs^ ID: </b>{@asgs^_CODE}<br>",

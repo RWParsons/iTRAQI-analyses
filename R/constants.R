@@ -46,3 +46,5 @@ crs_for_analyses <- list(
 )
 
 output_dir <- here::here("output")
+
+dl_file_frontpages_dir <- "data/downloadable_data_templates/"

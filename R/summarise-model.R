@@ -1,5 +1,5 @@
 aggregate_kriging_model_to_ASGS <- function(kriged_spdf, ASGS_level, ASGS_year) {
-  SA_id <- glue::glue("{ASGS_level}_CODE{ASGS_year}")
+  SA_id <- glue("{ASGS_level}_CODE{ASGS_year}")
 
   kriged_sf <- st_as_sf(kriged_spdf)
   kriged_sf <- st_set_crs(kriged_sf, crs_for_analyses$crs_num)
@@ -7,7 +7,7 @@ aggregate_kriging_model_to_ASGS <- function(kriged_spdf, ASGS_level, ASGS_year) 
 
   ASGS_poly <- strayr::read_absmap(area = ASGS_level, year = ASGS_year) |>
     (\(x) x[!st_is_empty(x), ])() |>
-    filter(!!rlang::sym(glue::glue("state_name_{ASGS_year}")) == "Queensland") |>
+    filter(!!rlang::sym(glue("state_name_{ASGS_year}")) == "Queensland") |>
     st_transform(crs = crs_for_analyses$crs_num) |>
     select(!!SA_id := 1)
 

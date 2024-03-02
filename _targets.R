@@ -3,7 +3,7 @@ library(tarchetypes)
 
 # Set target options:
 tar_option_set(
-  packages = c("tidyverse", "sf"), # packages that your targets need to run
+  packages = c("tidyverse", "sf", "glue"), # packages that your targets need to run
   format = "rds", # Optionally set the default storage format. qs is fast.
   controller = crew::crew_controller_local(workers = 4)
 )
@@ -308,5 +308,72 @@ list(
       simplify_keep = 0.1
     ),
     format = "file"
+  ),
+
+  # make download data
+  ## 2011
+  tar_target(
+    dl_file_2011_SA1,
+    make_download_file(
+      year = "2011",
+      asgs = "SA1",
+      d_acute = d_sa1_2011_acute_time,
+      d_rehab = d_sa1_2011_rehab_time,
+      d_remoteness = l_remoteness_dlist$asgs_2011_sa1,
+      d_seifa = l_seifa_dlist$seifa_2011_sa1
+    )
+  ),
+  tar_target(
+    dl_file_2011_SA2,
+    make_download_file(
+      year = "2011",
+      asgs = "SA2",
+      d_acute = d_sa2_2011_acute_time,
+      d_rehab = d_sa2_2011_rehab_time,
+      d_remoteness = l_remoteness_dlist$asgs_2011_sa2,
+      d_seifa = l_seifa_dlist$seifa_2011_sa2
+    )
+  ),
+  ## 2016
+  tar_target(
+    dl_file_2016_SA1,
+    make_download_file(
+      year = "2016",
+      asgs = "SA1",
+      d_acute = d_sa1_2016_acute_time,
+      d_rehab = d_sa1_2016_rehab_time,
+      d_remoteness = l_remoteness_dlist$asgs_2016_sa1,
+      d_seifa = l_seifa_dlist$seifa_2016_sa1
+    )
+  ),
+  tar_target(
+    dl_file_2016_SA2,
+    make_download_file(
+      year = "2016",
+      asgs = "SA2",
+      d_acute = d_sa2_2016_acute_time,
+      d_rehab = d_sa2_2016_rehab_time,
+      d_remoteness = l_remoteness_dlist$asgs_2016_sa2,
+      d_seifa = l_seifa_dlist$seifa_2016_sa2
+    )
+  ),
+  ## 2021
+  tar_target(
+    dl_file_2021_SA1,
+    make_download_file(
+      year = "2021",
+      asgs = "SA1",
+      d_acute = d_sa1_2021_acute_time,
+      d_rehab = d_sa1_2021_rehab_time
+    )
+  ),
+  tar_target(
+    dl_file_2021_SA2,
+    make_download_file(
+      year = "2021",
+      asgs = "SA2",
+      d_acute = d_sa2_2021_acute_time,
+      d_rehab = d_sa2_2021_rehab_time
+    )
   )
 )

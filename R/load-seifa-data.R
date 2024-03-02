@@ -9,7 +9,7 @@ get_seifa_data <- function(seifa_files) {
     col_names = FALSE
   ) |>
     (\(x) x[, c(2, (ncol(x) - 3):ncol(x))])() |>
-    rename("SA1_CODE16" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
+    rename("SA1_CODE2016" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
     mutate(quintile = quintile_from_decile(decile))
 
   seifa_2016_sa2 <- readxl::read_xls(
@@ -19,7 +19,7 @@ get_seifa_data <- function(seifa_files) {
     col_names = FALSE
   ) |>
     (\(x) x[, c(1, (ncol(x) - 6):(ncol(x) - 3))])() |>
-    rename("SA2_CODE16" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
+    rename("SA2_CODE2016" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
     mutate(quintile = quintile_from_decile(decile))
 
 
@@ -29,7 +29,8 @@ get_seifa_data <- function(seifa_files) {
     skip = 6,
     col_names = FALSE
   ) |>
-    select(code7 = 1, SA1_CODE11 = 2)
+    select(code7 = 1, SA1_CODE2011 = 2)
+
 
   seifa_2011_sa1 <- readxl::read_xls(
     seifa_files[str_detect(basename(seifa_files), "2011_sa1")],
@@ -41,7 +42,8 @@ get_seifa_data <- function(seifa_files) {
     rename("code7" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
     inner_join(sa1_digits, seifa_2011_sa1, by = "code7") |>
     select(-code7) |>
-    mutate(quintile = quintile_from_decile(decile))
+    mutate(quintile = quintile_from_decile(decile)) |>
+    select(contains("CODE"), any_of(names(seifa_2016_sa2)))
 
 
   seifa_2011_sa2 <- readxl::read_xls(
@@ -51,7 +53,7 @@ get_seifa_data <- function(seifa_files) {
     col_names = FALSE
   ) |>
     (\(x) x[, c(1, (ncol(x) - 6):(ncol(x) - 3))])() |>
-    rename("SA2_CODE11" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
+    rename("SA2_CODE2011" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
     mutate(across(all_of(c("decile", "percentile")), as.numeric)) |>
     mutate(quintile = quintile_from_decile(decile))
 
@@ -60,7 +62,8 @@ get_seifa_data <- function(seifa_files) {
     seifa_2016_sa2 = seifa_2016_sa2,
     seifa_2011_sa1 = seifa_2011_sa1,
     seifa_2011_sa2 = seifa_2011_sa2
-  )
+  ) |>
+    lapply(\(x) mutate(x, across(contains("CODE"), as.character)))
 }
 
 quintile_from_decile <- function(x) (x + x %% 2) / 2
