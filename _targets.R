@@ -1,27 +1,16 @@
 library(targets)
 library(tarchetypes)
 
-# Set target options:
 tar_option_set(
-  packages = c("tidyverse", "sf", "glue"), # packages that your targets need to run
-  format = "rds", # Optionally set the default storage format. qs is fast.
+  packages = c("tidyverse", "sf", "glue", "leaflet", "emojifont"),
+  format = "rds",
   controller = crew::crew_controller_local(workers = 4)
 )
-
-# tar_make_clustermq() is an older (pre-{crew}) way to do distributed computing
-# in {targets}, and its configuration for your machine is below.
 options(clustermq.scheduler = "multiprocess")
-
-# tar_make_future() is an older (pre-{crew}) way to do distributed computing
-# in {targets}, and its configuration for your machine is below.
-# Install packages {{future}}, {{future.callr}}, and {{future.batchtools}} to allow use_targets() to configure tar_make_future() options.
-
-# Run the R scripts in the R/ folder with your custom functions:
 tar_source()
-# source("other_functions.R") # Source other scripts as needed.
 
-# Replace the target list below with your own:
 list(
+  # Main data wrangling and model fitting #####################################
   # acute times data
   tar_target(
     acute_times_file,
@@ -376,8 +365,8 @@ list(
       d_rehab = d_sa2_2021_rehab_time
     )
   ),
-  
-  # visualisations
+
+  # visualisations ############################################################
   tar_target(
     centre_coords_file,
     "data/inputs-for-visualisations/centres.csv",
@@ -386,5 +375,56 @@ list(
   tar_target(
     d_centre_coords,
     read.csv(centre_coords_file)
+  ),
+  tar_target(
+    qas_locations_file,
+    "data/inputs-for-visualisations/qas_locations.csv",
+    format = "file"
+  ),
+  tar_target(
+    d_qas_locations,
+    read.csv(qas_locations_file)
+  ),
+  tar_target(
+    rsq_locations_file,
+    "data/inputs-for-visualisations/rsq_locations.csv",
+    format = "file"
+  ),
+  tar_target(
+    d_rsq_locations,
+    read.csv(rsq_locations_file)
+  ),
+  tar_target(
+    d_icons,
+    get_icons(icons_dir = "data/icons"),
+    cue = tar_cue("always")
+  ),
+  tar_target(
+    vis_shapes,
+    get_vis_datasets(
+      polygons = app_polygons,
+      qld_boundary = d_input_shapes$qld_state_boundary,
+      centre_coords = d_centre_coords,
+      qas_locations = d_qas_locations,
+      rsq_locations = d_rsq_locations,
+      town_locations = d_ids,
+      centre_icons = d_icons$centre_icons
+    )
+  ),
+  tar_target(
+    plotting_utils,
+    get_plotting_utils()
+  ),
+  tar_target(
+    qas_map,
+    make_qas_map(vis_shapes, plotting_utils)
+  ),
+  tar_target(
+    town_locations_map,
+    make_towns_map(vis_shapes, plotting_utils)
+  ),
+  tar_target(
+    rsq_maps,
+    make_rsq_maps(vis_shapes, plotting_utils)
   )
 )
