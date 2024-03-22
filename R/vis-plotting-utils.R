@@ -17,7 +17,7 @@ get_plotting_utils <- function() {
                                        theme = map_theme,
                                        x_limits = c(135, 158),
                                        cities_data = other_cities,
-                                       text_size = out_dpi / 300 * 2,
+                                       text_size = out_dpi / 300 * 12,
                                        add_dots_for_cities = T,
                                        text_hjust = -0.1,
                                        nudge_labels_x = 0) {

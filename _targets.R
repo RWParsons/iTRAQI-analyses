@@ -415,6 +415,7 @@ list(
     plotting_utils,
     get_plotting_utils()
   ),
+  # make maps
   tar_target(
     qas_map,
     make_qas_map(vis_shapes, plotting_utils)
@@ -426,5 +427,9 @@ list(
   tar_target(
     rsq_maps,
     make_rsq_maps(vis_shapes, plotting_utils)
+  ),
+  tar_target(
+    major_regional_services_map,
+    make_major_regional_services_map(vis_shapes, plotting_utils)
   )
 )
