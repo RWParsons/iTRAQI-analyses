@@ -19,7 +19,7 @@ d_drive_times|stem|83fdbb3b0c04424c|8c9e6a881862e285|c297168b37744650|805095284|
 d_future_gold|stem|bc7996fdcae9cd32|c77db3416ebf6474|6d61eac7ead947f7|-558288781||t19726.9505706014s|d854e2416e41b285|14111|rds|local|vector|||0.922||
 d_future_gold_and_cairns|stem|92219bcf8bbd625f|fd189496a91fdff9|ab842e8202fa2e9d|-1156415650||t19726.9505732958s|7867f1217739a530|14131|rds|local|vector|||0.906||
 d_gold|stem|74d1a8e343dec6d4|8b8e8f6ffa166651|36c6e4cd0f9c16fe|-935275553||t19726.9505757193s|ddd0408079e2dc8e|13976|rds|local|vector|||0.859||
-d_icons|stem|cafbd61726de45bd|9249761b6ef9bb62|e3b0bad8656e89e8|-851214051||t19805.2010830965s|768af1b6380cf070|339|rds|local|vector|||1.187||
+d_icons|stem|cafbd61726de45bd|9249761b6ef9bb62|e3b0bad8656e89e8|-851214051||t19805.255572758s|768af1b6380cf070|339|rds|local|vector|||1.218||
 d_ids|stem|1782e1b767970e83|1b0c8077b236fe68|92b00325d6d18e16|903306592||t19726.9406033454s|e75851ec39bae34e|10174|rds|local|vector|||0.641||
 d_input_shapes|stem|5f31a223ac2b1b70|33638fe1715a7b5e|0f1845d7d40df444|-1192428375||t19784.3460721434s|ae98e11eb21e17d9|1082306|rds|local|vector|||270.453|st_point_on_surface assumes attributes are constant over geometries. st_point_on_surface may not give correct results for longitudelatitude data|
 d_island_rehab_times|stem|8ddd4b5124426c94|6ea470b6917cb0cf|35eba598d6572605|89475984||t19726.9406041286s|bea4075b4710d630|650|rds|local|vector|||0.016||
@@ -78,6 +78,7 @@ get_ids|function|3c3272d4c3149174|||||||||||||||
 get_input_shapes|function|c9e647ed750f1d52|||||||||||||||
 get_island_times|function|196ef6db78f9ade7|||||||||||||||
 get_iTRAQI_index|function|51173749f28e7d8f|||||||||||||||
+get_iTRAQI_vis_objs|function|1e0c5368c2df6075|||||||||||||||
 get_new_tt_names|function|f8cd4e5a5bc1684e|||||||||||||||
 get_plotting_utils|function|da620ec0077e1b74|||||||||||||||
 get_popup_glue|function|b37f2d473c1aaef0|||||||||||||||
@@ -88,19 +89,33 @@ get_travel_times|function|40b8ccb161d09656|||||||||||||||
 get_vis_datasets|function|6edfe006b94a3520|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
 inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|447da0cbb873861b|1618372214||t19805.2011191041s|97f5d5ebb4412369|161|rds|local|vector|||1.453||
+iTRAQI_acute_continuous_map|stem|8918cde785e5e4a6|4746fe8c9f8065d2|6a2b743cfbd45f86|29494645||t19805.2445014188s|ae3ca543e47cf4fd|166|rds|local|vector|||3.078||
+iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|1ccbd3c00771cb17|206967308||t19805.2549047329s|ae3ca543e47cf4fd|166|rds|local|vector|||4.953||
+iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|719573eab7ea3b1a|-1228347186||t19805.2556408075s|af2f698bb96276c8|148|rds|local|vector|||1.875||
+itraqi_list|stem|f09f84e2d02bee5d|e0dd9ef8b22754fa|d14e3d4bc79d8110|-1855879146||t19805.2547374763s|d4097159d3730a7f|23998084|rds|local|vector|||0.688||
+iTRAQI_rehab_maps|stem|e1261ccb6bf56ab6|fd02f3040beca726|22e53043a613dc1f|140306304||t19805.2548331389s|3c9f22cdd675fcde|167|rds|local|vector|||3.296||
+iTRAQI_sa1_map|stem|4919f2c5defb5a00|2303afe4478a8ce8|88346797cf5fd9e4|-505862102||t19805.2548992349s|24d52ebf1535bba2|123|rds|local|vector|||5.187||
+iTRAQI_sa2_map|stem|923091d6dba5c13d|b1c883ef38a95d1f|e6252515c000e3e5|-544962212||t19805.254778497s|24d52ebf1535bba2|123|rds|local|vector|||0.797||
 l_all_drive_times|stem|863290ab751782f0|322c9834645b4160|7cdfb0cf9ae7937a|1979637785||t19727.699503603s|19a7a986c137792d|69482|rds|local|vector|||0.625||
 l_remoteness_dlist|stem|fd88b2e32b53b89e|7505d2c62235815e|aecfc931207396ae|1034374804||t19784.3035604944s|83a591c88582aa1c|65324|rds|local|vector|||1.141||
 l_seifa_dlist|stem|adc88655a505401a|b4bdfccb4b029dcc|4478fe93b8030a7c|-1224354568||t19784.3030741124s|184f2c93c9dff2c4|882353|rds|local|vector|||5.891|Expecting numeric in A55036  R55036C1 got  Commonwealth of Australia 2018. Expecting numeric in K2187  R2187C11 got NA. Expecting numeric in L2187  R2187C12 got NA. Expecting numeric in M2187  R2187C13 got NA. Expecting numeric in K2188  R2188C11 got NA. Expecting numeric in L2188  R2188C12 got NA. Expecting numeric in M2188  R2188C13 got NA. Expecting numeric in K2189  R2189C11 got NA. Expecting numeric in L2189  R2189C12 got NA. Expecting numeric in M2189  R2189C13 got NA. Expecting numeric in K2190  R2190C11 got NA. Expecting numeric in L2190  R2190C12 got NA. Expecting numeric in M2190  R2190C13 got NA. Expecting numeric in A2192  R2192C1 got  Commonwealth of Australia 2018. Expecting numeric in A56319  R56319C1 got  Commonwealth of Australia 2013. Expecting numeric in K52574  R52574C11 got NA. Expecting numeric in L52574  R52574C12 got NA. Expecting numeric in K52575  R52575C11 got NA. Expecting numeric in L52575  R52575C12 got NA. Expecting numeric in K52576  R52576C11 got NA. Expecting numeric in L52576  R52576C12 got NA. Expecting numeric in K52577  R52577C11 got NA. Expecting numeric in L52577  R52577C12 got NA. Expecting numeric in K52578  R52578C11 got NA. Expecting numeric in L52578  R52578C12 got NA. Expecting numeric in K52579  R52579C11 got NA. Expecting numeric in L52579  R52579C12 got NA. Expecting numeric in K52580  R52580C11 got NA. Expecting numeric in L52580  R52580C12 got NA. Expecting numeric in A52583  R52583C1 got  Commonwealth of Australia 2013. Detected an unexpected manytomany relationship between x and y.ℹ Row 70 of x matches multiple rows in y.ℹ Row 56312 of y matches multiple rows in x.ℹ If a manytomany relationship is expected, set relationship   manytomany to silence this warning.. There were 2 warnings in mutate.The first warning wasℹ In argument acrossall_ofcdecile, percentile, as.numeric.Caused by warning|
 l_travel_times|stem|89633cd7b43debad|8d7b12920e0335bc|5c9b399301d1371f|880071042||t19745.2668232455s|61234cae4c0aeef5|70237|rds|local|vector|||0.094||
 major_regional_services_map|stem|89641fbb78f90ee1|5ee6004191178fd8|8e0ffa481bbf10f7|-1777432472||t19804.2979661007s|6935d04907feb3d2|146|rds|local|vector|||0.5|Removed 1 rows containing missing values geom_point.|
+make_acute_maps|function|0621d7dcc6064b92|||||||||||||||
+make_continuous_acute_map|function|269bdce1a46702cb|||||||||||||||
 make_download_file|function|eaf6191bd89c4532|||||||||||||||
 make_inset_maps|function|02b8fb68eff93a87|||||||||||||||
+make_itraqi_sa1_map|function|a6f74a136cc15085|||||||||||||||
+make_itraqi_sa2_map|function|00fa39e5f6d1d81d|||||||||||||||
+make_legends|function|081a1863c69fbd6e|||||||||||||||
 make_major_regional_services_map|function|dba0946fecf37e25|||||||||||||||
 make_qas_map|function|f83dbbad1ea764fd|||||||||||||||
+make_rehab_maps|function|2c5fcd4fff948293|||||||||||||||
 make_rsq_maps|function|c3cd278b05efc527|||||||||||||||
 make_seifas_df|function|a173722530b35302|||||||||||||||
 make_towns_map|function|e565254c8e30c0cb|||||||||||||||
 output_dir|object|84f147b697db2e10|||||||||||||||
+palette_file|stem|937d241336311220|04a82023e2aa5b65|ef46db3751d8e999|2139255348||t19805.2272778607s|887021b347b02e8f|100|rds|local|vector|||1.313||
 partition_pnts|function|160bf8bcef341dc5|||||||||||||||
 platinum_locs|object|aaa08b5f88f3a54f|||||||||||||||
 plotting_utils|stem|82bbaf6ed7bdac52|d44d71bb5e91cb20|6f3c96109f29814f|-2141552691||t19804.2970754549s|710edb2d9dc3ce4e|9720|rds|local|vector|||1.235||

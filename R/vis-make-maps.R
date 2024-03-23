@@ -158,3 +158,147 @@ make_inset_maps <- function(shapes, centre_coords, utils, medal_icon_paths) {
     rehab_services_inset_combined_path
   )
 }
+
+
+make_itraqi_sa2_map <- function(iTRAQI_list, utils) {
+  p <-
+    ggplot() +
+    geom_sf(
+      data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA2s$index),
+      col = NA
+    )
+  p <- utils$add_common_plot_features(p, add_dots_for_cities = F)
+
+  path <- file.path(utils$out_dir, "iTRAQI-SA2s.jpeg")
+  ggsave(path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+  path
+}
+
+make_itraqi_sa1_map <- function(iTRAQI_list, utils) {
+  p <-
+    ggplot() +
+    geom_sf(
+      data = iTRAQI_list$qld_SA1s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA1s$index),
+      col = NA
+    )
+  p <- utils$add_common_plot_features(p, add_dots_for_cities = F)
+
+  path <- file.path(utils$out_dir, "iTRAQI-SA1s.jpeg")
+  ggsave(path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+  path
+}
+
+make_acute_maps <- function(iTRAQI_list, utils) {
+  p <- ggplot() +
+    geom_tile(
+      data = iTRAQI_list$acute_raster,
+      aes(x = x, y = y),
+      fill = iTRAQI_list$palNum(iTRAQI_list$acute_raster$pred)
+    ) +
+    coord_equal()
+  p <- utils$add_common_plot_features(p)
+  continuous_map_path <- file.path(utils$out_dir, "acute-time-continuous.jpeg")
+  ggsave(continuous_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  p <- ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$value_acute))
+  p <- utils$add_common_plot_features(p)
+  sa2_median_map_path <- file.path(utils$out_dir, "acute-time-median-SA2s.jpeg")
+  ggsave(sa2_median_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  p <- ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$acute_min))
+  p <- utils$add_common_plot_features(p)
+  sa2_min_map_path <- file.path(utils$out_dir, "acute-time-min-SA2s.jpeg")
+  ggsave(sa2_min_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  p <- ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$acute_max))
+  p <- utils$add_common_plot_features(p)
+  sa2_max_map_path <- file.path(utils$out_dir, "acute-time-max-SA2s.jpeg")
+  ggsave(sa2_max_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  c(
+    continuous_map_path,
+    sa2_median_map_path,
+    sa2_min_map_path,
+    sa2_max_map_path
+  )
+}
+
+make_rehab_maps <- function(iTRAQI_list, utils) {
+  p <- ggplot() +
+    geom_tile(
+      data = iTRAQI_list$rehab_raster,
+      aes(x = x, y = y),
+      fill = iTRAQI_list$palNum(iTRAQI_list$rehab_raster$pred)
+    ) +
+    coord_equal()
+  p <- utils$add_common_plot_features(p)
+  continuous_map_path <- file.path(utils$out_dir, "rehab-time-continuous.jpeg")
+  ggsave(continuous_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  p <- ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$value_rehab))
+  p <- utils$add_common_plot_features(p)
+  sa2_median_map_path <- file.path(utils$out_dir, "rehab-time-median-SA2s.jpeg")
+  ggsave(sa2_median_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  p <- ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$rehab_min))
+  p <- utils$add_common_plot_features(p)
+  sa2_min_map_path <- file.path(utils$out_dir, "rehab-time-min-SA2s.jpeg")
+  ggsave(sa2_min_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  p <- ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$rehab_max))
+  p <- utils$add_common_plot_features(p)
+  sa2_max_map_path <- file.path(utils$out_dir, "rehab-time-max-SA2s.jpeg")
+  ggsave(sa2_max_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  c(
+    continuous_map_path,
+    sa2_median_map_path,
+    sa2_min_map_path,
+    sa2_max_map_path
+  )
+}
+
+make_legends <- function(iTRAQI_list, utils) {
+  plot_with_continuous_legend <- ggplot() +
+    geom_tile(
+      data = iTRAQI_list$rehab_raster,
+      aes(x = x, y = y, fill = (pred / 60))
+    ) +
+    coord_equal() +
+    scale_fill_gradientn(
+      colours = iTRAQI_list$palNum_hours(iTRAQI_list$bins / 60),
+      values = scales::rescale(iTRAQI_list$bins / 60),
+      breaks = seq(0, 20, 5)
+    ) +
+    labs(fill = "")
+
+  continuous_legend <- cowplot::get_legend(plot_with_continuous_legend)
+  continuous_legend_path <- file.path(utils$out_dir, "continuous_legend.jpeg")
+  ggsave(continuous_legend_path, plot = continuous_legend, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+
+  iTRAQI_pal_vec <- iTRAQI_list$paliTRAQI(iTRAQI_list$iTRAQI_bins)
+  names(iTRAQI_pal_vec) <- iTRAQI_list$iTRAQI_bins
+
+  plot_with_index_legend <-
+    ggplot() +
+    geom_sf(data = iTRAQI_list$qld_SA2s, aes(fill = index)) +
+    scale_fill_manual(values = iTRAQI_pal_vec, breaks = sort(names(iTRAQI_pal_vec))) +
+    labs(fill = "iTRAQI Index")
+
+
+  itraqi_legend <- cowplot::get_legend(plot_with_index_legend)
+  itraqi_legend_path <- file.path(utils$out_dir, "index_legend.jpeg")
+  ggsave(itraqi_legend_path, plot = itraqi_legend, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+
+  c(
+    continuous_legend_path,
+    itraqi_legend_path
+  )
+}

@@ -415,6 +415,19 @@ list(
     plotting_utils,
     get_plotting_utils()
   ),
+  tar_target(
+    palette_file,
+    "data/inputs-for-visualisations/index_palette.csv"
+  ),
+  tar_target(
+    itraqi_list,
+    get_iTRAQI_vis_objs(
+      shapes = vis_shapes,
+      palette_file = palette_file,
+      kriged_rehab = d_rehab_kriged_raster$kriged_layer,
+      kriged_acute = d_acute_kriged_raster$kriged_layer
+    )
+  ),
   # make maps
   tar_target(
     qas_map,
@@ -440,5 +453,25 @@ list(
       plotting_utils,
       medal_icon_paths = d_icons$medal_icon_paths
     )
+  ),
+  tar_target(
+    iTRAQI_sa2_map,
+    make_itraqi_sa2_map(itraqi_list, plotting_utils)
+  ),
+  tar_target(
+    iTRAQI_sa1_map,
+    make_itraqi_sa1_map(itraqi_list, plotting_utils)
+  ),
+  tar_target(
+    iTRAQI_acute_maps,
+    make_acute_maps(itraqi_list, plotting_utils)
+  ),
+  tar_target(
+    iTRAQI_rehab_maps,
+    make_rehab_maps(itraqi_list, plotting_utils)
+  ),
+  tar_target(
+    iTRAQI_legends,
+    make_legends(itraqi_list, plotting_utils)
   )
 )
