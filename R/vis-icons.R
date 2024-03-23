@@ -36,7 +36,13 @@ get_icons <- function(icons_dir) {
     )
   )
 
+  medal_icon_paths <- list(
+    gold = file.path(icons_dir, "gold_medal.png"),
+    silver = file.path(icons_dir, "silver_medal.png")
+  )
+
   list(
-    centre_icons = centre_icons
+    centre_icons = centre_icons,
+    medal_icon_paths = medal_icon_paths
   )
 }

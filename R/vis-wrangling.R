@@ -62,7 +62,7 @@ get_vis_datasets <- function(polygons,
       list(centre_name = "Toowoomba Hospital", type = "Regional", x = 151.9468, y = -27.5701),
       list(centre_name = "Logan Hospital", type = "Regional", x = 0, y = 0)
     ) |>
-    bind_rows() |> 
+    bind_rows() |>
     left_join(select(centre_coords, centre_name, x2 = x, y2 = y), by = c("centre_name")) |>
     arrange(centre_name) |>
     mutate(

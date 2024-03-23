@@ -431,5 +431,14 @@ list(
   tar_target(
     major_regional_services_map,
     make_major_regional_services_map(vis_shapes, plotting_utils)
+  ),
+  tar_target(
+    inset_maps,
+    make_inset_maps(
+      vis_shapes,
+      centre_coords = d_centre_coords,
+      plotting_utils,
+      medal_icon_paths = d_icons$medal_icon_paths
+    )
   )
 )
