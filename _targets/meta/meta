@@ -1,7 +1,9 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
+app_locations_and_times|stem|71ebefa0b721712e|b1c8cc308eee02c4|8def2ef84e3833f4|1635295773|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/QLD_locations_with_RSQ_times.csv|t19806.2711974937s|734ae9969a284a07|73583|file|local|vector|||1.593||
 app_polygons|stem|7f94b3a5704c4cec|6aa6863e4a8b5fdc|dc6a888f9b0d2cd8|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19805.3376875929s|743bc87e2a1ae761|1465337|file|local|vector|||14.109||
+app_raster|stem|c2cbf9546e160981|1999daca4d985344|26368add9e70bb19|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s|028a051cc6972105|6312158|file|local|vector|||2.157||
 breaks_to_labels|function|15aa190f0fc9cc8c|||||||||||||||
 cell_size_agg|object|e9200b1fe25d1e1c|||||||||||||||
 CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
@@ -9,7 +11,9 @@ cell_size_raster|object|970a687b44b4bf24|||||||||||||||
 centre_coords_file|stem|6f822eeadc97db80|4f42a08c732bb99e|ef46db3751d8e999|540664881|data/inputs-for-visualisations/centres.csv|t19234.15736239s|86d2144d56b732f9|1576|file|local|vector|||1.047||
 centre_renaming|function|d61b6b45dcc868b6|||||||||||||||
 clean_acute_centre|function|75df2008a64da3da|||||||||||||||
+create_app_locs_and_times|function|23dab7c0938eb810|||||||||||||||
 create_app_polygons|function|9748f0c0f64e5ccd|||||||||||||||
+create_app_raster|function|0b82a3103b41e1e2|||||||||||||||
 crs_for_analyses|object|fe82103152f115e2|||||||||||||||
 d_acute|stem|67d5ad81c2771409|ccdab38e1eb4f139|914043714e556400|-916123321||t19745.2668215612s|b6caf4b88c88ffc1|5816|rds|local|vector|||1.047||
 d_acute_kriged_for_agg|stem|275eb1d34fc93263|3cde109066d112e5|56860192605d2e6f|1692583633||t19784.3498093136s|7c7cec4b16412559|38225665|rds|local|vector|||314.703||

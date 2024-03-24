@@ -298,6 +298,21 @@ list(
     ),
     format = "file"
   ),
+  tar_target(
+    app_raster,
+    create_app_raster(
+      rehab = d_rehab_kriged_raster$kriged_layer,
+      acute = d_acute_kriged_raster$kriged_layer
+    ),
+    format = "file"
+  ),
+  tar_target(
+    app_locations_and_times,
+    create_app_locs_and_times(
+      l_travel_times
+    ),
+    format = "file"
+  ),
 
   # make download data
   ## 2011
