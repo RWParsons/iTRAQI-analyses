@@ -1,7 +1,7 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
-app_polygons|stem|f5494ad36ce8e5f2|6aa6863e4a8b5fdc|ef7e96addf732d4e|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19784.5721960043s|d7aecf52fdc712f5|1462438|file|local|vector|||14.797||
+app_polygons|stem|7f94b3a5704c4cec|6aa6863e4a8b5fdc|dc6a888f9b0d2cd8|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19805.3376875929s|743bc87e2a1ae761|1465337|file|local|vector|||14.109||
 cell_size_agg|object|e9200b1fe25d1e1c|||||||||||||||
 CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
 cell_size_raster|object|970a687b44b4bf24|||||||||||||||
@@ -19,7 +19,7 @@ d_drive_times|stem|83fdbb3b0c04424c|8c9e6a881862e285|c297168b37744650|805095284|
 d_future_gold|stem|bc7996fdcae9cd32|c77db3416ebf6474|6d61eac7ead947f7|-558288781||t19726.9505706014s|d854e2416e41b285|14111|rds|local|vector|||0.922||
 d_future_gold_and_cairns|stem|92219bcf8bbd625f|fd189496a91fdff9|ab842e8202fa2e9d|-1156415650||t19726.9505732958s|7867f1217739a530|14131|rds|local|vector|||0.906||
 d_gold|stem|74d1a8e343dec6d4|8b8e8f6ffa166651|36c6e4cd0f9c16fe|-935275553||t19726.9505757193s|ddd0408079e2dc8e|13976|rds|local|vector|||0.859||
-d_icons|stem|cafbd61726de45bd|9249761b6ef9bb62|e3b0bad8656e89e8|-851214051||t19805.255572758s|768af1b6380cf070|339|rds|local|vector|||1.218||
+d_icons|stem|cafbd61726de45bd|9249761b6ef9bb62|e3b0bad8656e89e8|-851214051||t19805.2662943304s|768af1b6380cf070|339|rds|local|vector|||2.266||
 d_ids|stem|1782e1b767970e83|1b0c8077b236fe68|92b00325d6d18e16|903306592||t19726.9406033454s|e75851ec39bae34e|10174|rds|local|vector|||0.641||
 d_input_shapes|stem|5f31a223ac2b1b70|33638fe1715a7b5e|0f1845d7d40df444|-1192428375||t19784.3460721434s|ae98e11eb21e17d9|1082306|rds|local|vector|||270.453|st_point_on_surface assumes attributes are constant over geometries. st_point_on_surface may not give correct results for longitudelatitude data|
 d_island_rehab_times|stem|8ddd4b5124426c94|6ea470b6917cb0cf|35eba598d6572605|89475984||t19726.9406041286s|bea4075b4710d630|650|rds|local|vector|||0.016||
@@ -28,26 +28,26 @@ d_qas_locations|stem|6cfc7c4bdb25e246|bbecc698d872a5bb|f1fdfb7e1a21bf0c|13684318
 d_rehab_kriged_for_agg|stem|cc6a2c4e34d82c7c|127080367aed54f7|56860192605d2e6f|-101763484||t19784.34985089s|bbf4062d5ad7f1b8|38464886|rds|local|vector|||319.282|No convergence after 200 iterations try different initial values. No convergence after 200 iterations try different initial values|
 d_rehab_kriged_raster|stem|76ffaabc4a29e8ab|ad14072f3346f0f9|56860192605d2e6f|-1503165920||t19784.3466465539s|ad51d8ff0110a5f3|5763575|rds|local|vector|||42.531|No convergence after 200 iterations try different initial values. No convergence after 200 iterations try different initial values|
 d_rsq_locations|stem|0fb7736bfb88df74|92b9cb8e1ba7864e|f67e583e2a5e681e|-2072373617||t19804.2708199752s|2e799dafded695d9|538|rds|local|vector|||0||
-d_sa1_2011_acute_time|stem|471b6c4f26b2e931|998f138209ead1e6|f916518d2275aa52|-1652582580||t19784.4246098654s|b724b9ed68e62df8|266401|rds|local|vector|||6454.859||
+d_sa1_2011_acute_time|stem|12a1d3ce06b91505|58bd20df6114074d|d9d12797d7382cb2|-1652582580||t19805.3374229991s|5ea12ad84959c013|269689|rds|local|vector|||6137.438||
 d_sa1_2011_rehab_time|stem|471b6c4f26b2e931|998f138209ead1e6|f916518d2275aa52|-517939121||t19784.422887592s|b724b9ed68e62df8|266401|rds|local|vector|||6302.985||
-d_sa1_2016_acute_time|stem|67e0fe6e638f547c|1fdeb1f61b8c6e36|f916518d2275aa52|478600203||t19784.564930709s|a6309a7e2c71d06d|278803|rds|local|vector|||6066.891||
+d_sa1_2016_acute_time|stem|27876c03561c35e6|f7ef7cc6782fda6f|d9d12797d7382cb2|478600203||t19805.3373971206s|0ccdfacef1eddb41|282290|rds|local|vector|||6134.797||
 d_sa1_2016_rehab_time|stem|67e0fe6e638f547c|1fdeb1f61b8c6e36|f916518d2275aa52|1359479050||t19784.5666076618s|a6309a7e2c71d06d|278803|rds|local|vector|||6106.422||
-d_sa1_2021_acute_time|stem|2a65a35e2de7f695|c03cb40246c2814d|f916518d2275aa52|-1704413142||t19784.4943911006s|2fde7a05acc31ce2|302042|rds|local|vector|||6172.266||
+d_sa1_2021_acute_time|stem|14e58e5254c136ac|a2c61d4b43449026|d9d12797d7382cb2|-1704413142||t19805.3374109749s|91b6e8949b86cd50|305914|rds|local|vector|||6139.375||
 d_sa1_2021_rehab_time|stem|2a65a35e2de7f695|c03cb40246c2814d|f916518d2275aa52|-1991704197||t19784.4946740733s|2fde7a05acc31ce2|302042|rds|local|vector|||6169.86||
-d_sa2_2011_acute_time|stem|d3379c52424463ca|23459ceb4473e3d9|f916518d2275aa52|2046630615||t19784.4235041572s|f3971f9a138b199b|13626|rds|local|vector|||6355.906||
+d_sa2_2011_acute_time|stem|17a4e8dd5500d81d|ba976005b03f6186|d9d12797d7382cb2|2046630615||t19805.3716438562s|c6161f5993de59a5|13742|rds|local|vector|||2957.984||
 d_sa2_2011_rehab_time|stem|d3379c52424463ca|23459ceb4473e3d9|f916518d2275aa52|1992918840||t19784.4231918044s|f3971f9a138b199b|13626|rds|local|vector|||6329.906||
-d_sa2_2016_acute_time|stem|910ee62dcd2e066d|52ecd2f0c399a6b6|f916518d2275aa52|-1123803252||t19784.5720189475s|811904fe6c245e70|13687|rds|local|vector|||6099.453||
+d_sa2_2016_acute_time|stem|6ed0e316431604b1|2e20281c4ea05631|d9d12797d7382cb2|-1123803252||t19805.3375229156s|826834166210677e|13804|rds|local|vector|||6150.485||
 d_sa2_2016_rehab_time|stem|910ee62dcd2e066d|52ecd2f0c399a6b6|f916518d2275aa52|-130338539||t19784.5655209509s|811904fe6c245e70|13687|rds|local|vector|||6142.344||
-d_sa2_2021_acute_time|stem|6178fa12e10509c8|385475d9a53253ea|f916518d2275aa52|-2024727164||t19784.4958875006s|c4b14a92b662feb7|14172|rds|local|vector|||6238.828||
+d_sa2_2021_acute_time|stem|a530f678831a7d77|58d77be4345836b4|d9d12797d7382cb2|-2024727164||t19805.3715428576s|f512e49329a72b4d|14292|rds|local|vector|||2953.25||
 d_sa2_2021_rehab_time|stem|6178fa12e10509c8|385475d9a53253ea|f916518d2275aa52|-1336517495||t19784.5013017141s|c4b14a92b662feb7|14172|rds|local|vector|||6615.234||
 d_silver|stem|d5574d937ce0095f|167d7c4466639c6f|44984d486e505a2b|-319598435||t19726.9486245728s|e4d169a5a28eccc4|14320|rds|local|vector|||0.781||
 d_times|stem||8d7b12920e0335bc|0cb59c3551e15da6|1113975319||t19727.8907070989s||0|rds|local|vector|||1.391||ℹ In argument acute_care_transit_location  ifelse....Caused by error object acute_care_transit_location not found
-dl_file_2011_SA1|stem|74492e64a45bf938|006ddd7c4f4b73aa|626a89d4312ff305|-1856657953||t19784.5652555651s|a02a8e2007330cdf|142|rds|local|vector|||7.578||
-dl_file_2011_SA2|stem|7d646675d362212f|804a7e1e73194fef|1c4457842adfb826|1524720294||t19784.5651658046s|a02a8e2007330cdf|142|rds|local|vector|||20.828||
-dl_file_2016_SA1|stem|202fb7ca9dad75f0|1168961a56c70460|b49405a2ea5eeeb9|1207637311||t19784.5668474896s|a02a8e2007330cdf|142|rds|local|vector|||20.078||
-dl_file_2016_SA2|stem|b30c79d9aa96e41b|807323a4ba2a3b52|2c7ccc0591576cc7|-920840127||t19784.5720344233s|a02a8e2007330cdf|142|rds|local|vector|||1.062||
-dl_file_2021_SA1|stem|73f596291cdd9723|5e93bedcc462950e|16894cc140fa220d|-951599162||t19784.5652777096s|a02a8e2007330cdf|142|rds|local|vector|||1.938||
-dl_file_2021_SA2|stem|1aeab4a5676cf1c9|492857e74516bd82|b90812da9a76b99b|960287913||t19784.5652880759s|a02a8e2007330cdf|142|rds|local|vector|||0.891||
+dl_file_2011_SA1|stem|e611a05a756a745e|006ddd7c4f4b73aa|5cf40749f50fb553|-1856657953||t19805.3376144925s|a02a8e2007330cdf|142|rds|local|vector|||8.188||
+dl_file_2011_SA2|stem|f9a244600528d73a|804a7e1e73194fef|cf4d1bf97ca337ec|1524720294||t19805.3716825809s|a02a8e2007330cdf|142|rds|local|vector|||3.234||
+dl_file_2016_SA1|stem|ad7f31a9753b56e3|1168961a56c70460|61a0b237598d0cf8|1207637311||t19805.3375032581s|a02a8e2007330cdf|142|rds|local|vector|||8.891||
+dl_file_2016_SA2|stem|abeae3967edbe9aa|807323a4ba2a3b52|3c76a5b300dbc305|-920840127||t19805.3376258799s|a02a8e2007330cdf|142|rds|local|vector|||0.984||
+dl_file_2021_SA1|stem|9537a5aedac5e4a7|5e93bedcc462950e|8b12ba0829161984|-951599162||t19805.3375235226s|a02a8e2007330cdf|142|rds|local|vector|||1.5||
+dl_file_2021_SA2|stem|f75457f420d6d63c|492857e74516bd82|5fd9b2e4c4cf7f75|960287913||t19805.3715579587s|a02a8e2007330cdf|142|rds|local|vector|||1.172||
 dl_file_frontpages_dir|object|6a4652569d411b2c|||||||||||||||
 do_kriging_model|function|ace866b402004851|||||||||||||||
 download_input_shapes|function|3d203b015805f2df|||||||||||||||
@@ -88,19 +88,19 @@ get_travel_time_sheet_data|function|53bb510b9ee92b74|||||||||||||||
 get_travel_times|function|40b8ccb161d09656|||||||||||||||
 get_vis_datasets|function|6edfe006b94a3520|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
-inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|447da0cbb873861b|1618372214||t19805.2011191041s|97f5d5ebb4412369|161|rds|local|vector|||1.453||
+inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|ff4eff83429f0f33|1618372214||t19805.3377997993s|97f5d5ebb4412369|161|rds|local|vector|||1.797||
 iTRAQI_acute_continuous_map|stem|8918cde785e5e4a6|4746fe8c9f8065d2|6a2b743cfbd45f86|29494645||t19805.2445014188s|ae3ca543e47cf4fd|166|rds|local|vector|||3.078||
-iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|1ccbd3c00771cb17|206967308||t19805.2549047329s|ae3ca543e47cf4fd|166|rds|local|vector|||4.953||
-iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|719573eab7ea3b1a|-1228347186||t19805.2556408075s|af2f698bb96276c8|148|rds|local|vector|||1.875||
-itraqi_list|stem|f09f84e2d02bee5d|e0dd9ef8b22754fa|d14e3d4bc79d8110|-1855879146||t19805.2547374763s|d4097159d3730a7f|23998084|rds|local|vector|||0.688||
-iTRAQI_rehab_maps|stem|e1261ccb6bf56ab6|fd02f3040beca726|22e53043a613dc1f|140306304||t19805.2548331389s|3c9f22cdd675fcde|167|rds|local|vector|||3.296||
-iTRAQI_sa1_map|stem|4919f2c5defb5a00|2303afe4478a8ce8|88346797cf5fd9e4|-505862102||t19805.2548992349s|24d52ebf1535bba2|123|rds|local|vector|||5.187||
-iTRAQI_sa2_map|stem|923091d6dba5c13d|b1c883ef38a95d1f|e6252515c000e3e5|-544962212||t19805.254778497s|24d52ebf1535bba2|123|rds|local|vector|||0.797||
+iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|d2e7636de57c2221|206967308||t19805.3379713243s|ae3ca543e47cf4fd|166|rds|local|vector|||4.547||
+iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|bf523a14d37591cd|-1228347186||t19805.3378632835s|af2f698bb96276c8|148|rds|local|vector|||3.047||
+itraqi_list|stem|aadc08712ec4f30c|e0dd9ef8b22754fa|d692faffa9861437|-1855879146||t19805.3377952379s|284d1b3f24efb7f7|24009359|rds|local|vector|||0.766||
+iTRAQI_rehab_maps|stem|e1261ccb6bf56ab6|fd02f3040beca726|5c03af0a5bc66e3e|140306304||t19805.3379048761s|3c9f22cdd675fcde|167|rds|local|vector|||4.563||
+iTRAQI_sa1_map|stem|4919f2c5defb5a00|2303afe4478a8ce8|31c17b1fd81d976f|-505862102||t19805.3379391208s|24d52ebf1535bba2|123|rds|local|vector|||4.203||
+iTRAQI_sa2_map|stem|923091d6dba5c13d|b1c883ef38a95d1f|b1ab8c6b5d9ae46a|-544962212||t19805.337832646s|24d52ebf1535bba2|123|rds|local|vector|||0.609||
 l_all_drive_times|stem|863290ab751782f0|322c9834645b4160|7cdfb0cf9ae7937a|1979637785||t19727.699503603s|19a7a986c137792d|69482|rds|local|vector|||0.625||
 l_remoteness_dlist|stem|fd88b2e32b53b89e|7505d2c62235815e|aecfc931207396ae|1034374804||t19784.3035604944s|83a591c88582aa1c|65324|rds|local|vector|||1.141||
 l_seifa_dlist|stem|adc88655a505401a|b4bdfccb4b029dcc|4478fe93b8030a7c|-1224354568||t19784.3030741124s|184f2c93c9dff2c4|882353|rds|local|vector|||5.891|Expecting numeric in A55036  R55036C1 got  Commonwealth of Australia 2018. Expecting numeric in K2187  R2187C11 got NA. Expecting numeric in L2187  R2187C12 got NA. Expecting numeric in M2187  R2187C13 got NA. Expecting numeric in K2188  R2188C11 got NA. Expecting numeric in L2188  R2188C12 got NA. Expecting numeric in M2188  R2188C13 got NA. Expecting numeric in K2189  R2189C11 got NA. Expecting numeric in L2189  R2189C12 got NA. Expecting numeric in M2189  R2189C13 got NA. Expecting numeric in K2190  R2190C11 got NA. Expecting numeric in L2190  R2190C12 got NA. Expecting numeric in M2190  R2190C13 got NA. Expecting numeric in A2192  R2192C1 got  Commonwealth of Australia 2018. Expecting numeric in A56319  R56319C1 got  Commonwealth of Australia 2013. Expecting numeric in K52574  R52574C11 got NA. Expecting numeric in L52574  R52574C12 got NA. Expecting numeric in K52575  R52575C11 got NA. Expecting numeric in L52575  R52575C12 got NA. Expecting numeric in K52576  R52576C11 got NA. Expecting numeric in L52576  R52576C12 got NA. Expecting numeric in K52577  R52577C11 got NA. Expecting numeric in L52577  R52577C12 got NA. Expecting numeric in K52578  R52578C11 got NA. Expecting numeric in L52578  R52578C12 got NA. Expecting numeric in K52579  R52579C11 got NA. Expecting numeric in L52579  R52579C12 got NA. Expecting numeric in K52580  R52580C11 got NA. Expecting numeric in L52580  R52580C12 got NA. Expecting numeric in A52583  R52583C1 got  Commonwealth of Australia 2013. Detected an unexpected manytomany relationship between x and y.ℹ Row 70 of x matches multiple rows in y.ℹ Row 56312 of y matches multiple rows in x.ℹ If a manytomany relationship is expected, set relationship   manytomany to silence this warning.. There were 2 warnings in mutate.The first warning wasℹ In argument acrossall_ofcdecile, percentile, as.numeric.Caused by warning|
 l_travel_times|stem|89633cd7b43debad|8d7b12920e0335bc|5c9b399301d1371f|880071042||t19745.2668232455s|61234cae4c0aeef5|70237|rds|local|vector|||0.094||
-major_regional_services_map|stem|89641fbb78f90ee1|5ee6004191178fd8|8e0ffa481bbf10f7|-1777432472||t19804.2979661007s|6935d04907feb3d2|146|rds|local|vector|||0.5|Removed 1 rows containing missing values geom_point.|
+major_regional_services_map|stem|89641fbb78f90ee1|5ee6004191178fd8|d4a6bbad6ce1b418|-1777432472||t19805.3377338876s|6935d04907feb3d2|146|rds|local|vector|||0.64|Removed 1 rows containing missing values geom_point.|
 make_acute_maps|function|0621d7dcc6064b92|||||||||||||||
 make_continuous_acute_map|function|269bdce1a46702cb|||||||||||||||
 make_download_file|function|eaf6191bd89c4532|||||||||||||||
@@ -120,7 +120,7 @@ partition_pnts|function|160bf8bcef341dc5|||||||||||||||
 platinum_locs|object|aaa08b5f88f3a54f|||||||||||||||
 plotting_utils|stem|82bbaf6ed7bdac52|d44d71bb5e91cb20|6f3c96109f29814f|-2141552691||t19804.2970754549s|710edb2d9dc3ce4e|9720|rds|local|vector|||1.235||
 qas_locations_file|stem|47d8b576de70ef8e|fd3582224bc61473|ef46db3751d8e999|718353251|data/inputs-for-visualisations/qas_locations.csv|t19234.2007883874s|b2dcb5cf37156678|10479|file|local|vector|||1.328||
-qas_map|stem|e69241543175c797|eea5e9f0030edc9d|737deddaec5a4d8a|61823707||t19804.2971182395s|6aac70ce59868a33|131|rds|local|vector|||0.609||
+qas_map|stem|e69241543175c797|eea5e9f0030edc9d|4fca9fe2c8f38253|61823707||t19805.3378146335s|6aac70ce59868a33|131|rds|local|vector|||0.344||
 qld_locations_file|stem|371950c86cc87bec|1ec6722829c44405|ef46db3751d8e999|1094260305|data/QLDLocations3422.csv|t19409.0793635134s|8e55589b30e156b7|15655|file|local|vector|||0.704||
 quintile_from_decile|function|bc270d6e6e422eb2|||||||||||||||
 read_acute_pathways|function|1a36ca8a0230d230|||||||||||||||
@@ -133,7 +133,7 @@ remoteness_files_a8528819|branch|c75b5d289d154551|d364f7500701dda5|ef46db3751d8e
 remoteness_files_files|stem|f4657ed37a25cf40|f5ca3075331905f3|ef46db3751d8e999|-216980800||t19736.7185177909s|2247cb837b5b96db|124|rds|local|list||remoteness_files_files_eed6e623*remoteness_files_files_d090b561*remoteness_files_files_211af113*remoteness_files_files_ca629aa5|0||
 rename_travel_time_df|function|82572c667aa9ceb3|||||||||||||||
 rsq_locations_file|stem|72685425b2fb4cb6|7c2c0922575a2b28|ef46db3751d8e999|-3892719|data/inputs-for-visualisations/rsq_locations.csv|t19221.9976706623s|17fd65357607abf9|576|file|local|vector|||1.297||
-rsq_maps|stem|640a4e2523c1fca4|765ca2014d1ef285|df8b051da0debb4b|1296509518||t19804.2979776156s|c303d0aa7a9c897f|156|rds|local|vector|||0.594||
+rsq_maps|stem|640a4e2523c1fca4|765ca2014d1ef285|093b7abfb5190bcd|1296509518||t19805.337804747s|c303d0aa7a9c897f|156|rds|local|vector|||1.156||
 seifa_files|pattern|5cfc04b4c3634603|887c54425a6ada27||-1920692518||||112005632|file|local|vector||seifa_files_0fd258b0*seifa_files_3df8e749*seifa_files_b0acac7a*seifa_files_cab70577|0.016||
 seifa_files_0fd258b0|branch|ca67916bf2742b10|887c54425a6ada27|ef46db3751d8e999|927023566|data/remoteness_and_seifa_data/2011_sa1_seifa.xls|t19409.0793720087s|c62dc507448a4207|53460992|file|local|vector|seifa_files||0||
 seifa_files_3df8e749|branch|fbea7dee06d6d9d0|887c54425a6ada27|ef46db3751d8e999|56803531|data/remoteness_and_seifa_data/2011_sa2_seifa.xls|t19409.0793722171s|7c6c151c2bab7198|2412544|file|local|vector|seifa_files||0.016||
@@ -143,5 +143,5 @@ seifa_files_files|stem|92a6bd0e048be9f5|a03078bd0f3ea3f6|ef46db3751d8e999|156711
 seifa_scale_to_text|function|9654adcfacd5dc4b|||||||||||||||
 silver_locs|object|fc5aaa3d2a561f0c|||||||||||||||
 template_files|stem|751da96a4f79949e|b6c543b3df6e354c|ef46db3751d8e999|-678564935||t19784.2317935203s|f3963c450082b208|143|rds|local|vector|||0.969||
-town_locations_map|stem|b21775e38d319929|90827edbdeee3d4d|c039097c490aa982|1832630206||t19804.2971048652s|083ed7cd5fdca87c|132|rds|local|vector|||0.406||
-vis_shapes|stem|7bfc50c9f710cf64|eaa9a3aa42a2faf8|95b2a9737f06ca19|-2019822877||t19805.1971435868s|723884f5d3834efb|4743240|rds|local|vector|||0.875||
+town_locations_map|stem|b21775e38d319929|90827edbdeee3d4d|dbb37c8b663e8b06|1832630206||t19805.3378103701s|083ed7cd5fdca87c|132|rds|local|vector|||0.468||
+vis_shapes|stem|0fb08978410a2731|eaa9a3aa42a2faf8|7bfa7d97e1c9eeb6|-2019822877||t19805.3377120039s|d130826ad914d593|4755005|rds|local|vector|||0.625||

@@ -185,7 +185,7 @@ list(
   tar_target(
     d_sa2_2011_acute_time,
     aggregate_kriging_model_to_ASGS(
-      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      kriged_spdf = d_acute_kriged_for_agg$kriged_layer,
       ASGS_level = "SA2",
       ASGS_year = "2011"
     )
@@ -201,7 +201,7 @@ list(
   tar_target(
     d_sa2_2016_acute_time,
     aggregate_kriging_model_to_ASGS(
-      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      kriged_spdf = d_acute_kriged_for_agg$kriged_layer,
       ASGS_level = "SA2",
       ASGS_year = "2016"
     )
@@ -217,7 +217,7 @@ list(
   tar_target(
     d_sa2_2021_acute_time,
     aggregate_kriging_model_to_ASGS(
-      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      kriged_spdf = d_acute_kriged_for_agg$kriged_layer,
       ASGS_level = "SA2",
       ASGS_year = "2021"
     )
@@ -235,7 +235,7 @@ list(
   tar_target(
     d_sa1_2011_acute_time,
     aggregate_kriging_model_to_ASGS(
-      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      kriged_spdf = d_acute_kriged_for_agg$kriged_layer,
       ASGS_level = "SA1",
       ASGS_year = "2011"
     )
@@ -251,7 +251,7 @@ list(
   tar_target(
     d_sa1_2016_acute_time,
     aggregate_kriging_model_to_ASGS(
-      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      kriged_spdf = d_acute_kriged_for_agg$kriged_layer,
       ASGS_level = "SA1",
       ASGS_year = "2016"
     )
@@ -267,7 +267,7 @@ list(
   tar_target(
     d_sa1_2021_acute_time,
     aggregate_kriging_model_to_ASGS(
-      kriged_spdf = d_rehab_kriged_for_agg$kriged_layer,
+      kriged_spdf = d_acute_kriged_for_agg$kriged_layer,
       ASGS_level = "SA1",
       ASGS_year = "2021"
     )
