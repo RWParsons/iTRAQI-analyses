@@ -396,8 +396,7 @@ list(
   ),
   tar_target(
     d_icons,
-    get_icons(icons_dir = "data/icons"),
-    cue = tar_cue("always")
+    get_icons(icons_dir = "data/icons")
   ),
   tar_target(
     vis_shapes,
