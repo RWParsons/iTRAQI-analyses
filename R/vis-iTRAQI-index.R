@@ -2,7 +2,6 @@ get_iTRAQI_vis_objs <- function(shapes,
                                 palette_file,
                                 kriged_rehab,
                                 kriged_acute) {
-  
   browser()
   bins <- c(0, 30, 60, 120, 180, 240, 300, 360, 900, 1200)
 
@@ -97,6 +96,8 @@ get_iTRAQI_vis_objs <- function(shapes,
     rehab_raster = rehab_raster,
     acute_raster = acute_raster,
     palNum = palNum,
+    iTRAQI_acute_breaks = iTRAQI_acute_breaks,
+    iTRAQI_rehab_breaks = iTRAQI_rehab_breaks,
     bins = bins,
     iTRAQI_bins = iTRAQI_bins,
     palNum_hours = palNum_hours

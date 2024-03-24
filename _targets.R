@@ -2,7 +2,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("tidyverse", "sf", "glue", "leaflet", "emojifont"),
+  packages = c("tidyverse", "sf", "glue", "leaflet", "emojifont", "flextable"),
   format = "rds",
   controller = crew::crew_controller_local(workers = 4)
 )
@@ -473,5 +473,15 @@ list(
   tar_target(
     iTRAQI_legends,
     make_legends(itraqi_list, plotting_utils)
+  ),
+
+  # make tables
+  tar_target(
+    iTRAQI_tables,
+    make_itraqi_counts_tbls(itraqi_list)
+  ),
+  tar_target(
+    index_palette_table,
+    make_palette_table(itraqi_list)
   )
 )
