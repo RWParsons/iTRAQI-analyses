@@ -497,5 +497,12 @@ list(
   tar_target(
     index_palette_table,
     make_palette_table(itraqi_list)
-  )
+  ),
+
+  # palette for app
+  tar_target(
+    app_palette,
+    save_app_palette(itraqi_list)
+  ),
+  format = "file"
 )
