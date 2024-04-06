@@ -299,8 +299,8 @@ list(
     format = "file"
   ),
   tar_target(
-    app_raster,
-    create_app_raster(
+    app_rasters,
+    create_app_rasters(
       rehab = d_rehab_kriged_raster$kriged_layer,
       acute = d_acute_kriged_raster$kriged_layer
     ),

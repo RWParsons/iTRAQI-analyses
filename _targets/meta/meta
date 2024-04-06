@@ -3,7 +3,8 @@ acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|4479375
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
 app_locations_and_times|stem|71ebefa0b721712e|b1c8cc308eee02c4|8def2ef84e3833f4|1635295773|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/QLD_locations_with_RSQ_times.csv|t19806.2711974937s|734ae9969a284a07|73583|file|local|vector|||1.593||
 app_polygons|stem|7f94b3a5704c4cec|6aa6863e4a8b5fdc|dc6a888f9b0d2cd8|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19805.3376875929s|743bc87e2a1ae761|1465337|file|local|vector|||14.109||
-app_raster|stem|c2cbf9546e160981|1999daca4d985344|26368add9e70bb19|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s|028a051cc6972105|6312158|file|local|vector|||2.157||
+app_raster|stem|c2cbf9546e160981|b13b86c57469fee5|b8786adeabdd75a5|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s||6312158|file|local|vector|||1.594||promise already under evaluation recursive default argument reference or earlier problems
+app_rasters|stem|c31f84f47f2831bd|b13b86c57469fee5|6e278b5c140235a8|1306936721||t0s|f4066a65ff755f48|0|file|local|vector|||2.203||
 breaks_to_labels|function|15aa190f0fc9cc8c|||||||||||||||
 cell_size_agg|object|e9200b1fe25d1e1c|||||||||||||||
 CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
@@ -14,6 +15,7 @@ clean_acute_centre|function|75df2008a64da3da|||||||||||||||
 create_app_locs_and_times|function|23dab7c0938eb810|||||||||||||||
 create_app_polygons|function|9748f0c0f64e5ccd|||||||||||||||
 create_app_raster|function|0b82a3103b41e1e2|||||||||||||||
+create_app_rasters|function|626998230c1c46f0|||||||||||||||
 crs_for_analyses|object|fe82103152f115e2|||||||||||||||
 d_acute|stem|67d5ad81c2771409|ccdab38e1eb4f139|914043714e556400|-916123321||t19745.2668215612s|b6caf4b88c88ffc1|5816|rds|local|vector|||1.047||
 d_acute_kriged_for_agg|stem|275eb1d34fc93263|3cde109066d112e5|56860192605d2e6f|1692583633||t19784.3498093136s|7c7cec4b16412559|38225665|rds|local|vector|||314.703||
@@ -154,6 +156,7 @@ seifa_files_cab70577|branch|41a0e4b1c1180c59|887c54425a6ada27|ef46db3751d8e999|-
 seifa_files_files|stem|92a6bd0e048be9f5|a03078bd0f3ea3f6|ef46db3751d8e999|1567115929||t19736.7001155751s|bf0d8caacacad815|112|rds|local|list||seifa_files_files_b8e0c22c*seifa_files_files_e491d188*seifa_files_files_62b7ff49*seifa_files_files_146326d6|0||
 seifa_scale_to_text|function|9654adcfacd5dc4b|||||||||||||||
 silver_locs|object|fc5aaa3d2a561f0c|||||||||||||||
+tbl_to_raster|function|bf64572f21350623|||||||||||||||
 template_files|stem|751da96a4f79949e|b6c543b3df6e354c|ef46db3751d8e999|-678564935||t19784.2317935203s|f3963c450082b208|143|rds|local|vector|||0.969||
 town_locations_map|stem|b21775e38d319929|90827edbdeee3d4d|dbb37c8b663e8b06|1832630206||t19805.3378103701s|083ed7cd5fdca87c|132|rds|local|vector|||0.468||
 vis_shapes|stem|0fb08978410a2731|eaa9a3aa42a2faf8|7bfa7d97e1c9eeb6|-2019822877||t19805.3377120039s|d130826ad914d593|4755005|rds|local|vector|||0.625||
