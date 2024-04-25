@@ -2,7 +2,6 @@ get_iTRAQI_vis_objs <- function(shapes,
                                 palette_file,
                                 kriged_rehab,
                                 kriged_acute) {
-  browser()
   bins <- c(0, 30, 60, 120, 180, 240, 300, 360, 900, 1200)
 
   palBin <- colorBin("YlOrRd", domain = min(bins):max(bins), bins = bins, na.color = "transparent")
@@ -37,8 +36,8 @@ get_iTRAQI_vis_objs <- function(shapes,
     palNum(x * 60)
   }
 
-  iTRAQI_acute_breaks <- c(-Inf, 1, 2, 4, 6, Inf)
-  iTRAQI_rehab_breaks <- c(-Inf, 1, 2, 4, 6, Inf)
+  iTRAQI_acute_breaks <- c(-Inf, 1, 2, 4, 6, 8, Inf)
+  iTRAQI_rehab_breaks <- c(-Inf, 2, 4, Inf)
 
   get_iTRAQI_index <- function(acute_mins, rehab_mins) {
     acute_cat <- cut(acute_mins / 60, breaks = iTRAQI_acute_breaks)

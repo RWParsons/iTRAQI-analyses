@@ -28,7 +28,6 @@ make_download_file <- function(year,
 
   travel_time <- get_travel_time_sheet_data(d_acute, d_rehab)
 
-  browser()
   xlsx::write.xlsx2(
     x = as.data.frame(travel_time),
     file = download_data_file,
@@ -48,7 +47,7 @@ make_download_file <- function(year,
       append = TRUE
     )
   }
-  # browser()
+
   if (!missing(d_remoteness)) {
     gc()
     d_remoteness <- left_join(select(travel_time, 1), d_remoteness)
@@ -97,8 +96,10 @@ get_new_tt_names <- function(x) {
 }
 
 get_iTRAQI_index <- function(acute_mins, rehab_mins) {
-  acute_cat <- cut(acute_mins / 60, breaks = c(-Inf, 1, 2, 4, 6, Inf))
-  rehab_cat <- cut(rehab_mins / 60, breaks = c(-Inf, 1, 2, 4, 6, Inf))
+  iTRAQI_acute_breaks <- c(-Inf, 1, 2, 4, 6, 8, Inf)
+  iTRAQI_rehab_breaks <- c(-Inf, 2, 4, Inf)
+  acute_cat <- cut(acute_mins / 60, breaks = iTRAQI_acute_breaks)
+  rehab_cat <- cut(rehab_mins / 60, breaks = iTRAQI_rehab_breaks)
 
   acute_label <- as.numeric(acute_cat)
   rehab_label <- LETTERS[rehab_cat]
