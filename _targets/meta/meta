@@ -2,7 +2,7 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
 app_locations_and_times|stem|71ebefa0b721712e|b1c8cc308eee02c4|8def2ef84e3833f4|1635295773|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/QLD_locations_with_RSQ_times.csv|t19806.2711974937s|734ae9969a284a07|73583|file|local|vector|||1.593||
-app_palette|stem|2a71ba7d34288d42|e24316a13bb70c3f|0e9cc877b9008698|1089662940||t19866.473542131s|4956b68a23f9e1fc|122|rds|local|vector|||1.938||
+app_palette|stem|2a71ba7d34288d42|e24316a13bb70c3f|10d96fb3ce458878|1089662940||t19866.9212429187s|4956b68a23f9e1fc|122|rds|local|vector|||1.797||
 app_polygons|stem|7f94b3a5704c4cec|6aa6863e4a8b5fdc|dc6a888f9b0d2cd8|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19805.3376875929s|743bc87e2a1ae761|1465337|file|local|vector|||14.109||
 app_raster|stem|c2cbf9546e160981|b13b86c57469fee5|b8786adeabdd75a5|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s||6312158|file|local|vector|||1.594||promise already under evaluation recursive default argument reference or earlier problems
 app_rasters|stem|c31f84f47f2831bd|b13b86c57469fee5|6e278b5c140235a8|1306936721||t0s|f4066a65ff755f48|0|file|local|vector|||2.203||
@@ -89,7 +89,7 @@ get_index_f|function|2ef61843fb2b902b|||||||||||||||
 get_input_shapes|function|c9e647ed750f1d52|||||||||||||||
 get_island_times|function|196ef6db78f9ade7|||||||||||||||
 get_iTRAQI_index|function|905c50818f01ef90|||||||||||||||
-get_iTRAQI_vis_objs|function|16030aa72c8c55f3|||||||||||||||
+get_iTRAQI_vis_objs|function|313674ef0f908b1b|||||||||||||||
 get_new_tt_names|function|f8cd4e5a5bc1684e|||||||||||||||
 get_plotting_utils|function|da620ec0077e1b74|||||||||||||||
 get_popup_glue|function|b37f2d473c1aaef0|||||||||||||||
@@ -100,17 +100,17 @@ get_travel_times|function|40b8ccb161d09656|||||||||||||||
 get_vis_datasets|function|6edfe006b94a3520|||||||||||||||
 gg|function|9eb4e57db553eb17|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
-index_palette_table|stem|debc7de85244be73|a8df915eafb52551|124ff18f9b833ee5|1831416846||t19866.4735047379s|237f91a00ac3de41|125|rds|local|vector|||3.594||
+index_palette_table|stem|debc7de85244be73|a8df915eafb52551|7c524d5edd7de3ab|1831416846||t19866.9212103286s|237f91a00ac3de41|125|rds|local|vector|||5.234||
 inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|ff4eff83429f0f33|1618372214||t19805.3377997993s|97f5d5ebb4412369|161|rds|local|vector|||1.797||
 iTRAQI_acute_continuous_map|stem|8918cde785e5e4a6|4746fe8c9f8065d2|6a2b743cfbd45f86|29494645||t19805.2445014188s|ae3ca543e47cf4fd|166|rds|local|vector|||3.078||
-iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|ba57bce9868cfe20|206967308||t19866.4734342438s|ae3ca543e47cf4fd|166|rds|local|vector|||4.375||
+iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|97fb36cf33ea4121|206967308||t19866.9210879453s|ae3ca543e47cf4fd|166|rds|local|vector|||8.078||
 iTRAQI_index_counts_tbl|stem|a743647a79bd692b|d57bd319170d08e2|cd910488a7222ea4|1128743655||t19806.1611449963s|22b4442571f78ea6|657|rds|local|vector|||0.813||
-iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|1cdf81ded60f6555|-1228347186||t19866.473523978s|af2f698bb96276c8|148|rds|local|vector|||2.718||
-itraqi_list|stem|74d5894a3ae1bdb0|6c87c5766f8a68a3|910ec6fcbf8a1b89|-1855879146||t19866.4733472701s|64dc4ba248cae495|24008194|rds|local|vector|||2.141||
-iTRAQI_rehab_maps|stem|e1261ccb6bf56ab6|fd02f3040beca726|a3c2d225ca8ca70f|140306304||t19866.4735273267s|3c9f22cdd675fcde|167|rds|local|vector|||6.719||
-iTRAQI_sa1_map|stem|4919f2c5defb5a00|2303afe4478a8ce8|a0a2b81d5c85f357|-505862102||t19866.4735626492s|24d52ebf1535bba2|123|rds|local|vector|||3.328||
-iTRAQI_sa2_map|stem|923091d6dba5c13d|b1c883ef38a95d1f|8ec68fe1e14bdf34|-544962212||t19866.4734989936s|24d52ebf1535bba2|123|rds|local|vector|||2.812||
-iTRAQI_tables|stem|abd4da48aedb0aef|d57bd319170d08e2|e65827a575448ef9|-130480019||t19866.4734680955s|b24c3eae4f512946|797|rds|local|vector|||1.484||
+iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|7a5fe9d3c6c91a6f|-1228347186||t19866.921212857s|af2f698bb96276c8|148|rds|local|vector|||3.656||
+itraqi_list|stem|e337c80d406bc474|6c87c5766f8a68a3|f5064886a50f622a|-1855879146||t19866.9208413388s|d475617469fd1ba6|24018679|rds|local|vector|||2.422||
+iTRAQI_rehab_maps|stem|e1261ccb6bf56ab6|fd02f3040beca726|20530ef3a3b228c6|140306304||t19866.9211411762s|3c9f22cdd675fcde|167|rds|local|vector|||5.859||
+iTRAQI_sa1_map|stem|4919f2c5defb5a00|2303afe4478a8ce8|922de542af7ce033|-505862102||t19866.9212460707s|24d52ebf1535bba2|123|rds|local|vector|||4.344||
+iTRAQI_sa2_map|stem|923091d6dba5c13d|b1c883ef38a95d1f|3df90bb71ba3ad9b|-544962212||t19866.9211980021s|24d52ebf1535bba2|123|rds|local|vector|||3.968||
+iTRAQI_tables|stem|abd4da48aedb0aef|d57bd319170d08e2|0efe71f6baa988ce|-130480019||t19866.9211735524s|b24c3eae4f512946|797|rds|local|vector|||5.547||
 l_all_drive_times|stem|863290ab751782f0|322c9834645b4160|7cdfb0cf9ae7937a|1979637785||t19727.699503603s|19a7a986c137792d|69482|rds|local|vector|||0.625||
 l_itraqi_breaks|stem|1c29f7ad4e7e585f|321d97320e85dc90|ef46db3751d8e999|-472980907||t19866.4660676659s|094cdf8ee71e1e88|135|rds|local|vector|||1.828||
 l_remoteness_dlist|stem|fd88b2e32b53b89e|7505d2c62235815e|aecfc931207396ae|1034374804||t19784.3035604944s|83a591c88582aa1c|65324|rds|local|vector|||1.141||
@@ -152,7 +152,7 @@ remoteness_files_files|stem|f4657ed37a25cf40|f5ca3075331905f3|ef46db3751d8e999|-
 rename_travel_time_df|function|82572c667aa9ceb3|||||||||||||||
 rsq_locations_file|stem|72685425b2fb4cb6|7c2c0922575a2b28|ef46db3751d8e999|-3892719|data/inputs-for-visualisations/rsq_locations.csv|t19221.9976706623s|17fd65357607abf9|576|file|local|vector|||1.297||
 rsq_maps|stem|640a4e2523c1fca4|765ca2014d1ef285|093b7abfb5190bcd|1296509518||t19805.337804747s|c303d0aa7a9c897f|156|rds|local|vector|||1.156||
-save_app_palette|function|387741ddc2db958e|||||||||||||||
+save_app_palette|function|3e75f24dac6a9f85|||||||||||||||
 seifa_files|pattern|5cfc04b4c3634603|887c54425a6ada27||-1920692518||||112005632|file|local|vector||seifa_files_0fd258b0*seifa_files_3df8e749*seifa_files_b0acac7a*seifa_files_cab70577|0.016||
 seifa_files_0fd258b0|branch|ca67916bf2742b10|887c54425a6ada27|ef46db3751d8e999|927023566|data/remoteness_and_seifa_data/2011_sa1_seifa.xls|t19409.0793720087s|c62dc507448a4207|53460992|file|local|vector|seifa_files||0||
 seifa_files_3df8e749|branch|fbea7dee06d6d9d0|887c54425a6ada27|ef46db3751d8e999|56803531|data/remoteness_and_seifa_data/2011_sa2_seifa.xls|t19409.0793722171s|7c6c151c2bab7198|2412544|file|local|vector|seifa_files||0.016||

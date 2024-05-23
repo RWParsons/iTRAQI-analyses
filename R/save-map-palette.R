@@ -9,7 +9,9 @@ save_app_palette <- function(itraqi_list) {
     iTRAQI_rehab_breaks = itraqi_list$iTRAQI_rehab_breaks,
     paliTRAQI = itraqi_list$paliTRAQI,
     palNum = itraqi_list$palNum,
-    palNum_hours = itraqi_list$palNum_hours
+    palNum_hours = itraqi_list$palNum_hours,
+    palBin_hours = itraqi_list$palBin_hours,
+    palBin = itraqi_list$palBin
   )
 
   saveRDS(l_palette_objs, file.path(output_dir, "palette_list.rds"))
