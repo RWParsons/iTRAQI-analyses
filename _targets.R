@@ -324,7 +324,8 @@ list(
       d_acute = d_sa1_2011_acute_time,
       d_rehab = d_sa1_2011_rehab_time,
       d_remoteness = l_remoteness_dlist$asgs_2011_sa1,
-      d_seifa = l_seifa_dlist$seifa_2011_sa1
+      d_seifa = l_seifa_dlist$seifa_2011_sa1,
+      get_index_function = f_get_iTRAQI_index
     )
   ),
   tar_target(
@@ -335,7 +336,8 @@ list(
       d_acute = d_sa2_2011_acute_time,
       d_rehab = d_sa2_2011_rehab_time,
       d_remoteness = l_remoteness_dlist$asgs_2011_sa2,
-      d_seifa = l_seifa_dlist$seifa_2011_sa2
+      d_seifa = l_seifa_dlist$seifa_2011_sa2,
+      get_index_function = f_get_iTRAQI_index
     )
   ),
   ## 2016
@@ -347,7 +349,8 @@ list(
       d_acute = d_sa1_2016_acute_time,
       d_rehab = d_sa1_2016_rehab_time,
       d_remoteness = l_remoteness_dlist$asgs_2016_sa1,
-      d_seifa = l_seifa_dlist$seifa_2016_sa1
+      d_seifa = l_seifa_dlist$seifa_2016_sa1,
+      get_index_function = f_get_iTRAQI_index
     )
   ),
   tar_target(
@@ -358,7 +361,8 @@ list(
       d_acute = d_sa2_2016_acute_time,
       d_rehab = d_sa2_2016_rehab_time,
       d_remoteness = l_remoteness_dlist$asgs_2016_sa2,
-      d_seifa = l_seifa_dlist$seifa_2016_sa2
+      d_seifa = l_seifa_dlist$seifa_2016_sa2,
+      get_index_function = f_get_iTRAQI_index
     )
   ),
   ## 2021
@@ -368,7 +372,8 @@ list(
       year = "2021",
       asgs = "SA1",
       d_acute = d_sa1_2021_acute_time,
-      d_rehab = d_sa1_2021_rehab_time
+      d_rehab = d_sa1_2021_rehab_time,
+      get_index_function = f_get_iTRAQI_index
     )
   ),
   tar_target(
@@ -377,11 +382,23 @@ list(
       year = "2021",
       asgs = "SA2",
       d_acute = d_sa2_2021_acute_time,
-      d_rehab = d_sa2_2021_rehab_time
+      d_rehab = d_sa2_2021_rehab_time,
+      get_index_function = f_get_iTRAQI_index
     )
   ),
 
   # visualisations ############################################################
+  tar_target(
+    l_itraqi_breaks,
+    list(
+      iTRAQI_acute_breaks = c(-Inf, 1, 2, 4, 6, Inf),
+      iTRAQI_rehab_breaks = c(-Inf, 2, 4, Inf)
+    )
+  ),
+  tar_target(
+    f_get_iTRAQI_index,
+    get_index_f(l_itraqi_breaks)
+  ),
   tar_target(
     centre_coords_file,
     "data/inputs-for-visualisations/centres.csv",
@@ -439,7 +456,9 @@ list(
       shapes = vis_shapes,
       palette_file = palette_file,
       kriged_rehab = d_rehab_kriged_raster$kriged_layer,
-      kriged_acute = d_acute_kriged_raster$kriged_layer
+      kriged_acute = d_acute_kriged_raster$kriged_layer,
+      itraqi_breaks = l_itraqi_breaks,
+      get_iTRAQI_index = f_get_iTRAQI_index
     )
   ),
   # make maps

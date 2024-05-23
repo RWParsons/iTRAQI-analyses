@@ -4,6 +4,7 @@ make_download_file <- function(year,
                                d_rehab,
                                d_remoteness,
                                d_seifa,
+                               get_index_function,
                                front_page_dir = dl_file_frontpages_dir) {
   # make output path
   if (!dir.exists(file.path(output_dir, "download-data"))) {
@@ -26,7 +27,7 @@ make_download_file <- function(year,
     overwrite = TRUE
   )
 
-  travel_time <- get_travel_time_sheet_data(d_acute, d_rehab)
+  travel_time <- get_travel_time_sheet_data(d_acute, d_rehab, get_index_function)
 
   xlsx::write.xlsx2(
     x = as.data.frame(travel_time),
@@ -64,7 +65,7 @@ make_download_file <- function(year,
 }
 
 
-get_travel_time_sheet_data <- function(d_acute, d_rehab) {
+get_travel_time_sheet_data <- function(d_acute, d_rehab, get_iTRAQI_index) {
   d_combined_times <- inner_join(
     rename_travel_time_df(d_acute, "acute"),
     rename_travel_time_df(d_rehab, "rehab")
@@ -93,16 +94,4 @@ get_new_tt_names <- function(x) {
     glue("min_time_to_{x}_care"),
     glue("max_time_to_{x}_care")
   )
-}
-
-get_iTRAQI_index <- function(acute_mins, rehab_mins) {
-  iTRAQI_acute_breaks <- c(-Inf, 1, 2, 4, 6, 8, Inf)
-  iTRAQI_rehab_breaks <- c(-Inf, 2, 4, Inf)
-  acute_cat <- cut(acute_mins / 60, breaks = iTRAQI_acute_breaks)
-  rehab_cat <- cut(rehab_mins / 60, breaks = iTRAQI_rehab_breaks)
-
-  acute_label <- as.numeric(acute_cat)
-  rehab_label <- LETTERS[rehab_cat]
-
-  paste0(acute_label, rehab_label)
 }
