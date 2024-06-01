@@ -69,8 +69,9 @@ server <- function(id) {
     })
 
 
-    shiny$observeEvent(input$subtab{
-      browser()
+    shiny$observeEvent(input$subtab, {
+      # browser()
+      mm$update_shape_aes(proxymap())
     })
 
   })

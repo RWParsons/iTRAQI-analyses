@@ -2,6 +2,8 @@ box::use(
   leaflet,
 )
 
+# NOTE IN USE - SEE `./notes.md`!
+
 # https://github.com/Appsilon/rhino-showcase/blob/2eec2f29f07273f0b405eb60acbe971c594cd562/app/js/index.js
 #' @export
 set_shape_style <- function(map,
