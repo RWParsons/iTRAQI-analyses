@@ -15,6 +15,7 @@ box::use(
   # all the same functions in both modules so making generic names like "create map" and "update map" with generic inputs etc
   mm = app / mapping,
   app / data / shapes,
+  app / view / maps / make_top_cards,
 )
 
 #' @export
@@ -23,14 +24,9 @@ ui <- function(id) {
   shiny$div(
     shiny$tagList(
       bslib$card(
-        bslib$card_header(
-          shinyWidgets$radioGroupButtons(
-            ns("subtab"),
-            choices = c("Map", "Tour")
-          )
-        ),
         height = "calc(100vh - 100px)",
-        mm$mapOutput(ns("map"))
+        mm$mapOutput(ns("map")),
+        make_top_cards$make_controls(ns = ns)
       )
     )
   )
@@ -47,16 +43,16 @@ server <- function(id) {
     map_content <- list(
       list(
         type = "polygon",
-        polygon = shapes$sa1_polygon
-      ),
-      list(
-        type = "linestring",
-        linestring = shapes$sa1_linestring
-      ),
-      list(
-        type = "linestring",
-        linestring = shapes$sa2_linestring
-      )
+        polygon = shapes$stacked_sa1_sa2_polygon_geom
+      )#,
+      # list(
+      #   type = "linestring",
+      #   linestring = shapes$sa1_linestring
+      # ),
+      # list(
+      #   type = "linestring",
+      #   linestring = shapes$sa2_linestring
+      # )
     )
 
     shiny$observe({
@@ -66,13 +62,6 @@ server <- function(id) {
 
       content_added(TRUE)
     })
-
-
-    shiny$observeEvent(input$subtab, {
-      # browser()
-      mm$update_shape_aes(proxymap())
-    })
-
   })
 }
 
