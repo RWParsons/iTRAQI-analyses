@@ -16,7 +16,6 @@ make_base_map <- function(l_map_content = list()) {
       m <- m |>
         leafgl$addGlPolygons(data = sh$data)
     }
-
   }
 
   leaflet$renderLeaflet(m)
