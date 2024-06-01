@@ -2,6 +2,10 @@ box::use(
   dplyr,
 )
 
+box::use(
+  app / data / shapes
+)
+
 
 #' @export
 seifa_scale_to_text <- function(x) {
@@ -57,4 +61,4 @@ ra_text_to_value <- function(x) {
 ra_text_choices <- ra_scale_to_text(0:4)
 
 #' @export
-iTRAQI_levels <- c("1A", "1B", "(placeholder)")
+iTRAQI_levels <- sort(unique(shapes$stacked_sa1_sa2_data$value_index))

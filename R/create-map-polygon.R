@@ -1,4 +1,4 @@
-create_app_polygons <- function(data, asgs_year, simplify_keep) {
+create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_function) {
   names(data$sa2_seifa)[1] <- "SA2_CODE"
   names(data$sa1_seifa)[1] <- "SA1_CODE"
 
@@ -142,7 +142,15 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     select(starts_with("sa1_code"), starts_with("sa2_code")) |> 
     rename(sa1_code = 1, sa2_code = 2)
   
-  stacked_sa1_sa2_polygons <- rbind(sa1_all, sa2_all)
+  stacked_sa1_sa2_polygons <- rbind(sa1_all, sa2_all) |> 
+    mutate(
+      value_index = get_index_function(acute_mins = value_acute, rehab_mins = value_rehab),
+      rehab_time_str = str_extract(popup_rehab, "<b>Time to.*$"),
+      popup_index =
+        paste0(popup_acute, rehab_time_str, "<b>iTRAQI Index: </b>", value_index, "<br>")
+      
+    )
+  
   
   stacked_sa1_sa2_data <- stacked_sa1_sa2_polygons |> 
     as_tibble() |> 

@@ -26,18 +26,8 @@ make_controls_ui <- function(ns) {
             shiny$radioButtons(
               inputId = ns("layer_selection"),
               label = NULL,
-              choices = c(
-                "None",
-                "SA1 Index",
-                "SA2 Index",
-                "Acute time",
-                "SA1 Acute",
-                "SA2 Acute",
-                "Rehab time",
-                "SA1 Rehab",
-                "SA2 Rehab"
-              ),
-              selected = "None"
+              choices = names(constants$layer_choices),
+              selected = names(constants$layer_choices)[1]
             )
           ),
           bslib$accordion_panel(

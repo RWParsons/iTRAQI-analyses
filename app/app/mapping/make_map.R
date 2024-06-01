@@ -26,12 +26,12 @@ add_map_content <- function(proxy_map, map_content) {
     sh <- map_content[[sh_idx]]
     if (sh$type == "polygon") {
       proxy_map <- proxy_map |>
-        leafgl$addGlPolygons(data = sh$polygon, layerId = sh$layerid, pane = "layers")
+        leafgl$addGlPolygons(data = sh$polygon, layerId = sh$layerid, pane = "layers", group = "layers")
     }
 
     if (sh$type == "linestring") {
       proxy_map <- proxy_map |>
-        leafgl$addGlPolylines(data = sh$linestring, layerId = sh$layerid)
+        leafgl$addGlPolylines(data = sh$linestring, layerId = sh$layerid, group = "layers")
     }
   }
 }

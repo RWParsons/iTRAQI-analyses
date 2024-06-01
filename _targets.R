@@ -294,7 +294,8 @@ list(
         sa2_ra = l_remoteness_dlist$asgs_2016_sa2
       ),
       asgs_year = 2016,
-      simplify_keep = 0.1
+      simplify_keep = 0.1,
+      get_index_function = f_get_iTRAQI_index
     ),
     format = "file"
   ),

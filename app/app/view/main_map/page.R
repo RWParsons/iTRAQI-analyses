@@ -16,6 +16,7 @@ box::use(
   mm = app / mapping,
   app / data / shapes,
   app / view / main_map / make_top_cards,
+  app / logic / wrangle_data,
 )
 
 #' @export
@@ -37,8 +38,6 @@ ui <- function(id) {
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map()
-
-    content_added <- shiny$reactiveVal(value = FALSE)
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
 
     map_content <- list(
@@ -48,15 +47,18 @@ server <- function(id) {
       )
     )
 
+    d_poly <- shiny$reactive({
+      wrangle_data$get_poly_selection(
+        layer_selection = input$layer_selection,
+        seifa = input$seifa,
+        remoteness = input$remoteness,
+        itraqi_index = input$itraqi_index
+      )
+    })
+
 
     shiny$observe({
-      if (content_added()) {
-        return()
-      }
-
-      mm$add_map_content(proxymap(), map_content)
-
-      content_added(TRUE)
+      mm$update_map_content(proxymap(), d_poly())
     })
   })
 
