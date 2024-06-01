@@ -137,6 +137,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     ungroup()
   
   sa1_sa2_code_lkp <- strayr::read_absmap(glue("sa1{asgs_year}")) |>
+    filter(sa1_code_2016 %in% sa1_all$CODE) |> 
     as_tibble() |>
     select(starts_with("sa1_code"), starts_with("sa2_code")) |> 
     rename(sa1_code = 1, sa2_code = 2)
@@ -147,6 +148,23 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     as_tibble() |> 
     select(-geometry)
   
+  linestring_layerid_lkp <- bind_rows(sa1_linestring, sa2_linestring) |>
+    as_tibble() |>
+    select(-geometry) |>
+    mutate(type = "linestring")
+  
+  sa1_polygon_lkp <- sa1_polygon |>
+    as_tibble() |>
+    select(-geometry)
+  
+  polygon_layerid_lkp <- sa1_sa2_code_lkp |>
+    inner_join(sa1_polygon_lkp, by = c("sa1_code" = "CODE")) |>
+    pivot_longer(!layerid, values_to = "CODE") |>
+    select(-name) |>
+    mutate(type = "polygon")
+  
+  sa_code_layerid_lkp <- bind_rows(linestring_layerid_lkp, polygon_layerid_lkp)
+  
   # saveRDS(sa2_polygon, file.path(output_dir, "sa2_polygon.rds"))
   saveRDS(sa2_linestring, file.path(output_dir, "sa2_linestring.rds"))
   saveRDS(sa1_polygon, file.path(output_dir, "sa1_polygon.rds"))
@@ -155,6 +173,8 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
   saveRDS(sa1_all, file.path(output_dir, "sa1_all_polygons.rds"))
   saveRDS(sa1_sa2_code_lkp, file.path(output_dir, "sa1_sa2_code_lkp.rds"))
   saveRDS(stacked_sa1_sa2_data, file.path(output_dir, "stacked_sa1_sa2_data.rds"))
+  saveRDS(sa_code_layerid_lkp, file.path(output_dir, "sa_code_layerid_lkp.rds"))
+  
   
 
   saveRDS(stacked_sa1_sa2_polygons, file.path(output_dir, "stacked_SA1_and_SA2_polygons.rds"))

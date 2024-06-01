@@ -48,7 +48,7 @@ server <- function(id) {
     map_content <- list(
       list(
         type = "polygon",
-        polygon = shapes$sa1_polygons
+        polygon = shapes$sa1_polygon
       ),
       list(
         type = "linestring",
