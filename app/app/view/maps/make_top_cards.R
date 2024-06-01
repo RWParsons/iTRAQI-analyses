@@ -40,7 +40,6 @@ make_controls <- function(ns) {
               selected = "None"
             )
           ),
-
           bslib$accordion_panel(
             "Markers",
             shiny$actionButton(
@@ -57,7 +56,6 @@ make_controls <- function(ns) {
               selected = constants$default_base_layers
             )
           ),
-
           bslib$accordion_panel(
             "SEIFA",
             shiny$actionButton(
@@ -72,10 +70,9 @@ make_controls <- function(ns) {
               label = NULL,
               choices = scales_and_palettes$seifa_text_choices,
               selected = scales_and_palettes$seifa_text_choices
-            )#,
+            ) # ,
             # htmlOutput(ns("seifa_included"))
           ),
-
           bslib$accordion_panel(
             "Remoteness index",
             shiny$actionButton(
@@ -90,10 +87,9 @@ make_controls <- function(ns) {
               label = NULL,
               choices = scales_and_palettes$ra_text_choices,
               selected = scales_and_palettes$ra_text_choices
-            )#,
+            ) # ,
             # htmlOutput(ns("remoteness_included"))
           ),
-
           bslib$accordion_panel(
             "iTRAQI index",
             shiny$actionButton(
@@ -108,7 +104,7 @@ make_controls <- function(ns) {
               label = NULL,
               choices = scales_and_palettes$iTRAQI_levels,
               selected = scales_and_palettes$iTRAQI_levels
-            )#,
+            ) # ,
             # htmlOutput(ns("itraqi_included"))
           )
         )

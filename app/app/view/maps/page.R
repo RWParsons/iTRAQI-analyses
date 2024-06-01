@@ -44,7 +44,7 @@ server <- function(id) {
       list(
         type = "polygon",
         polygon = shapes$stacked_sa1_sa2_polygon_geom
-      )#,
+      ) # ,
       # list(
       #   type = "linestring",
       #   linestring = shapes$sa1_linestring
@@ -56,7 +56,9 @@ server <- function(id) {
     )
 
     shiny$observe({
-      if(content_added()) return()
+      if (content_added()) {
+        return()
+      }
 
       mm$add_map_content(proxymap(), map_content)
 
@@ -64,18 +66,3 @@ server <- function(id) {
     })
   })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

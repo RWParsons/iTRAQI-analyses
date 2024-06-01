@@ -32,5 +32,5 @@ stacked_sa1_sa2_data <- readRDS(file.path(analyses_output_dir, "stacked_sa1_sa2_
 # sa_code_layerid_lkp <- readRDS(file.path(analyses_output_dir, "sa_code_layerid_lkp.rds"))
 
 # TODO: later....
-    # create a lookup between all filters and the layerids above so that layer ids
+# create a lookup between all filters and the layerids above so that layer ids
 # can easily be selected based on selected filters

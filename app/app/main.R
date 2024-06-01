@@ -15,7 +15,7 @@ ui <- function(id) {
     bslib$nav_panel(
       title = "Maps",
       maps$ui(ns("maps"))
-    )#,
+    ) # ,
 
     # make more pages for main map, downloads and information.
     # bslib$nav_panel(
