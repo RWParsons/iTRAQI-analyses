@@ -18,3 +18,5 @@ layer_choices <- c(
 )
 
 
+#' @export
+analyses_output_dir <- here::here("../output")

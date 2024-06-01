@@ -2,17 +2,18 @@ box::use(
   sf,
 )
 
-analyses_output_dir <- here::here("../output")
-
-
-#' @export
-stacked_sa1_sa2_polygon_geom <- readRDS(file.path(analyses_output_dir, "stacked_SA1_and_SA2_polygons_geom.rds"))
+box::use(
+  app / data / constants
+)
 
 #' @export
-stacked_sa1_sa2_linestring_geom <- readRDS(file.path(analyses_output_dir, "stacked_SA1_and_SA2_linestrings_geom.rds"))
+stacked_sa1_sa2_polygon_geom <- readRDS(file.path(constants$analyses_output_dir, "stacked_SA1_and_SA2_polygons_geom.rds"))
 
 #' @export
-stacked_sa1_sa2_data <- readRDS(file.path(analyses_output_dir, "stacked_sa1_sa2_data.rds"))
+stacked_sa1_sa2_linestring_geom <- readRDS(file.path(constants$analyses_output_dir, "stacked_SA1_and_SA2_linestrings_geom.rds"))
+
+#' @export
+stacked_sa1_sa2_data <- readRDS(file.path(constants$analyses_output_dir, "stacked_sa1_sa2_data.rds"))
 
 
 # old pipeline outputs that would have been useful if taking the updating-shape-aes approach

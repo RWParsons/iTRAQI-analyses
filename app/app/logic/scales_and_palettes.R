@@ -3,7 +3,7 @@ box::use(
 )
 
 box::use(
-  app / data / shapes
+  app / data / constants
 )
 
 
@@ -60,5 +60,10 @@ ra_text_to_value <- function(x) {
 #' @export
 ra_text_choices <- ra_scale_to_text(0:4)
 
+
+palette_list <- readRDS(file.path(constants$analyses_output_dir, "palette_list.rds"))
+
 #' @export
-iTRAQI_levels <- sort(unique(shapes$stacked_sa1_sa2_data$value_index))
+iTRAQI_levels <- palette_list$bins_index
+
+
