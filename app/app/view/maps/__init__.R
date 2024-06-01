@@ -1,6 +1,6 @@
 #' @export
 box::use(
-  app / view / tour / page[
+  app / view / maps / page[
     server,
     ui,
   ],
