@@ -8,8 +8,8 @@ box::use(
   app / logic / scales_and_palettes,
 )
 
-
-make_controls <- function(ns) {
+#' @export
+make_controls_ui <- function(ns) {
   shiny$absolutePanel(
     width = 400,
     top = 25,
@@ -70,8 +70,8 @@ make_controls <- function(ns) {
               label = NULL,
               choices = scales_and_palettes$seifa_text_choices,
               selected = scales_and_palettes$seifa_text_choices
-            ) # ,
-            # htmlOutput(ns("seifa_included"))
+            ),
+            shiny$htmlOutput(ns("seifa_included"))
           ),
           bslib$accordion_panel(
             "Remoteness index",
@@ -87,8 +87,8 @@ make_controls <- function(ns) {
               label = NULL,
               choices = scales_and_palettes$ra_text_choices,
               selected = scales_and_palettes$ra_text_choices
-            ) # ,
-            # htmlOutput(ns("remoteness_included"))
+            ),
+            shiny$htmlOutput(ns("remoteness_included"))
           ),
           bslib$accordion_panel(
             "iTRAQI index",
@@ -104,11 +104,49 @@ make_controls <- function(ns) {
               label = NULL,
               choices = scales_and_palettes$iTRAQI_levels,
               selected = scales_and_palettes$iTRAQI_levels
-            ) # ,
-            # htmlOutput(ns("itraqi_included"))
+            ),
+            shiny$htmlOutput(ns("itraqi_index_included"))
           )
         )
       )
     )
   )
+}
+
+
+#' @export
+make_controls_server <- function(id) {
+  shiny$moduleServer(id, function(input, output, session) {
+
+    output$seifa_included <- shiny$renderText({
+      if (length(input$seifa) == 0) {
+        return("<b>All excluded</b>")
+      } else if (length(input$seifa) == length(scales_and_palettes$seifa_text_choices)) {
+        return("<b>All included</b>")
+      } else {
+        paste("<b>Including:</b>", paste0(input$seifa, collapse = ", "))
+      }
+    })
+
+    output$remoteness_included <- shiny$renderText({
+      if (length(input$remoteness) == 0) {
+        return("<b>All excluded</b>")
+      } else if (length(input$remoteness) == length(scales_and_palettes$ra_text_choices)) {
+        return("<b>All included</b>")
+      } else {
+        paste("<b>Including:</b>", paste0(input$remoteness, collapse = ", "))
+      }
+    })
+
+    output$itraqi_index_included <- shiny$renderText({
+      if (length(input$itraqi_index) == 0) {
+        return("<b>All excluded</b>")
+      } else if (length(input$itraqi_index) == length(scales_and_palettes$iTRAQI_levels)) {
+        return("<b>All included</b>")
+      } else {
+        paste("<b>Including:</b>", paste0(input$itraqi_index, collapse = ", "))
+      }
+    })
+
+  })
 }

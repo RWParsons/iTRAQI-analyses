@@ -26,16 +26,17 @@ ui <- function(id) {
       bslib$card(
         height = "calc(100vh - 100px)",
         mm$mapOutput(ns("map")),
-        make_top_cards$make_controls(ns = ns)
+        make_top_cards$make_controls_ui(ns = ns)
       )
     )
   )
 }
 
+
 #' @export
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
-    output$map <- mm$make_base_map(tour_map_content)
+    output$map <- mm$make_base_map()
 
     content_added <- shiny$reactiveVal(value = FALSE)
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
@@ -44,16 +45,9 @@ server <- function(id) {
       list(
         type = "polygon",
         polygon = shapes$stacked_sa1_sa2_polygon_geom
-      ) # ,
-      # list(
-      #   type = "linestring",
-      #   linestring = shapes$sa1_linestring
-      # ),
-      # list(
-      #   type = "linestring",
-      #   linestring = shapes$sa2_linestring
-      # )
+      )
     )
+
 
     shiny$observe({
       if (content_added()) {
@@ -65,4 +59,6 @@ server <- function(id) {
       content_added(TRUE)
     })
   })
+
+  make_top_cards$make_controls_server(id)
 }
