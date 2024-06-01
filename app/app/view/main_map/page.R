@@ -1,4 +1,4 @@
-# maps page
+# main_map page
 box::use(
   shiny,
   bslib,
@@ -15,7 +15,7 @@ box::use(
   # all the same functions in both modules so making generic names like "create map" and "update map" with generic inputs etc
   mm = app / mapping,
   app / data / shapes,
-  app / view / maps / make_top_cards,
+  app / view / main_map / make_top_cards,
 )
 
 #' @export

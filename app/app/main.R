@@ -4,7 +4,7 @@ box::use(
 )
 
 box::use(
-  app / view / maps
+  app / view / main_map
 )
 
 
@@ -14,7 +14,7 @@ ui <- function(id) {
   bslib$page_navbar(
     bslib$nav_panel(
       title = "Maps",
-      maps$ui(ns("maps"))
+      main_map$ui(ns("maps"))
     ) # ,
 
     # make more pages for main map, downloads and information.
@@ -28,6 +28,6 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
-    maps$server("maps")
+    main_map$server("maps")
   })
 }

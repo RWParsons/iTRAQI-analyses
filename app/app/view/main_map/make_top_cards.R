@@ -117,7 +117,23 @@ make_controls_ui <- function(ns) {
 #' @export
 make_controls_server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
+    # base layers
+    shiny$observeEvent(input$base_layers_all_btn, {
+      if (length(input$base_layers) != length(constants$all_base_layers)) {
+        shiny$updateCheckboxGroupInput(
+          inputId = "base_layers",
+          selected = constants$all_base_layers
+        )
+      } else {
+        shiny$updateCheckboxGroupInput(
+          inputId = "base_layers",
+          choices = constants$all_base_layers,
+          selected = NULL
+        )
+      }
+    })
 
+    # SEIFA
     output$seifa_included <- shiny$renderText({
       if (length(input$seifa) == 0) {
         return("<b>All excluded</b>")
@@ -127,7 +143,22 @@ make_controls_server <- function(id) {
         paste("<b>Including:</b>", paste0(input$seifa, collapse = ", "))
       }
     })
+    shiny$observeEvent(input$seifa_all_btn, {
+      if (length(input$seifa) != length(scales_and_palettes$seifa_text_choices)) {
+        shiny$updateCheckboxGroupInput(
+          inputId = "seifa",
+          selected = scales_and_palettes$seifa_text_choices
+        )
+      } else {
+        shiny$updateCheckboxGroupInput(
+          inputId = "seifa",
+          choices = scales_and_palettes$seifa_text_choices,
+          selected = NULL
+        )
+      }
+    })
 
+    # Remoteness
     output$remoteness_included <- shiny$renderText({
       if (length(input$remoteness) == 0) {
         return("<b>All excluded</b>")
@@ -137,7 +168,22 @@ make_controls_server <- function(id) {
         paste("<b>Including:</b>", paste0(input$remoteness, collapse = ", "))
       }
     })
+    shiny$observeEvent(input$remoteness_all_btn, {
+      if (length(input$remoteness) != length(scales_and_palettes$ra_text_choices)) {
+        shiny$updateCheckboxGroupInput(
+          inputId = "remoteness",
+          selected = scales_and_palettes$ra_text_choices
+        )
+      } else {
+        shiny$updateCheckboxGroupInput(
+          inputId = "remoteness",
+          choices = scales_and_palettes$ra_text_choices,
+          selected = NULL
+        )
+      }
+    })
 
+    # iTRAQI index
     output$itraqi_index_included <- shiny$renderText({
       if (length(input$itraqi_index) == 0) {
         return("<b>All excluded</b>")
@@ -147,6 +193,19 @@ make_controls_server <- function(id) {
         paste("<b>Including:</b>", paste0(input$itraqi_index, collapse = ", "))
       }
     })
-
+    shiny$observeEvent(input$itraqi_all_btn, {
+      if (length(input$itraqi_index) != length(scales_and_palettes$iTRAQI_levels)) {
+        shiny$updateCheckboxGroupInput(
+          inputId = "itraqi_index",
+          selected = scales_and_palettes$iTRAQI_levels
+        )
+      } else {
+        shiny$updateCheckboxGroupInput(
+          inputId = "itraqi_index",
+          choices = scales_and_palettes$iTRAQI_levels,
+          selected = NULL
+        )
+      }
+    })
   })
 }
