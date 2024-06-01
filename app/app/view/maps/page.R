@@ -17,13 +17,6 @@ box::use(
   app / data / shapes,
 )
 
-
-# sa1s_qld <- strayr$read_absmap("sa12021") |>
-#   sf$st_transform(4326) |>
-#   dplyr$filter(state_name_2021 == "Queensland") |>
-#   dplyr$mutate(sa1_code_2021 = as.numeric(sa1_code_2021))
-
-
 #' @export
 ui <- function(id) {
   ns <- shiny$NS(id)
@@ -32,7 +25,7 @@ ui <- function(id) {
       bslib$card(
         bslib$card_header(
           shinyWidgets$radioGroupButtons(
-            ns("map-tab"),
+            ns("subtab"),
             choices = c("Tour", "Map")
           )
         ),
@@ -46,12 +39,54 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
-    tour_map_content <- list(
+    output$map <- mm$make_base_map(tour_map_content)
+
+    content_added <- shiny$reactiveVal(value = FALSE)
+
+    proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
+
+    map_content <- list(
       list(
         type = "polygon",
-        data = shapes$qld_sa1s
+        polygon = shapes$sa1_polygons
+      ),
+      list(
+        type = "linestring",
+        linestring = shapes$sa1_linestring
+      ),
+      list(
+        type = "linestring",
+        linestring = shapes$sa2_linestring
       )
     )
-    output$map <- mm$make_base_map(tour_map_content)
+
+    shiny$observe({
+      if(content_added()) return()
+
+      mm$add_map_content(proxymap(), map_content)
+
+      content_added(TRUE)
+    })
+
+
+    shiny$observeEvent(input$subtab{
+      browser()
+    })
+
   })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

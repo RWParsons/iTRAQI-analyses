@@ -97,7 +97,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     "value_rehab",
     "SA_level"
   )
-
+  
   sa2_all <- sa2_poly |>
     left_join(sa2_rehab) |>
     left_join(sa2_acute) |>
@@ -109,10 +109,55 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
     left_join(sa1_acute) |>
     rename(CODE = SA1_CODE) |>
     select(all_of(cols))
+  
+  sa2_polygon <- sa2_all |>
+    select(CODE) |>
+    st_cast("MULTIPOLYGON") |>
+    st_cast("POLYGON")
+  
+  sa2_linestring <- sa2_polygon |> 
+    st_cast("LINESTRING") |> 
+    group_by(CODE) |> 
+    mutate(layerid = glue("{CODE}-linestring-{row_number()}")) |> 
+    ungroup()
+  
+  sa1_polygon <- sa1_all |> 
+    select(CODE) |> 
+    st_cast("MULTIPOLYGON") |> 
+    st_cast("POLYGON") |> 
+    group_by(CODE) |> 
+    mutate(layerid = glue("{CODE}-polygon-{row_number()}")) |> 
+    ungroup()
+  
+  
+  sa1_linestring <- sa1_polygon |> 
+    st_cast("LINESTRING") |> 
+    group_by(CODE) |> 
+    mutate(layerid = glue("{CODE}-linestring-{row_number()}")) |> 
+    ungroup()
+  
+  sa1_sa2_code_lkp <- strayr::read_absmap(glue("sa1{asgs_year}")) |>
+    as_tibble() |>
+    select(starts_with("sa1_code"), starts_with("sa2_code")) |> 
+    rename(sa1_code = 1, sa2_code = 2)
+  
+  stacked_sa1_sa2_polygons <- rbind(sa1_all, sa2_all)
+  
+  stacked_sa1_sa2_data <- stacked_sa1_sa2_polygons |> 
+    as_tibble() |> 
+    select(-geometry)
+  
+  # saveRDS(sa2_polygon, file.path(output_dir, "sa2_polygon.rds"))
+  saveRDS(sa2_linestring, file.path(output_dir, "sa2_linestring.rds"))
+  saveRDS(sa1_polygon, file.path(output_dir, "sa1_polygon.rds"))
+  saveRDS(sa1_linestring, file.path(output_dir, "sa1_linestring.rds"))
+  saveRDS(sa2_all, file.path(output_dir, "sa2_all_polygons.rds"))
+  saveRDS(sa1_all, file.path(output_dir, "sa1_all_polygons.rds"))
+  saveRDS(sa1_sa2_code_lkp, file.path(output_dir, "sa1_sa2_code_lkp.rds"))
+  saveRDS(stacked_sa1_sa2_data, file.path(output_dir, "stacked_sa1_sa2_data.rds"))
+  
 
-  res <- rbind(sa1_all, sa2_all)
-
-  saveRDS(res, file.path(output_dir, "stacked_SA1_and_SA2_polygons.rds"))
+  saveRDS(stacked_sa1_sa2_polygons, file.path(output_dir, "stacked_SA1_and_SA2_polygons.rds"))
   file.path(output_dir, "stacked_SA1_and_SA2_polygons.rds")
 }
 
