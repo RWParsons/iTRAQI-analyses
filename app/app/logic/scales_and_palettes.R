@@ -64,6 +64,13 @@ ra_text_choices <- ra_scale_to_text(0:4)
 palette_list <- readRDS(file.path(constants$analyses_output_dir, "palette_list.rds"))
 
 #' @export
+pal_mins <- palette_list$palNum
+
+#' @export
+pal_hours <- palette_list$palNum_hours
+
+#' @export
+pal_index <- palette_list$paliTRAQI
+
+#' @export
 iTRAQI_levels <- palette_list$bins_index
-
-

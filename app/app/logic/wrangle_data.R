@@ -5,7 +5,7 @@ box::use(
 
 box::use(
   app / data / shapes,
-  app / data/ constants,
+  app / data / constants,
   app / logic / scales_and_palettes
 )
 
@@ -14,10 +14,9 @@ get_poly_selection <- function(layer_selection,
                                seifa,
                                remoteness,
                                itraqi_index) {
-
   layer <- constants$layer_choices[names(constants$layer_choices) == layer_selection]
 
-  if(!stringr$str_detect(layer, "sa[1,2]")) {
+  if (!stringr$str_detect(layer, "sa[1,2]")) {
     return()
   }
 
@@ -42,8 +41,8 @@ get_poly_selection <- function(layer_selection,
     ) |>
     dplyr$mutate(
       selected = seifa_quintile %in% scales_and_palettes$seifa_text_to_value(seifa) &
-      ra %in% scales_and_palettes$ra_text_to_value(remoteness) &
-      value_index %in% itraqi_index
+        ra %in% scales_and_palettes$ra_text_to_value(remoteness) &
+        value_index %in% itraqi_index
     ) |>
     dplyr$rename(
       selected_col := care_type_outcome,
@@ -54,5 +53,4 @@ get_poly_selection <- function(layer_selection,
     data = d,
     outcome = care_str
   )
-
 }
