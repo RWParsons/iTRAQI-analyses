@@ -26,7 +26,7 @@ ui <- function(id) {
         bslib$card_header(
           shinyWidgets$radioGroupButtons(
             ns("subtab"),
-            choices = c("Tour", "Map")
+            choices = c("Map", "Tour")
           )
         ),
         height = "calc(100vh - 100px)",
@@ -42,7 +42,6 @@ server <- function(id) {
     output$map <- mm$make_base_map(tour_map_content)
 
     content_added <- shiny$reactiveVal(value = FALSE)
-
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
 
     map_content <- list(

@@ -165,7 +165,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
   
   sa_code_layerid_lkp <- bind_rows(linestring_layerid_lkp, polygon_layerid_lkp)
   
-  # saveRDS(sa2_polygon, file.path(output_dir, "sa2_polygon.rds"))
+  saveRDS(sa2_polygon, file.path(output_dir, "sa2_polygon.rds"))
   saveRDS(sa2_linestring, file.path(output_dir, "sa2_linestring.rds"))
   saveRDS(sa1_polygon, file.path(output_dir, "sa1_polygon.rds"))
   saveRDS(sa1_linestring, file.path(output_dir, "sa1_linestring.rds"))
@@ -174,6 +174,22 @@ create_app_polygons <- function(data, asgs_year, simplify_keep) {
   saveRDS(sa1_sa2_code_lkp, file.path(output_dir, "sa1_sa2_code_lkp.rds"))
   saveRDS(stacked_sa1_sa2_data, file.path(output_dir, "stacked_sa1_sa2_data.rds"))
   saveRDS(sa_code_layerid_lkp, file.path(output_dir, "sa_code_layerid_lkp.rds"))
+  
+  
+  
+  stacked_sa1_sa2_polygon_geom <- rbind(sa1_all, sa2_all) |> 
+    st_cast("MULTIPOLYGON") |> 
+    st_cast("POLYGON") |> 
+    select(CODE)
+  
+  saveRDS(stacked_sa1_sa2_polygon_geom, file.path(output_dir, "stacked_SA1_and_SA2_polygons_geom.rds"))
+  
+  stacked_sa1_sa2_linestring_geom <- stacked_sa1_sa2_polygon_geom |> 
+    st_cast("LINESTRING") |> 
+    select(CODE)
+  
+  saveRDS(stacked_sa1_sa2_linestring_geom, file.path(output_dir, "stacked_SA1_and_SA2_linestrings_geom.rds"))
+  
   
   
 
