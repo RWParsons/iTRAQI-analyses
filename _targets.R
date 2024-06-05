@@ -524,10 +524,5 @@ list(
     app_palette,
     save_app_palette(itraqi_list),
     format = "file"
-  ),
-  tar_target(
-    app_scale_fxs,
-    save_app_scale_fxs(itraqi_list),
-    format = "file"
   )
 )

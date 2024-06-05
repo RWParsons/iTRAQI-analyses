@@ -6,8 +6,7 @@ outputs_to_move <- c(
   "stacked_SA1_and_SA2_polygons_geom.rds",
   "stacked_SA1_and_SA2_linestrings_geom.rds",
   "stacked_sa1_sa2_data.rds",
-  "palette_list.rds",
-  "scale_fxs.rds"
+  "palette_list.rds"
 )
 
 x <- purrr::map(
@@ -33,5 +32,11 @@ x <- purrr::map(
         to = file.path(app_data_dir, fname)
       )
     }
+
   }
 )
+
+# remove files that aren't in list from data
+input_data_files <- list.files(app_data_dir)
+
+purrr::map(input_data_files[!input_data_files %in% outputs_to_move], ~ file.remove(file.path(app_data_dir, .x)))

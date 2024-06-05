@@ -12,7 +12,7 @@ save_app_scale_fxs <- function(itraqi_list) {
 
 
 seifa_text_to_value <- function(x) {
-  case_when(
+  dplyr::case_when(
     x == "Most disadvantaged" ~ 1,
     x == "Disadvantaged" ~ 2,
     x == "Middle socio-economic status" ~ 3,
@@ -22,7 +22,7 @@ seifa_text_to_value <- function(x) {
 }
 
 ra_scale_to_text <- function(x) {
-  case_when(
+  dplyr::case_when(
     x == 0 ~ "Major Cities of Australia",
     x == 1 ~ "Inner Regional Australia",
     x == 2 ~ "Outer Regional Australia",
@@ -33,7 +33,7 @@ ra_scale_to_text <- function(x) {
 }
 
 ra_text_to_value <- function(x) {
-  case_when(
+  dplyr::case_when(
     x == "Major Cities of Australia" ~ 0,
     x == "Inner Regional Australia" ~ 1,
     x == "Outer Regional Australia" ~ 2,

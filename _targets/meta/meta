@@ -6,7 +6,7 @@ app_palette|stem|cac570aeb87fb676|e24316a13bb70c3f|4344e541fc69628d|1089662940|C
 app_polygons|stem|e7d123b9aec4e861|5c835e7fc326dfb4|fac77f55835876ba|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19875.4977091281s|f5319271863f1aa5|1670214|file|local|vector|||30.531|repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant|
 app_raster|stem|c2cbf9546e160981|b13b86c57469fee5|b8786adeabdd75a5|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s||6312158|file|local|vector|||1.594||promise already under evaluation recursive default argument reference or earlier problems
 app_rasters|stem|c31f84f47f2831bd|b13b86c57469fee5|6e278b5c140235a8|1306936721||t0s|f4066a65ff755f48|0|file|local|vector|||2.203||
-app_scale_fxs|stem|20fe6b94c43f2e83|514b0a88839ebf2b|d097146eda55c46a|-280546199|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/scale_fxs.rds|t19879.0306422121s|c2212432560d6336|25123|file|local|vector|||1.75||
+app_scale_fxs|stem|c78b801dabb917c5|514b0a88839ebf2b|589a8b9a1196e788|-280546199|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/scale_fxs.rds|t19879.0405234028s|502baa2af2ed0ba7|25261|file|local|vector|||1.563||
 breaks_to_labels|function|15aa190f0fc9cc8c|||||||||||||||
 cell_size_agg|object|e9200b1fe25d1e1c|||||||||||||||
 CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
@@ -142,8 +142,8 @@ qas_locations_file|stem|47d8b576de70ef8e|fd3582224bc61473|ef46db3751d8e999|71835
 qas_map|stem|e69241543175c797|eea5e9f0030edc9d|55f10a27542bd307|61823707||t19875.4978105361s|6aac70ce59868a33|131|rds|local|vector|||0.407||
 qld_locations_file|stem|371950c86cc87bec|1ec6722829c44405|ef46db3751d8e999|1094260305|data/QLDLocations3422.csv|t19409.0793635134s|8e55589b30e156b7|15655|file|local|vector|||0.704||
 quintile_from_decile|function|bc270d6e6e422eb2|||||||||||||||
-ra_scale_to_text|function|c1acc9ff04332e8b|||||||||||||||
-ra_text_to_value|function|73d5d9d86704dc76|||||||||||||||
+ra_scale_to_text|function|c43f6624f5e459a7|||||||||||||||
+ra_text_to_value|function|dd6b49691d4852aa|||||||||||||||
 read_acute_pathways|function|1a36ca8a0230d230|||||||||||||||
 read_rehab_data|function|a09cb307a4d6a798|||||||||||||||
 remoteness_files|pattern|98c703641e4cde89|d364f7500701dda5||-796710876||||6302502|file|local|vector||remoteness_files_82c12366*remoteness_files_2bb95249*remoteness_files_a8528819*remoteness_files_06e81f91|0||
@@ -156,15 +156,15 @@ rename_travel_time_df|function|82572c667aa9ceb3|||||||||||||||
 rsq_locations_file|stem|72685425b2fb4cb6|7c2c0922575a2b28|ef46db3751d8e999|-3892719|data/inputs-for-visualisations/rsq_locations.csv|t19221.9976706623s|17fd65357607abf9|576|file|local|vector|||1.297||
 rsq_maps|stem|640a4e2523c1fca4|765ca2014d1ef285|7cf20ddf76bed36f|1296509518||t19875.497779303s|c303d0aa7a9c897f|156|rds|local|vector|||0.703||
 save_app_palette|function|3e75f24dac6a9f85|||||||||||||||
-save_app_scale_fxs|function|2229d381d8768cb5|||||||||||||||
+save_app_scale_fxs|function|2a9b1b250e0153c4|||||||||||||||
 seifa_files|pattern|5cfc04b4c3634603|887c54425a6ada27||-1920692518||||112005632|file|local|vector||seifa_files_0fd258b0*seifa_files_3df8e749*seifa_files_b0acac7a*seifa_files_cab70577|0.016||
 seifa_files_0fd258b0|branch|ca67916bf2742b10|887c54425a6ada27|ef46db3751d8e999|927023566|data/remoteness_and_seifa_data/2011_sa1_seifa.xls|t19409.0793720087s|c62dc507448a4207|53460992|file|local|vector|seifa_files||0||
 seifa_files_3df8e749|branch|fbea7dee06d6d9d0|887c54425a6ada27|ef46db3751d8e999|56803531|data/remoteness_and_seifa_data/2011_sa2_seifa.xls|t19409.0793722171s|7c6c151c2bab7198|2412544|file|local|vector|seifa_files||0.016||
 seifa_files_b0acac7a|branch|b5e556e507134893|887c54425a6ada27|ef46db3751d8e999|309424726|data/remoteness_and_seifa_data/2016_sa1_seifa.xls|t19409.07937518s|c28695aedb990632|54134784|file|local|vector|seifa_files||0||
 seifa_files_cab70577|branch|41a0e4b1c1180c59|887c54425a6ada27|ef46db3751d8e999|-973884529|data/remoteness_and_seifa_data/2016_sa2_seifa.xls|t19409.0793753539s|a7fed4e7b47695f0|1997312|file|local|vector|seifa_files||0||
 seifa_files_files|stem|92a6bd0e048be9f5|a03078bd0f3ea3f6|ef46db3751d8e999|1567115929||t19736.7001155751s|bf0d8caacacad815|112|rds|local|list||seifa_files_files_b8e0c22c*seifa_files_files_e491d188*seifa_files_files_62b7ff49*seifa_files_files_146326d6|0||
-seifa_scale_to_text|function|9654adcfacd5dc4b|||||||||||||||
-seifa_text_to_value|function|1b54a5c209cba897|||||||||||||||
+seifa_scale_to_text|function|5d72251148e5bae2|||||||||||||||
+seifa_text_to_value|function|6d61674a937af476|||||||||||||||
 silver_locs|object|fc5aaa3d2a561f0c|||||||||||||||
 tbl_to_raster|function|bf64572f21350623|||||||||||||||
 template_files|stem|751da96a4f79949e|b6c543b3df6e354c|ef46db3751d8e999|-678564935||t19784.2317935203s|f3963c450082b208|143|rds|local|vector|||0.969||
