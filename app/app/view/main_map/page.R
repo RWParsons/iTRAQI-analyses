@@ -3,7 +3,6 @@ box::use(
   shiny,
   bslib,
   leaflet,
-  strayr,
   sf,
   leafgl,
   dplyr,
@@ -39,6 +38,7 @@ server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map()
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
+    layers_rv <- shiny$reactiveValues(current_grp = "A")
 
     map_content <- list(
       list(
@@ -57,8 +57,8 @@ server <- function(id) {
     })
 
 
-    shiny$observe({
-      mm$update_map_content(proxymap(), d_poly())
+    shiny$observeEvent(list(proxymap(), d_poly()), {
+      mm$update_map_content(proxymap(), d_poly(), layers = shiny$isolate(layers_rv))
     })
   })
 

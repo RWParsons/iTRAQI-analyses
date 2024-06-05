@@ -13,9 +13,9 @@ box::use(
 
 
 #' @export
-update_map_content <- function(proxy_map, d_selection) {
-  proxy_map |>
-    leaflet$clearGroup("layers")
+update_map_content <- function(proxy_map, d_selection, layers) {
+  grp_remove <- layers$current_grp
+  grp_add <- ifelse(layers$current_grp == "A", "B", "A")
 
   if (is.null(d_selection)) {
     return()
@@ -39,17 +39,24 @@ update_map_content <- function(proxy_map, d_selection) {
   }
 
   proxy_map <- proxy_map |>
+    leaflet$hideGroup(grp_add) |>
     leafgl$addGlPolygons(
       data = poly_add,
       pane = "layers",
-      group = "layers",
+      group = grp_add,
       fillColor = fcolor_palette(poly_add$selected_col)
     ) |>
     leafgl$addGlPolylines(
       data = linestring_add,
-      group = "layers",
+      group = grp_add,
       color = "black",
       weight = 0.1,
       opacity = 0.5
     )
+
+  proxy_map |>
+    leaflet$showGroup(grp_add) |>
+    leaflet$clearGroup(grp_remove)
+
+  layers$current_grp <- grp_add
 }
