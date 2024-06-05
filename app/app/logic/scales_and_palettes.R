@@ -3,7 +3,7 @@ box::use(
 )
 
 box::use(
-  app / data / constants
+  app / logic / constants
 )
 
 
@@ -60,8 +60,7 @@ ra_text_to_value <- function(x) {
 #' @export
 ra_text_choices <- ra_scale_to_text(0:4)
 
-
-palette_list <- readRDS(file.path(constants$analyses_output_dir, "palette_list.rds"))
+palette_list <- readRDS(file.path(constants$data_dir, "palette_list.rds"))
 
 #' @export
 pal_mins <- palette_list$palNum

@@ -4,4 +4,6 @@
 .Renviron
 .rhino
 .rscignore
+sandpit.R
+update-data.R
 tests

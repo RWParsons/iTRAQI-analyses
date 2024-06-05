@@ -6,7 +6,7 @@ box::use(
 
 
 box::use(
-  app / data / shapes,
+  app / logic / load_shapes,
   app / logic / scales_and_palettes,
 )
 
@@ -24,10 +24,10 @@ update_map_content <- function(proxy_map, d_selection) {
     dplyr$filter(selected) |>
     dplyr$select(CODE, selected_col, selected_popup)
 
-  poly_add <- shapes$stacked_sa1_sa2_polygon_geom |>
+  poly_add <- load_shapes$stacked_sa1_sa2_polygon_geom |>
     dplyr$inner_join(d_codes_selected, by = "CODE")
 
-  linestring_add <- shapes$stacked_sa1_sa2_linestring_geom |>
+  linestring_add <- load_shapes$stacked_sa1_sa2_linestring_geom |>
     dplyr$inner_join(d_codes_selected, by = "CODE")
 
 

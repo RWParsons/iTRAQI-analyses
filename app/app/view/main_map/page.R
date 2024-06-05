@@ -14,8 +14,8 @@ box::use(
   # mapping module - might change this to rdeck if it's possible - they will need to have
   # all the same functions in both modules so making generic names like "create map" and "update map" with generic inputs etc
   mm = app / mapping,
-  app / data / shapes,
   app / view / main_map / make_top_cards,
+  app / logic / load_shapes,
   app / logic / wrangle_data,
 )
 
@@ -43,7 +43,7 @@ server <- function(id) {
     map_content <- list(
       list(
         type = "polygon",
-        polygon = shapes$stacked_sa1_sa2_polygon_geom
+        polygon = load_shapes$stacked_sa1_sa2_polygon_geom
       )
     )
 

@@ -4,7 +4,7 @@ box::use(
 )
 
 box::use(
-  app / data / constants,
+  app / logic / constants,
   app / logic / scales_and_palettes,
 )
 

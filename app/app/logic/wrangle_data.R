@@ -4,8 +4,8 @@ box::use(
 )
 
 box::use(
-  app / data / shapes,
-  app / data / constants,
+  app / logic / load_shapes,
+  app / logic / constants,
   app / logic / scales_and_palettes
 )
 
@@ -35,7 +35,7 @@ get_poly_selection <- function(layer_selection,
     care_str == "rehab" ~ "popup_rehab"
   )
 
-  d <- shapes$stacked_sa1_sa2_data |>
+  d <- load_shapes$stacked_sa1_sa2_data |>
     dplyr$filter(
       SA_level == sa_level
     ) |>
