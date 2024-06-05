@@ -88,6 +88,7 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
       data = poly_add,
       pane = "layers",
       group = grp_add,
+      popup = poly_add$selected_popup,
       fillColor = fcolor_palette(poly_add$selected_col)
     ) |>
     leafgl$addGlPolylines(
