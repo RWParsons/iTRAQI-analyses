@@ -1,7 +1,8 @@
 box::use(
+  dplyr,
   leaflet,
   leafgl,
-  dplyr,
+  withr,
 )
 
 

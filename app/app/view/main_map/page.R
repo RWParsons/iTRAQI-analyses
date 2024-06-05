@@ -3,6 +3,7 @@ box::use(
   shiny,
   bslib,
   leaflet,
+  strayr,
   sf,
   leafgl,
   dplyr,

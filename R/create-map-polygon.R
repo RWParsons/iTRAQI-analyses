@@ -222,7 +222,7 @@ get_popup_glue <- function(asgs, care_type) {
 
 
 seifa_scale_to_text <- function(x) {
-  dplyr::case_when(
+  case_when(
     x == 1 ~ "Most disadvantaged",
     x == 2 ~ "Disadvantaged",
     x == 3 ~ "Middle socio-economic status",
