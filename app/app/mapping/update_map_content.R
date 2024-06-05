@@ -46,6 +46,9 @@ update_map_content <- function(proxy_map, d_selection) {
     ) |>
     leafgl$addGlPolylines(
       data = linestring_add,
-      group = "layers"
+      group = "layers",
+      color = "black",
+      weight = 0.1,
+      opacity = 0.5
     )
 }
