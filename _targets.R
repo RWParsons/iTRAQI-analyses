@@ -522,7 +522,12 @@ list(
   # palette for app
   tar_target(
     app_palette,
-    save_app_palette(itraqi_list)
+    save_app_palette(itraqi_list),
+    format = "file"
   ),
-  format = "file"
+  tar_target(
+    app_scale_fxs,
+    save_app_scale_fxs(itraqi_list),
+    format = "file"
+  )
 )

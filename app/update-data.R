@@ -6,7 +6,8 @@ outputs_to_move <- c(
   "stacked_SA1_and_SA2_polygons_geom.rds",
   "stacked_SA1_and_SA2_linestrings_geom.rds",
   "stacked_sa1_sa2_data.rds",
-  "palette_list.rds"
+  "palette_list.rds",
+  "scale_fxs.rds"
 )
 
 x <- purrr::map(
@@ -25,7 +26,7 @@ x <- purrr::map(
 
     if (move_file) {
       cli::cli({
-        cli::cli_h2(glue::glue("updating file: {fname}"))
+        cli::cli_h2(glue::glue("loading file: {fname}"))
       })
       file.copy(
         from = file.path(analyses_output_dir, fname),
