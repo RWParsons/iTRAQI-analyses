@@ -33,6 +33,9 @@ ra_text_choices <- ra_scale_to_text(0:4)
 pal_mins <- function(x) withr$with_package("dplyr", palette_list$palNum(x))
 
 #' @export
+bins_mins <- palette_list$bins_mins
+
+#' @export
 pal_hours <- function(x) withr$with_package("dplyr", palette_list$palNum_hours(x))
 
 #' @export

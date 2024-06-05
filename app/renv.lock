@@ -850,6 +850,21 @@
       ],
       "Hash": "d6b521a3382490f766de5fedf95fc1af"
     },
+    "leaflegend": {
+      "Package": "leaflegend",
+      "Version": "1.2.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "base64enc",
+        "htmltools",
+        "htmlwidgets",
+        "leaflet",
+        "stats"
+      ],
+      "Hash": "b6ae2af92974c56c504b889287c6a9d7"
+    },
     "leaflet": {
       "Package": "leaflet",
       "Version": "2.2.2",

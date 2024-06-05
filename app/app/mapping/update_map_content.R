@@ -11,6 +11,7 @@ box::use(
   app / logic / load_shapes,
   app / logic / scales_and_palettes,
   app / logic / utils,
+  app / mapping / update_legend,
 )
 
 #' @export
@@ -18,13 +19,19 @@ update_map_content <- function(proxy_map, d_selection, selected_layer, r_layers)
   layer_type <- utils$get_layer_type(selected_layer)
   selected_layer <- utils$get_standard_layer_name(selected_layer)
 
-  if(layer_type == "none") {
+  if (layer_type == "none") {
     show_nothing(proxy_map = proxy_map, r_layers = r_layers)
   } else if (layer_type == "polygon") {
     show_polygon(proxy_map = proxy_map, d_selection = d_selection, r_layers = r_layers)
   } else if (layer_type == "raster") {
     show_raster(proxy_map = proxy_map, selected_layer = selected_layer, r_layers = r_layers)
   }
+
+  update_legend$update_legend(
+    proxy_map = proxy_map,
+    selected_layer = selected_layer,
+    layer_type = layer_type
+  )
 }
 
 show_nothing <- function(proxy_map, r_layers) {
@@ -107,11 +114,11 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
 }
 
 remove_or_hide_grp <- function(proxy_map, grp) {
-  if(is_polygon_grp(grp)) {
+  if (is_polygon_grp(grp)) {
     proxy_map |>
       leaflet$clearGroup(grp)
   }
-  if(is_raster_grp(grp)) {
+  if (is_raster_grp(grp)) {
     proxy_map |>
       leaflet$hideGroup(grp)
   }
