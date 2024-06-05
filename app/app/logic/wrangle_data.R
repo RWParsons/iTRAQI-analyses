@@ -6,7 +6,8 @@ box::use(
 box::use(
   app / logic / constants,
   app / logic / load_shapes,
-  app / logic / scales_and_palettes
+  app / logic / scales_and_palettes,
+  app / logic / utils,
 )
 
 #' @export
@@ -14,7 +15,7 @@ get_poly_selection <- function(layer_selection,
                                seifa,
                                remoteness,
                                itraqi_index) {
-  layer <- constants$layer_choices[names(constants$layer_choices) == layer_selection]
+  layer <- utils$get_standard_layer_name(layer_selection)
 
   if (!stringr$str_detect(layer, "sa[1,2]")) {
     return()

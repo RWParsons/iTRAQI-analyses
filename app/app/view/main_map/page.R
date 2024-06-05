@@ -38,7 +38,7 @@ server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map()
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
-    layers_rv <- shiny$reactiveValues(current_grp = "A")
+    layers_rv <- shiny$reactiveValues(current_grp = "A", rasters = c())
 
     map_content <- list(
       list(
@@ -57,8 +57,13 @@ server <- function(id) {
     })
 
 
-    shiny$observeEvent(list(proxymap(), d_poly()), {
-      mm$update_map_content(proxymap(), d_poly(), layers = shiny$isolate(layers_rv))
+    shiny$observeEvent(list(proxymap(), d_poly(), input$layer_selection), {
+      mm$update_map_content(
+        proxy_map = proxymap(),
+        d_selection = d_poly(),
+        selected_layer = input$layer_selection,
+        r_layers = shiny$isolate(layers_rv)
+      )
     })
   })
 

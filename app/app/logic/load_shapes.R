@@ -1,5 +1,7 @@
 box::use(
+  purrr,
   sf,
+  tidyterra,
 )
 
 box::use(
@@ -15,6 +17,9 @@ stacked_sa1_sa2_linestring_geom <- readRDS(file.path(constants$data_dir, "stacke
 #' @export
 stacked_sa1_sa2_data <- readRDS(file.path(constants$data_dir, "stacked_sa1_sa2_data.rds"))
 
+#' @export
+raster_layers <- readRDS(file.path(constants$data_dir, "raster_points.rds")) |>
+  purrr$map(~ tidyterra$as_spatraster(.x, crs = 4326))
 
 # old pipeline outputs that would have been useful if taking the updating-shape-aes approach
 #' @export

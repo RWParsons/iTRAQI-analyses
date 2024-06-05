@@ -11,7 +11,8 @@ outputs_to_move <- c(
   "stacked_SA1_and_SA2_linestrings_geom.rds",
   "stacked_sa1_sa2_data.rds",
   "palette_list.rds",
-  "scale_fxs.rds"
+  "scale_fxs.rds",
+  "raster_points.rds"
 )
 
 x <- purrr::map(
