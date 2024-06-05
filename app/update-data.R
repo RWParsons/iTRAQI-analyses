@@ -1,6 +1,10 @@
-analyses_output_dir <- here::here("../output")
+box::use(
+  here,
+)
 
-app_data_dir <- here::here("app/data")
+analyses_output_dir <- here$here("../output")
+
+app_data_dir <- here$here("app/data")
 
 outputs_to_move <- c(
   "stacked_SA1_and_SA2_polygons_geom.rds",

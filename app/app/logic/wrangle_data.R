@@ -1,11 +1,11 @@
 box::use(
-  stringr,
   dplyr,
+  stringr,
 )
 
 box::use(
-  app / logic / load_shapes,
   app / logic / constants,
+  app / logic / load_shapes,
   app / logic / scales_and_palettes
 )
 
