@@ -58,11 +58,21 @@ server <- function(id) {
 
 
     shiny$observeEvent(list(proxymap(), d_poly(), input$layer_selection), {
-      mm$update_map_content(
+      mm$update_map_shapes(
         proxy_map = proxymap(),
         d_selection = d_poly(),
         selected_layer = input$layer_selection,
         r_layers = shiny$isolate(layers_rv)
+      )
+    })
+
+
+    shiny$observe({
+      # TODO: reactively update the proxy_map() markers
+      # - probably worth making some function to clean the name as I have
+      mm$update_map_markers(
+        proxy_map = proxymap(),
+        markers = input$base_layers
       )
     })
   })

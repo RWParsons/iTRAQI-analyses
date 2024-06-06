@@ -2,6 +2,7 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
 app_locations_and_times|stem|71ebefa0b721712e|b1c8cc308eee02c4|8def2ef84e3833f4|1635295773|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/QLD_locations_with_RSQ_times.csv|t19806.2711974937s|734ae9969a284a07|73583|file|local|vector|||1.593||
+app_markers|stem|bee56fa653981a14|882f87cf9940dce8|209582dc02518662|-310036408|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/l_markers.rds|t19880.3475760119s|eab4217444e752d9|18343|file|local|vector|||1.703||
 app_palette|stem|cac570aeb87fb676|e24316a13bb70c3f|4344e541fc69628d|1089662940|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/palette_list.rds|t19879.0306642727s|8d467cf3ee19c39a|20340568|file|local|vector|||3.781||
 app_polygons|stem|e7d123b9aec4e861|5c835e7fc326dfb4|fac77f55835876ba|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19875.4977091281s|f5319271863f1aa5|1670214|file|local|vector|||30.531|repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant|
 app_raster|stem|c2cbf9546e160981|b13b86c57469fee5|b8786adeabdd75a5|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s||6312158|file|local|vector|||1.594||promise already under evaluation recursive default argument reference or earlier problems
@@ -13,6 +14,7 @@ CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
 cell_size_raster|object|970a687b44b4bf24|||||||||||||||
 centre_coords_file|stem|6f822eeadc97db80|4f42a08c732bb99e|ef46db3751d8e999|540664881|data/inputs-for-visualisations/centres.csv|t19234.15736239s|86d2144d56b732f9|1576|file|local|vector|||1.047||
 centre_renaming|function|d61b6b45dcc868b6|||||||||||||||
+centres_file|stem|6f822eeadc97db80|4f42a08c732bb99e|ef46db3751d8e999|2130286199|data/inputs-for-visualisations/centres.csv|t19234.15736239s|86d2144d56b732f9|1576|file|local|vector|||2.188||
 clean_acute_centre|function|75df2008a64da3da|||||||||||||||
 create_app_locs_and_times|function|23dab7c0938eb810|||||||||||||||
 create_app_polygons|function|3576cf83bde61418|||||||||||||||
@@ -155,6 +157,7 @@ remoteness_files_files|stem|f4657ed37a25cf40|f5ca3075331905f3|ef46db3751d8e999|-
 rename_travel_time_df|function|82572c667aa9ceb3|||||||||||||||
 rsq_locations_file|stem|72685425b2fb4cb6|7c2c0922575a2b28|ef46db3751d8e999|-3892719|data/inputs-for-visualisations/rsq_locations.csv|t19221.9976706623s|17fd65357607abf9|576|file|local|vector|||1.297||
 rsq_maps|stem|640a4e2523c1fca4|765ca2014d1ef285|7cf20ddf76bed36f|1296509518||t19875.497779303s|c303d0aa7a9c897f|156|rds|local|vector|||0.703||
+save_app_markers|function|64fd386a97cf593f|||||||||||||||
 save_app_palette|function|3e75f24dac6a9f85|||||||||||||||
 save_app_scale_fxs|function|2229d381d8768cb5|||||||||||||||
 seifa_files|pattern|5cfc04b4c3634603|887c54425a6ada27||-1920692518||||112005632|file|local|vector||seifa_files_0fd258b0*seifa_files_3df8e749*seifa_files_b0acac7a*seifa_files_cab70577|0.016||

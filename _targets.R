@@ -21,7 +21,7 @@ list(
     d_acute,
     read_acute_pathways(acute_times_file)
   ),
-
+  
   # rehab (drive) times data
   tar_files_input(
     drive_times_files,
@@ -519,7 +519,7 @@ list(
     make_palette_table(itraqi_list)
   ),
 
-  # palette for app
+  # other content for app
   tar_target(
     app_palette,
     save_app_palette(itraqi_list),
@@ -528,6 +528,14 @@ list(
   tar_target(
     app_scale_fxs,
     save_app_scale_fxs(itraqi_list),
+    format = "file"
+  ),
+  tar_target(
+    app_markers,
+    save_app_markers(
+      vis_shapes = vis_shapes,
+      d_centre_coords = d_centre_coords
+    ),
     format = "file"
   )
 )

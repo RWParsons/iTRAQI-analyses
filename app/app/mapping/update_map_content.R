@@ -8,6 +8,7 @@ box::use(
 
 
 box::use(
+  app / logic / constants,
   app / logic / load_shapes,
   app / logic / scales_and_palettes,
   app / logic / utils,
@@ -15,7 +16,31 @@ box::use(
 )
 
 #' @export
-update_map_content <- function(proxy_map, d_selection, selected_layer, r_layers) {
+update_map_markers <- function(proxy_map, markers) {
+  markers <- clean_marker_group_name(markers)
+
+  all_layers <- clean_marker_group_name(constants$all_base_layers)
+
+  hide_groups <- all_layers[!all_layers %in% markers]
+  show_groups <- all_layers[all_layers %in% markers]
+
+  proxy_map |>
+    leaflet$hideGroup(hide_groups) |>
+    leaflet$showGroup(show_groups)
+}
+
+clean_marker_group_name <- function(x) {
+  dplyr$case_when(
+    x == "Towns" ~ "towns",
+    x == "Acute centres" ~ "acute_centres",
+    x == "Rehab centres" ~ "rehab_centres",
+    x == "Aeromedical bases" ~ "rsq",
+    x == "QAS response locations" ~ "qas"
+  )
+}
+
+#' @export
+update_map_shapes <- function(proxy_map, d_selection, selected_layer, r_layers) {
   layer_type <- utils$get_layer_type(selected_layer)
   selected_layer <- utils$get_standard_layer_name(selected_layer)
 

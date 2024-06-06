@@ -7,6 +7,7 @@ analyses_output_dir <- here$here("../output")
 app_data_dir <- here$here("app/data")
 
 outputs_to_move <- c(
+  "l_markers.rds",
   "stacked_SA1_and_SA2_polygons_geom.rds",
   "stacked_SA1_and_SA2_linestrings_geom.rds",
   "stacked_sa1_sa2_data.rds",
