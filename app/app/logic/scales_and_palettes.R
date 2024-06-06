@@ -42,4 +42,4 @@ pal_hours <- function(x) withr$with_package("dplyr", palette_list$palNum_hours(x
 pal_index <- palette_list$paliTRAQI
 
 #' @export
-iTRAQI_levels <- palette_list$bins_index
+iTRAQI_levels <- levels(palette_list$bins_index)
