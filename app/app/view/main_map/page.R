@@ -1,18 +1,20 @@
 # main_map page
 box::use(
-  shiny,
   bslib,
-  leaflet,
-  sf,
-  leafgl,
   dplyr,
+  ggplot2,
+  leafgl,
+  leaflet,
+  shiny,
   shinyWidgets,
+  sf,
 )
 
 box::use(
   # mapping module - might change this to rdeck if it's possible - they will need to have
   # all the same functions in both modules so making generic names like "create map" and "update map" with generic inputs etc
   mm = app / mapping,
+  app / view / main_map / interactive_plot,
   app / view / main_map / make_top_cards,
   app / logic / load_shapes,
   app / logic / wrangle_data,
@@ -26,7 +28,8 @@ ui <- function(id) {
       bslib$card(
         height = "calc(100vh - 100px)",
         mm$mapOutput(ns("map")),
-        make_top_cards$make_controls_ui(ns = ns)
+        make_top_cards$make_controls_ui(ns = ns),
+        interactive_plot$interactive_plot_ui(id = ns("plot"))
       )
     )
   )
@@ -48,6 +51,7 @@ server <- function(id) {
     )
 
     d_poly <- shiny$reactive({
+      # these inputs are from the controls
       wrangle_data$get_poly_selection(
         layer_selection = input$layer_selection,
         seifa = input$seifa,
@@ -56,6 +60,7 @@ server <- function(id) {
       )
     })
 
+    interactive_plot$interactive_plot_server(id = "plot", d_poly = d_poly)
 
     shiny$observeEvent(list(proxymap(), d_poly(), input$layer_selection), {
       mm$update_map_shapes(
@@ -68,14 +73,14 @@ server <- function(id) {
 
 
     shiny$observe({
-      # TODO: reactively update the proxy_map() markers
-      # - probably worth making some function to clean the name as I have
       mm$update_map_markers(
         proxy_map = proxymap(),
         markers = input$base_layers
       )
     })
   })
+
+
 
   make_top_cards$make_controls_server(id)
 }
