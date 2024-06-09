@@ -13,6 +13,7 @@ outputs_to_move <- c(
   "stacked_sa1_sa2_data.rds",
   "palette_list.rds",
   "scale_fxs.rds",
+  "state_boundary.rds",
   "raster_points.rds"
 )
 

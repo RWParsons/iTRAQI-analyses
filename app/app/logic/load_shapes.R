@@ -9,6 +9,9 @@ box::use(
 )
 
 #' @export
+state_boundary <- readRDS(file.path(constants$data_dir, "state_boundary.rds"))
+
+#' @export
 stacked_sa1_sa2_polygon_geom <- readRDS(file.path(constants$data_dir, "stacked_SA1_and_SA2_polygons_geom.rds"))
 
 #' @export

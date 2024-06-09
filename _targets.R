@@ -521,6 +521,11 @@ list(
 
   # other content for app
   tar_target(
+    app_qld_boundary,
+    save_qld_boundary(d_input_shapes$qld_state_boundary),
+    format = "file"
+  ),
+  tar_target(
     app_palette,
     save_app_palette(itraqi_list),
     format = "file"
