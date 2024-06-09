@@ -12,6 +12,9 @@ palette_list <- readRDS(file.path(constants$data_dir, "palette_list.rds"))
 scale_fxs <- readRDS(file.path(constants$data_dir, "scale_fxs.rds"))
 
 #' @export
+get_itraqi_index <- scale_fxs$itraqi_index
+
+#' @export
 seifa_scale_to_text <- function(x) withr$with_package("dplyr", scale_fxs$seifa_scale_to_text(x))
 
 #' @export

@@ -3,7 +3,8 @@ save_app_scale_fxs <- function(itraqi_list) {
     seifa_scale_to_text = seifa_scale_to_text,
     seifa_text_to_value = seifa_text_to_value,
     ra_scale_to_text = ra_scale_to_text,
-    ra_text_to_value = ra_text_to_value
+    ra_text_to_value = ra_text_to_value,
+    itraqi_index = itraqi_list$iTRAQI_index
   )
   
   saveRDS(fx_list, file.path(output_dir, "scale_fxs.rds"))
