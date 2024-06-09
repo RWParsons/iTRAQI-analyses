@@ -1,8 +1,14 @@
 box::use(
   bslib,
-  shiny,
   ggplot2,
+  shiny,
 )
+
+box::use(
+  app / logic / scales_and_palettes,
+)
+
+
 
 
 #' @export
@@ -48,15 +54,23 @@ interactive_plot_server <- function(id, d_poly) {
 
     output$interactive_plot <- shiny$renderPlot({
       shiny$req(d_poly())
-      cat(names(d_poly()$data))
-
 
       rehab_var <- ifelse(d_poly()$outcome == "rehab", "selected_col", "value_rehab")
       acute_var <- ifelse(d_poly()$outcome == "acute", "selected_col", "value_acute")
 
+      # browser()
+
       d_poly()$data |>
-        ggplot2$ggplot(ggplot2$aes(x = get(rehab_var), y = get(acute_var))) +
-        ggplot2$geom_point()
+        ggplot2$ggplot(ggplot2$aes(x = get(rehab_var), y = get(acute_var), alpha = selected)) +
+        ggplot2$geom_point(size = 2) +
+        ggplot2$theme_bw() +
+        ggplot2$labs(
+          y = "Acute time (minutes)",
+          x = "Rehab time (minutes)"
+        ) +
+        ggplot2$scale_alpha_manual(values = c(0, 0.5), limits = c(FALSE, TRUE)) +
+        ggplot2$scale_y_continuous(breaks = seq(0, 1000, by = 120)) +
+        ggplot2$scale_x_continuous(breaks = seq(0, 1500, by = 120))
     })
   })
 }
