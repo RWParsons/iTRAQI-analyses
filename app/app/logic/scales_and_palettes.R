@@ -43,3 +43,12 @@ pal_index <- palette_list$paliTRAQI
 
 #' @export
 iTRAQI_levels <- levels(palette_list$bins_index)
+
+#' @export
+get_palette <- function(outcome) {
+  if (outcome == "index") {
+    pal_index
+  } else {
+    pal_mins
+  }
+}

@@ -108,11 +108,7 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
   linestring_add <- load_shapes$stacked_sa1_sa2_linestring_geom |>
     dplyr$inner_join(d_codes_selected, by = "CODE")
 
-  if (d_selection$outcome == "index") {
-    fcolor_palette <- scales_and_palettes$pal_index
-  } else {
-    fcolor_palette <- scales_and_palettes$pal_mins
-  }
+  fcolor_palette <- scales_and_palettes$get_palette(d_selection$outcome)
 
   proxy_map |>
     leaflet$hideGroup(grp_add) |>
