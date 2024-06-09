@@ -6,6 +6,7 @@ box::use(
   leafgl,
   leaflet,
   shiny,
+  shinyjs,
   shinyWidgets,
   sf,
 )
@@ -25,6 +26,7 @@ ui <- function(id) {
   ns <- shiny$NS(id)
   shiny$div(
     shiny$tagList(
+      shinyjs$useShinyjs(),
       bslib$card(
         height = "calc(100vh - 100px)",
         mm$mapOutput(ns("map")),
@@ -84,6 +86,13 @@ server <- function(id) {
         proxy_map = proxymap(),
         markers = input$base_layers
       )
+    })
+
+    shiny$observeEvent(input$map_click, {
+      shiny$req(input$map_click)
+      mm$add_prediction_marker(proxy_map = proxymap(), input$map_click)
+      shinyjs$runjs(sprintf("setTimeout(() => open_popup('%s'), 1000)", "map_click_marker"))
+
     })
   })
 
