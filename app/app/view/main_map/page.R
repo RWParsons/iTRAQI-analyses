@@ -65,7 +65,8 @@ server <- function(id) {
       d_poly = d_poly,
       selected_layer = shiny$reactive({
         input$layer_selection
-      })
+      }),
+      proxy_map = proxymap()
     )
 
     shiny$observeEvent(list(proxymap(), d_poly(), input$layer_selection), {

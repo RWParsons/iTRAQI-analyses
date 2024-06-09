@@ -1,5 +1,6 @@
 box::use(
   bslib,
+  dplyr,
   ggplot2,
   shiny,
   stringr,
@@ -8,6 +9,7 @@ box::use(
 box::use(
   app / logic / scales_and_palettes,
   app / logic / utils,
+  mm = app / mapping,
 )
 
 
@@ -18,7 +20,7 @@ interactive_plot_ui <- function(id) {
 }
 
 #' @export
-interactive_plot_server <- function(id, d_poly, selected_layer) {
+interactive_plot_server <- function(id, d_poly, selected_layer, proxy_map) {
   shiny$moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
@@ -59,22 +61,42 @@ interactive_plot_server <- function(id, d_poly, selected_layer) {
 
       shiny$plotOutput(
         ns("interactive_plot"),
-        width = 500, height = 400
-        # click = "plot_click",
-        # brush = shiny$brushOpts("plot_brush")
+        width = 500,
+        height = 400,
+        click = ns("plot_click"),
+        brush = shiny$brushOpts(ns("plot_brush"))
+      )
+    })
+
+    shiny$observeEvent(list(input$plot_brush, input$plot_click), {
+      shiny$req(d_poly())
+
+      mm$clear_plot_interactions(proxy_map)
+
+      d_plotted <- d_poly() |>
+        back_trans_data() |>
+        dplyr$filter(selected)
+
+
+      mm$add_clicked_point(
+        proxy_map = proxy_map,
+        d_clicked = shiny$nearPoints(d_plotted, input$plot_click)[1, ]
+      )
+
+      mm$add_brushed_polylines(
+        proxy_map = proxy_map,
+        d_selection = shiny$brushedPoints(d_plotted, input$plot_brush)
       )
     })
 
     output$interactive_plot <- shiny$renderPlot({
       shiny$req(d_poly())
 
-      rehab_var <- ifelse(d_poly()$outcome == "rehab", "selected_col", "value_rehab")
-      acute_var <- ifelse(d_poly()$outcome == "acute", "selected_col", "value_acute")
-
       col_vec <- scales_and_palettes$get_palette(d_poly()$outcome)(d_poly()$data$selected_col)
 
-      d_poly()$data |>
-        ggplot2$ggplot(ggplot2$aes(x = get(rehab_var), y = get(acute_var), alpha = selected)) +
+      d_poly() |>
+        back_trans_data() |>
+        ggplot2$ggplot(ggplot2$aes(x = rehab, y = acute, alpha = selected)) +
         ggplot2$geom_point(size = 2, col = col_vec) +
         ggplot2$theme_bw() +
         ggplot2$labs(
@@ -87,4 +109,12 @@ interactive_plot_server <- function(id, d_poly, selected_layer) {
         ggplot2$theme(legend.position = "none")
     })
   })
+}
+
+
+back_trans_data <- function(d) {
+  rehab_var <- ifelse(d$outcome == "rehab", "selected_col", "value_rehab")
+  acute_var <- ifelse(d$outcome == "acute", "selected_col", "value_acute")
+
+  d$data |> dplyr$rename(rehab := rehab_var, acute := acute_var)
 }

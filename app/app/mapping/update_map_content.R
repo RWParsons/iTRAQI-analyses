@@ -2,6 +2,7 @@ box::use(
   dplyr,
   leaflet,
   leafgl,
+  sf,
   stringr,
   withr,
 )
@@ -14,6 +15,57 @@ box::use(
   app / logic / utils,
   app / mapping / update_legend,
 )
+
+plot_interaction_groups <- c("clicked_point", "brushed_points")
+
+#' @export
+clear_plot_interactions <- function(proxy_map) {
+  proxy_map |>
+    leaflet$clearGroup(plot_interaction_groups)
+}
+
+#' @export
+add_clicked_point <- function(proxy_map, d_clicked) {
+  d_clicked_top <- d_clicked |>
+    dplyr$filter(!is.na(CODE)) |>
+    dplyr$slice(1)
+
+  if (nrow(d_clicked_top) > 0) {
+    d_popup_add <- load_shapes$stacked_sa1_sa2_polygon_geom |>
+      dplyr$inner_join(dplyr$select(d_clicked_top, CODE, selected_popup), by = "CODE")
+
+    suppressWarnings({
+      d_coords <- d_popup_add |>
+        sf$st_centroid() |>
+        sf$st_coordinates()
+    })
+
+    proxy_map |>
+      leaflet$addPopups(
+        lng = d_coords[1],
+        lat = d_coords[2],
+        popup = d_popup_add$selected_popup,
+        group = "clicked_point"
+      )
+  }
+}
+
+#' @export
+add_brushed_polylines <- function(proxy_map, d_selection) {
+  linestring_add <- load_shapes$stacked_sa1_sa2_linestring_geom |>
+    dplyr$inner_join(dplyr$select(d_selection, CODE), by = "CODE")
+
+  if (nrow(linestring_add) > 0) {
+    proxy_map |>
+      leafgl$addGlPolylines(
+        data = linestring_add,
+        group = "brushed_points",
+        color = "darkgreen",
+        weight = 0.4,
+        opacity = 0.7
+      )
+  }
+}
 
 #' @export
 update_map_markers <- function(proxy_map, markers) {
@@ -133,6 +185,7 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
 
   r_layers$current_grp <- grp_add
 }
+
 
 remove_or_hide_grp <- function(proxy_map, grp) {
   if (is_polygon_grp(grp)) {
