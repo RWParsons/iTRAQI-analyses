@@ -2,47 +2,60 @@ box::use(
   bslib,
   ggplot2,
   shiny,
+  stringr,
 )
 
 box::use(
   app / logic / scales_and_palettes,
+  app / logic / utils,
 )
-
-
 
 
 #' @export
 interactive_plot_ui <- function(id) {
   ns <- shiny$NS(id)
-  shiny$absolutePanel(
-    id = "plot_panel",
-    class = "panel panel-default",
-    fixed = TRUE,
-    draggable = FALSE,
-    top = 170,
-    left = 50,
-    right = "auto",
-    bottom = "auto",
-    width = 120,
-    height = 50,
-    shiny$checkboxInput(
-      ns("show_plot_checkbox"),
-      shiny$HTML("<b>Show plot</b>"),
-      value = TRUE
-    ),
-    shiny$uiOutput(ns("plot_ui"))
-  )
+  shiny$uiOutput(ns("interactive_plot_container"))
 }
 
 #' @export
-interactive_plot_server <- function(id, d_poly) {
+interactive_plot_server <- function(id, d_poly, selected_layer) {
   shiny$moduleServer(id, function(input, output, session) {
     ns <- session$ns
+
+    output$interactive_plot_container <- shiny$renderUI({
+      shiny$req(selected_layer())
+
+      if (stringr$str_detect(utils$get_standard_layer_name(selected_layer()), "sa[12]_")) {
+        chkbox <- shiny$checkboxInput(
+          ns("show_plot_checkbox"),
+          shiny$HTML("<b>Show plot</b>"),
+          value = FALSE
+        )
+      } else {
+        chkbox <- NULL
+      }
+
+      shiny$absolutePanel(
+        id = "plot_panel",
+        class = "panel panel-default",
+        fixed = TRUE,
+        draggable = FALSE,
+        top = 170,
+        left = 50,
+        right = "auto",
+        bottom = "auto",
+        width = 120,
+        height = 50,
+        chkbox,
+        shiny$uiOutput(ns("plot_ui"))
+      )
+    })
+
     output$plot_ui <- shiny$renderUI({
+      shiny$req(input$show_plot_checkbox)
       if (!input$show_plot_checkbox) {
         return()
       }
-
 
       shiny$plotOutput(
         ns("interactive_plot"),

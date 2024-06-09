@@ -60,7 +60,13 @@ server <- function(id) {
       )
     })
 
-    interactive_plot$interactive_plot_server(id = "plot", d_poly = d_poly)
+    interactive_plot$interactive_plot_server(
+      id = "plot",
+      d_poly = d_poly,
+      selected_layer = shiny$reactive({
+        input$layer_selection
+      })
+    )
 
     shiny$observeEvent(list(proxymap(), d_poly(), input$layer_selection), {
       mm$update_map_shapes(
