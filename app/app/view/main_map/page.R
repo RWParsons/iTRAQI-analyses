@@ -8,6 +8,7 @@ box::use(
   shiny,
   shinyWidgets,
   sf,
+  waiter,
 )
 
 
@@ -30,6 +31,7 @@ ui <- function(id) {
     shiny$tagList(
       bslib$card(
         height = "calc(100vh - 100px)",
+        waiter$autoWaiter(html = waiter$spin_solar()),
         mm$mapOutput(ns("map")),
         make_top_cards$make_controls_ui(ns = ns),
         interactive_plot$interactive_plot_ui(id = ns("plot"))
