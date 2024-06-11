@@ -13,11 +13,11 @@ make_base_map <- function() {
   m <- leaflet$leaflet() |>
     leaflet$setView(144.4583, -22.49671, zoom = 5) |>
     leaflet$addMapPane(name = "layers", zIndex = 200) |>
-    leaflet$addMapPane(name = "maplabels", zIndex = 400) |>
-    leaflet$addMapPane(name = "acute_centres", zIndex = 205) |>
-    leaflet$addMapPane(name = "rehab_centres", zIndex = 204) |>
-    leaflet$addMapPane(name = "rsq_centres", zIndex = 205) |>
-    leaflet$addMapPane(name = "qas_centres", zIndex = 210) |>
+    leaflet$addMapPane(name = "maplabels", zIndex = 1400) |>
+    leaflet$addMapPane(name = "acute_centres", zIndex = 1205) |>
+    leaflet$addMapPane(name = "rehab_centres", zIndex = 1204) |>
+    leaflet$addMapPane(name = "rsq_centres", zIndex = 1205) |>
+    leaflet$addMapPane(name = "qas_centres", zIndex = 1210) |>
     leaflet$addProviderTiles("CartoDB.VoyagerNoLabels") |>
     leaflet$addProviderTiles("CartoDB.VoyagerOnlyLabels",
       options = leaflet$leafletOptions(pane = "maplabels"),
