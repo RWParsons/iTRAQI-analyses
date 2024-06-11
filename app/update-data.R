@@ -6,6 +6,8 @@ analyses_output_dir <- here$here("../output")
 
 app_data_dir <- here$here("app/data")
 
+dl_data <- file.path("download-data", list.files(file.path(analyses_output_dir, "download-data")))
+
 outputs_to_move <- c(
   "l_markers.rds",
   "stacked_SA1_and_SA2_polygons_geom.rds",
@@ -14,8 +16,10 @@ outputs_to_move <- c(
   "palette_list.rds",
   "scale_fxs.rds",
   "state_boundary.rds",
-  "raster_points.rds"
+  "raster_points.rds",
+  dl_data
 )
+
 
 x <- purrr::map(
   outputs_to_move,

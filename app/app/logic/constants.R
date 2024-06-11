@@ -23,3 +23,6 @@ layer_choices <- c(
 
 #' @export
 data_dir <- here$here("app/data")
+
+#' @export
+downloads_dir <- file.path(data_dir, "download-data")
