@@ -89,6 +89,11 @@ server <- function(id) {
       )
     })
 
+    shiny$observe({
+      shiny$req(input$map_marker_click)
+      mm$handle_marker_click(proxy_map = proxymap(), marker_click = input$map_marker_click)
+    })
+
     shiny$observeEvent(input$map_click, {
       shiny$req(input$map_click)
       mm$add_prediction_marker(proxy_map = proxymap(), input$map_click)

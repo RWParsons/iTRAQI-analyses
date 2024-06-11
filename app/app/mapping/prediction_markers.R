@@ -56,7 +56,13 @@ add_prediction_marker <- function(proxy_map, map_click) {
 
 #' @export
 handle_marker_click <- function(proxy_map, marker_click) {
-  browser()
+  if (is.null(marker_click$id)) {
+    return()
+  }
+  if (marker_click$id == "map_click_marker") {
+    proxy_map |>
+      leaflet$removeMarker(layerId = "map_click_marker")
+  }
 }
 
 is_point_in_qld <- function(lat, lng) {
