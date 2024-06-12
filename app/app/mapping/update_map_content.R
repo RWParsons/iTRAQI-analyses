@@ -69,9 +69,9 @@ add_brushed_polylines <- function(proxy_map, d_selection) {
 
 #' @export
 update_map_markers <- function(proxy_map, markers) {
-  markers <- clean_marker_group_name(markers)
+  markers <- utils$clean_marker_group_name(markers)
 
-  all_layers <- clean_marker_group_name(constants$all_base_layers)
+  all_layers <- utils$clean_marker_group_name(constants$all_base_layers)
 
   hide_groups <- all_layers[!all_layers %in% markers]
   show_groups <- all_layers[all_layers %in% markers]
@@ -79,16 +79,6 @@ update_map_markers <- function(proxy_map, markers) {
   proxy_map |>
     leaflet$hideGroup(hide_groups) |>
     leaflet$showGroup(show_groups)
-}
-
-clean_marker_group_name <- function(x) {
-  dplyr$case_when(
-    x == "Towns" ~ "towns",
-    x == "Acute centres" ~ "acute_centres",
-    x == "Rehab centres" ~ "rehab_centres",
-    x == "Aeromedical bases" ~ "rsq",
-    x == "QAS response locations" ~ "qas"
-  )
 }
 
 #' @export

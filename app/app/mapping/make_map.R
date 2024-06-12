@@ -6,6 +6,8 @@ box::use(
 
 box::use(
   app / logic / load_shapes,
+  app / logic / constants,
+  app / logic / utils,
 )
 
 #' @export
@@ -25,6 +27,9 @@ make_base_map <- function() {
     )
 
   l_markers <- load_shapes$l_markers
+
+  non_default_markers <- constants$all_base_layers[!constants$all_base_layers %in% constants$default_base_layers] |>
+    utils$clean_marker_group_name()
 
   m <- m |>
     leaflet$addCircleMarkers(
@@ -64,7 +69,9 @@ make_base_map <- function() {
       icon = centre_icons["qas"],
       group = "qas",
       options = leaflet$leafletOptions(pane = "qas_centres")
-    )
+    ) |>
+    leaflet$hideGroup(non_default_markers)
+
 
 
   leaflet$renderLeaflet(m)
