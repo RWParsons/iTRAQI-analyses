@@ -5,7 +5,7 @@ box::use(
 )
 
 box::use(
-  app / logic / constants
+  app / logic / constants,
 )
 
 #' @export

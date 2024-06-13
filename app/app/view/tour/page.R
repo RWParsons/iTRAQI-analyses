@@ -1,5 +1,6 @@
 box::use(
   bslib,
+  leaflet,
   shiny,
   waiter,
 )
@@ -23,7 +24,7 @@ ui <- function(id) {
         height = "calc(100vh - 100px)",
         waiter$autoWaiter(html = waiter$spin_solar()),
         mm$mapOutput(ns("map")),
-        tour_navigation$make_tour_nav_card_ui(ns = ns)
+        tour_navigation$make_tour_nav_ui(id = ns("nav"))
       )
     )
   )
@@ -35,7 +36,8 @@ ui <- function(id) {
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map(show_default_markers = FALSE)
+    proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
+    # layers_rv <- shiny$reactiveValues(current_grp = "A", rasters = c())
+    tour_navigation$make_tour_nav_server(id = "nav", proxymap())
   })
-
-  tour_navigation$make_tour_nav_card_server(id)
 }

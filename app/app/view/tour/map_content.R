@@ -5,7 +5,7 @@ get_map_layers <- function(tab) {
 
 map_layers <- list(
   t1 = c(),
-  t2 = c("aria"),
+  t2 = c("sa1_aria"),
   t3 = c("towns", "rsq", "qas"),
   t4 = c("acute_centres"),
   t5 = c("rehab_centres"),

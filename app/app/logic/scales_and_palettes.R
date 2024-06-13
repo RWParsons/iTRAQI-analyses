@@ -1,5 +1,6 @@
 box::use(
   dplyr,
+  leaflet,
   withr,
 )
 
@@ -48,9 +49,14 @@ pal_index <- palette_list$paliTRAQI
 iTRAQI_levels <- levels(palette_list$bins_index)
 
 #' @export
+pal_aria <- leaflet$colorFactor("Greens", levels = ra_text_choices, ordered = TRUE, reverse = TRUE)
+
+#' @export
 get_palette <- function(outcome) {
   if (outcome == "index") {
     pal_index
+  } else if (outcome == "aria") {
+    pal_aria
   } else {
     pal_mins
   }

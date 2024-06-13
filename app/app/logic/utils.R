@@ -9,6 +9,8 @@ box::use(
 
 #' @export
 get_standard_layer_name <- function(x) {
+  layers_allowed <- c(constants$layer_choices, "sa1_aria")
+
   is_layer_name <- x %in% names(constants$layer_choices)
   newx <- ifelse(
     is_layer_name,
@@ -16,7 +18,7 @@ get_standard_layer_name <- function(x) {
     x
   )
 
-  stopifnot(newx %in% constants$layer_choices)
+  stopifnot(newx %in% layers_allowed)
   newx
 }
 
@@ -34,11 +36,16 @@ get_layer_type <- function(x) {
 
 #' @export
 clean_marker_group_name <- function(x) {
-  dplyr$case_when(
+  clean_x <- dplyr$case_when(
     x == "Towns" ~ "towns",
     x == "Acute centres" ~ "acute_centres",
     x == "Rehab centres" ~ "rehab_centres",
     x == "Aeromedical bases" ~ "rsq",
-    x == "QAS response locations" ~ "qas"
+    x == "QAS response locations" ~ "qas",
+    .default = x
   )
+
+  dplyr$if_else(clean_x %in% clean_marker_names, clean_x, NA_character_)
 }
+
+clean_marker_names <- c("towns", "acute_centres", "rehab_centres", "rsq", "qas")

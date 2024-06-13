@@ -29,7 +29,7 @@ make_base_map <- function(show_default_markers = TRUE) {
   l_markers <- load_shapes$l_markers
 
 
-  if(show_default_markers) {
+  if (show_default_markers) {
     marker_grps_hide <- constants$all_base_layers[!constants$all_base_layers %in% constants$default_base_layers]
   } else {
     marker_grps_hide <- constants$all_base_layers

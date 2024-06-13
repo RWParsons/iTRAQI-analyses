@@ -142,7 +142,7 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
 
   d_codes_selected <- d_selection$data |>
     dplyr$filter(selected) |>
-    dplyr$select(CODE, selected_col, selected_popup)
+    dplyr$select(dplyr$any_of(c("CODE", "selected_col", "selected_popup")))
 
   poly_add <- load_shapes$stacked_sa1_sa2_polygon_geom |>
     dplyr$inner_join(d_codes_selected, by = "CODE")
@@ -151,6 +151,8 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
     dplyr$inner_join(d_codes_selected, by = "CODE")
 
   fcolor_palette <- scales_and_palettes$get_palette(d_selection$outcome)
+
+  # browser()
 
   proxy_map |> leaflet$hideGroup(grp_add)
 
