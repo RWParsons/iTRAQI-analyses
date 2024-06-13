@@ -34,7 +34,7 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
-    output$map <- mm$make_base_map()
+    output$map <- mm$make_base_map(show_default_markers = FALSE)
   })
 
   tour_navigation$make_tour_nav_card_server(id)

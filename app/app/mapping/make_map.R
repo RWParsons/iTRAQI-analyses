@@ -11,15 +11,15 @@ box::use(
 )
 
 #' @export
-make_base_map <- function() {
+make_base_map <- function(show_default_markers = TRUE) {
   m <- leaflet$leaflet() |>
     leaflet$setView(144.4583, -22.49671, zoom = 5) |>
     leaflet$addMapPane(name = "layers", zIndex = 200) |>
     leaflet$addMapPane(name = "maplabels", zIndex = 1400) |>
     leaflet$addMapPane(name = "acute_centres", zIndex = 1205) |>
     leaflet$addMapPane(name = "rehab_centres", zIndex = 1204) |>
-    leaflet$addMapPane(name = "rsq_centres", zIndex = 1205) |>
-    leaflet$addMapPane(name = "qas_centres", zIndex = 1210) |>
+    leaflet$addMapPane(name = "rsq", zIndex = 1205) |>
+    leaflet$addMapPane(name = "qas", zIndex = 1210) |>
     leaflet$addProviderTiles("CartoDB.VoyagerNoLabels") |>
     leaflet$addProviderTiles("CartoDB.VoyagerOnlyLabels",
       options = leaflet$leafletOptions(pane = "maplabels"),
@@ -28,8 +28,12 @@ make_base_map <- function() {
 
   l_markers <- load_shapes$l_markers
 
-  non_default_markers <- constants$all_base_layers[!constants$all_base_layers %in% constants$default_base_layers] |>
-    utils$clean_marker_group_name()
+
+  if(show_default_markers) {
+    marker_grps_hide <- constants$all_base_layers[!constants$all_base_layers %in% constants$default_base_layers]
+  } else {
+    marker_grps_hide <- constants$all_base_layers
+  }
 
   m <- m |>
     leaflet$addCircleMarkers(
@@ -60,7 +64,7 @@ make_base_map <- function() {
       popup = l_markers$d_rsq_locations$popup,
       icon = centre_icons["rsq"],
       group = "rsq",
-      options = leaflet$leafletOptions(pane = "rsq_centres")
+      options = leaflet$leafletOptions(pane = "rsq")
     ) |>
     leaflet$addMarkers(
       lng = l_markers$d_qas_locations$x,
@@ -68,10 +72,9 @@ make_base_map <- function() {
       popup = l_markers$d_qas_locations$popup,
       icon = centre_icons["qas"],
       group = "qas",
-      options = leaflet$leafletOptions(pane = "qas_centres")
+      options = leaflet$leafletOptions(pane = "qas")
     ) |>
-    leaflet$hideGroup(non_default_markers)
-
+    leaflet$hideGroup(utils$clean_marker_group_name(marker_grps_hide))
 
 
   leaflet$renderLeaflet(m)
