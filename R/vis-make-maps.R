@@ -50,7 +50,30 @@ make_rsq_maps <- function(shapes, utils) {
   helicopter_file_path <- file.path(utils$out_dir, "rsq-helicopter_locations.jpeg")
   ggsave(plot = p, helicopter_file_path, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
-  c(fixed_wing_file_path, helicopter_file_path)
+  p <- ggplot() +
+    geom_sf(data = shapes$qld_boundary, fill = utils$qld_fill, col = "transparent") +
+    geom_text(
+      data = filter(shapes$rsq_locations, method == "helicopter"),
+      aes(x = x, y = y, label = emoji("helicopter")),
+      size = utils$out_dpi / 300 * 15,
+      vjust = 0,
+      family = "EmojiOne"
+    ) + 
+    geom_text(
+      data = filter(shapes$rsq_locations, method == "plane"),
+      aes(x = x, y = y, label = fontawesome("fa-plane")),
+      size = utils$out_dpi / 300 * 15,
+      family = "fontawesome-webfont"
+    )
+  
+  p <- utils$add_common_plot_features(p, add_dots_for_cities = FALSE)
+  
+  helicopter_and_fixed_wing_file_path <- file.path(utils$out_dir, "rsq-helicopter_and_fixed-wing_locations.jpeg")
+  ggsave(plot = p, helicopter_and_fixed_wing_file_path, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
+  
+  
+  
+  c(fixed_wing_file_path, helicopter_file_path, helicopter_and_fixed_wing_file_path)
 }
 
 make_major_regional_services_map <- function(shapes, utils) {
