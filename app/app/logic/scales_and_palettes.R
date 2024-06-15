@@ -12,6 +12,12 @@ palette_list <- readRDS(file.path(constants$data_dir, "palette_list.rds"))
 scale_fxs <- readRDS(file.path(constants$data_dir, "scale_fxs.rds"))
 
 #' @export
+itraqi_acute_breaks <- palette_list$iTRAQI_acute_breaks
+
+#' @export
+itraqi_rehab_breaks <- palette_list$iTRAQI_rehab_breaks
+
+#' @export
 get_itraqi_index <- scale_fxs$itraqi_index
 
 #' @export

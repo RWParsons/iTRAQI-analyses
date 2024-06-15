@@ -2,6 +2,10 @@ box::use(
   glue,
 )
 
+box::use(
+  app / logic / index_table,
+)
+
 #' @export
 tour_card_width <- 300
 
@@ -79,7 +83,7 @@ content <- list(
     "<h3>Building iTRAQI – aggregation into categories</h3>",
     "Travel time to acute and rehabilitation care was categorised and combined to form iTRAQI. iTRAQI can be displayed by small areas, using Statistical Areas (SA) level 1 (shown here) or Level 2.",
     # TODO: fix up html table to come from pipeline output
-    "<br><h4>Acute care travel time</h4><table style='width:100%'>\n  <tr>\n      <th style='width:30%'>Cat</th>\n      <th style='width:50%'>Travel-time (hours)</th>\n  </tr>\n<tr><td>1</td><td><1</td></tr><tr><td>2</td><td>1 – 2</td></tr><tr><td>3</td><td>2 – 4</td></tr><tr><td>4</td><td>4 – 6</td></tr><tr><td>5</td><td>6 – 8</td></tr><tr><td>6</td><td>>8</td></tr></table><h4>Averaged Rehabilitation driving time (initial + subsequent)</h4><table style='width:100%'>\n  <tr>\n      <th style='width:30%'>Cat</th>\n      <th style='width:50%'>Travel-time (hours)</th>\n  </tr>\n<tr><td>A</td><td><2</td></tr><tr><td>B</td><td>2 – 4</td></tr><tr><td>C</td><td>>4</td></tr></table>"
+    index_table$itraqi_categories_table
   ),
   t10 = paste(
     sep = separator,
