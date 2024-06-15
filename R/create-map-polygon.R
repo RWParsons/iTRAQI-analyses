@@ -32,7 +32,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
       d
     })() |>
     filter(STATE_NAME == "Queensland") |>
-    remove_empty_polygons() |> 
+    remove_empty_polygons() |>
     rmapshaper::ms_simplify(keep = simplify_keep, keep_shapes = TRUE) |>
     select(all_of(c("SA1_CODE", "SA2_NAME"))) |>
     mutate(SA_level = 1) |>
@@ -64,7 +64,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
       d
     })() |>
     filter(STATE_NAME == "Queensland") |>
-    remove_empty_polygons() |> 
+    remove_empty_polygons() |>
     rmapshaper::ms_simplify(keep = simplify_keep, keep_shapes = TRUE) |>
     select(all_of(c("SA2_CODE", "SA2_NAME"))) |>
     mutate(SA_level = 2) |>
@@ -99,7 +99,7 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
     "value_rehab",
     "SA_level"
   )
-  
+
   sa2_all <- sa2_poly |>
     left_join(sa2_rehab) |>
     left_join(sa2_acute) |>
@@ -111,70 +111,69 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
     left_join(sa1_acute) |>
     rename(CODE = SA1_CODE) |>
     select(all_of(cols))
-  
+
   sa2_polygon <- sa2_all |>
     select(CODE) |>
     st_cast("MULTIPOLYGON") |>
     st_cast("POLYGON")
-  
-  sa2_linestring <- sa2_polygon |> 
-    st_cast("LINESTRING") |> 
-    group_by(CODE) |> 
-    mutate(layerid = glue("{CODE}-linestring-{row_number()}")) |> 
+
+  sa2_linestring <- sa2_polygon |>
+    st_cast("LINESTRING") |>
+    group_by(CODE) |>
+    mutate(layerid = glue("{CODE}-linestring-{row_number()}")) |>
     ungroup()
-  
-  sa1_polygon <- sa1_all |> 
-    select(CODE) |> 
-    st_cast("MULTIPOLYGON") |> 
-    st_cast("POLYGON") |> 
-    group_by(CODE) |> 
-    mutate(layerid = glue("{CODE}-polygon-{row_number()}")) |> 
+
+  sa1_polygon <- sa1_all |>
+    select(CODE) |>
+    st_cast("MULTIPOLYGON") |>
+    st_cast("POLYGON") |>
+    group_by(CODE) |>
+    mutate(layerid = glue("{CODE}-polygon-{row_number()}")) |>
     ungroup()
-  
-  
-  sa1_linestring <- sa1_polygon |> 
-    st_cast("LINESTRING") |> 
-    group_by(CODE) |> 
-    mutate(layerid = glue("{CODE}-linestring-{row_number()}")) |> 
+
+
+  sa1_linestring <- sa1_polygon |>
+    st_cast("LINESTRING") |>
+    group_by(CODE) |>
+    mutate(layerid = glue("{CODE}-linestring-{row_number()}")) |>
     ungroup()
-  
+
   sa1_sa2_code_lkp <- strayr::read_absmap(glue("sa1{asgs_year}")) |>
-    filter(sa1_code_2016 %in% sa1_all$CODE) |> 
+    filter(sa1_code_2016 %in% sa1_all$CODE) |>
     as_tibble() |>
-    select(starts_with("sa1_code"), starts_with("sa2_code")) |> 
+    select(starts_with("sa1_code"), starts_with("sa2_code")) |>
     rename(sa1_code = 1, sa2_code = 2)
-  
-  stacked_sa1_sa2_polygons <- rbind(sa1_all, sa2_all) |> 
+
+  stacked_sa1_sa2_polygons <- rbind(sa1_all, sa2_all) |>
     mutate(
       value_index = get_index_function(acute_mins = value_acute, rehab_mins = value_rehab),
       rehab_time_str = str_extract(popup_rehab, "<b>Time to.*$"),
       popup_index =
         paste0(popup_acute, rehab_time_str, "<b>iTRAQI Index: </b>", value_index, "<br>")
-      
     )
-  
-  
-  stacked_sa1_sa2_data <- stacked_sa1_sa2_polygons |> 
-    as_tibble() |> 
+
+
+  stacked_sa1_sa2_data <- stacked_sa1_sa2_polygons |>
+    as_tibble() |>
     select(-geometry)
-  
+
   linestring_layerid_lkp <- bind_rows(sa1_linestring, sa2_linestring) |>
     as_tibble() |>
     select(-geometry) |>
     mutate(type = "linestring")
-  
+
   sa1_polygon_lkp <- sa1_polygon |>
     as_tibble() |>
     select(-geometry)
-  
+
   polygon_layerid_lkp <- sa1_sa2_code_lkp |>
     inner_join(sa1_polygon_lkp, by = c("sa1_code" = "CODE")) |>
     pivot_longer(!layerid, values_to = "CODE") |>
     select(-name) |>
     mutate(type = "polygon")
-  
+
   sa_code_layerid_lkp <- bind_rows(linestring_layerid_lkp, polygon_layerid_lkp)
-  
+
   saveRDS(sa2_polygon, file.path(output_dir, "sa2_polygon.rds"))
   saveRDS(sa2_linestring, file.path(output_dir, "sa2_linestring.rds"))
   saveRDS(sa1_polygon, file.path(output_dir, "sa1_polygon.rds"))
@@ -184,24 +183,24 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
   saveRDS(sa1_sa2_code_lkp, file.path(output_dir, "sa1_sa2_code_lkp.rds"))
   saveRDS(stacked_sa1_sa2_data, file.path(app_data_dir, "stacked_sa1_sa2_data.rds"))
   saveRDS(sa_code_layerid_lkp, file.path(output_dir, "sa_code_layerid_lkp.rds"))
-  
-  
-  
-  stacked_sa1_sa2_polygon_geom <- rbind(sa1_all, sa2_all) |> 
-    st_cast("MULTIPOLYGON") |> 
-    st_cast("POLYGON") |> 
+
+
+
+  stacked_sa1_sa2_polygon_geom <- rbind(sa1_all, sa2_all) |>
+    st_cast("MULTIPOLYGON") |>
+    st_cast("POLYGON") |>
     select(CODE)
-  
+
   saveRDS(stacked_sa1_sa2_polygon_geom, file.path(app_data_dir, "stacked_SA1_and_SA2_polygons_geom.rds"))
-  
-  stacked_sa1_sa2_linestring_geom <- stacked_sa1_sa2_polygon_geom |> 
-    st_cast("LINESTRING") |> 
+
+  stacked_sa1_sa2_linestring_geom <- stacked_sa1_sa2_polygon_geom |>
+    st_cast("LINESTRING") |>
     select(CODE)
-  
+
   saveRDS(stacked_sa1_sa2_linestring_geom, file.path(app_data_dir, "stacked_SA1_and_SA2_linestrings_geom.rds"))
-  
-  
-  
+
+
+
 
   saveRDS(stacked_sa1_sa2_polygons, file.path(output_dir, "stacked_SA1_and_SA2_polygons.rds"))
   file.path(output_dir, "stacked_SA1_and_SA2_polygons.rds")

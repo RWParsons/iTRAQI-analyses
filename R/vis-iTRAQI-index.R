@@ -1,5 +1,4 @@
 get_iTRAQI_vis_objs <- function(shapes,
-                                palette_file,
                                 kriged_rehab,
                                 kriged_acute,
                                 itraqi_breaks,
@@ -62,11 +61,37 @@ get_iTRAQI_vis_objs <- function(shapes,
 
   iTRAQI_bins <- get_iTRAQI_bins()
 
-  index_palette <- read.csv(palette_file)
+  index_palette <- tibble(
+    # from Susanna's email and shown on issue #1 on GitHub
+    index = c(
+      "1A", "2A", "3A", "3B", "3C", "4A",
+      "4B", "4C", "5B", "5C"
+    ), r = c(
+      255L, 255L, 255L, 255L, 255L,
+      230L, 220L, 196L, 140L, 95L
+    ), g = c(
+      230L, 191L, 136L, 110L, 78L,
+      60L, 30L, 0L, 0L, 0L
+    ), b = c(
+      153L, 47L, 83L, 36L, 19L, 66L, 72L,
+      78L, 78L, 78L
+    )
+  )
+
+  index_palette$hex <- NA
+
+  for (i in 1:nrow(index_palette)) {
+    index_palette$hex[i] <- rgb(
+      r = index_palette$r[i],
+      g = index_palette$g[i],
+      b = index_palette$b[i],
+      maxColorValue = 255
+    )
+  }
 
   paliTRAQI <- colorFactor(
     # https://stackoverflow.com/questions/44269655/ggplot-rcolorbrewer-extend-and-apply-to-factor-data
-    index_palette$hex2,
+    index_palette$hex,
     levels = levels(iTRAQI_bins),
     ordered = FALSE
   )
@@ -89,6 +114,7 @@ get_iTRAQI_vis_objs <- function(shapes,
     iTRAQI_acute_breaks = iTRAQI_acute_breaks,
     iTRAQI_rehab_breaks = iTRAQI_rehab_breaks,
     iTRAQI_index = get_iTRAQI_index,
+    index_palette = index_palette,
     bins = bins,
     iTRAQI_bins = iTRAQI_bins,
     palNum_hours = palNum_hours,

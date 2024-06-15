@@ -32,5 +32,5 @@ centre_renaming <- function(x) {
 }
 
 remove_empty_polygons <- function(x) {
-  x[!st_is_empty(x),,drop=FALSE]
+  x[!st_is_empty(x), , drop = FALSE]
 }

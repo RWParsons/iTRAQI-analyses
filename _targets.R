@@ -21,7 +21,7 @@ list(
     d_acute,
     read_acute_pathways(acute_times_file)
   ),
-  
+
   # rehab (drive) times data
   tar_files_input(
     drive_times_files,
@@ -448,14 +448,9 @@ list(
     get_plotting_utils()
   ),
   tar_target(
-    palette_file,
-    "data/inputs-for-visualisations/index_palette.csv"
-  ),
-  tar_target(
     itraqi_list,
     get_iTRAQI_vis_objs(
       shapes = vis_shapes,
-      palette_file = palette_file,
       kriged_rehab = d_rehab_kriged_raster$kriged_layer,
       kriged_acute = d_acute_kriged_raster$kriged_layer,
       itraqi_breaks = l_itraqi_breaks,

@@ -26,7 +26,7 @@ make_itraqi_counts_tbls <- function(iTRAQI_list) {
   )
 
   itraqi_counts_by_remoteness <- iTRAQI_list$qld_SA1s |>
-    as_tibble() |> 
+    as_tibble() |>
     left_join(d_remoteness_labels, by = "ra") |>
     group_by(index, remoteness) |>
     summarize(n = n()) |>
@@ -45,7 +45,7 @@ make_itraqi_counts_tbls <- function(iTRAQI_list) {
   )
 
   itraqi_counts_by_seifa <- iTRAQI_list$qld_SA1s |>
-    as_tibble() |> 
+    as_tibble() |>
     left_join(d_seifa_labels, by = "seifa_quintile") |>
     group_by(index, seifa) |>
     summarize(n = n()) |>
