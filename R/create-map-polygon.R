@@ -32,7 +32,8 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
       d
     })() |>
     filter(STATE_NAME == "Queensland") |>
-    rmapshaper::ms_simplify(keep = simplify_keep) |>
+    remove_empty_polygons() |> 
+    rmapshaper::ms_simplify(keep = simplify_keep, keep_shapes = TRUE) |>
     select(all_of(c("SA1_CODE", "SA2_NAME"))) |>
     mutate(SA_level = 1) |>
     left_join(select(data$sa1_seifa, 1, seifa_quintile = quintile)) |>
@@ -63,7 +64,8 @@ create_app_polygons <- function(data, asgs_year, simplify_keep, get_index_functi
       d
     })() |>
     filter(STATE_NAME == "Queensland") |>
-    rmapshaper::ms_simplify(keep = simplify_keep) |>
+    remove_empty_polygons() |> 
+    rmapshaper::ms_simplify(keep = simplify_keep, keep_shapes = TRUE) |>
     select(all_of(c("SA2_CODE", "SA2_NAME"))) |>
     mutate(SA_level = 2) |>
     left_join(select(data$sa2_seifa, 1, seifa_quintile = quintile)) |>
