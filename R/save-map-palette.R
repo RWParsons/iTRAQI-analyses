@@ -14,6 +14,6 @@ save_app_palette <- function(itraqi_list) {
     palBin = itraqi_list$palBin
   )
 
-  saveRDS(l_palette_objs, file.path(output_dir, "palette_list.rds"))
-  file.path(output_dir, "palette_list.rds")
+  saveRDS(l_palette_objs, file.path(app_data_dir, "palette_list.rds"))
+  file.path(app_data_dir, "palette_list.rds")
 }

@@ -1,14 +1,15 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 acute_times_file|stem|78628a02c2414b53|fe7e07c76de81ef1|ef46db3751d8e999|447937573|data/Qld_towns_RSQ pathways.xlsx|t19726.86148581s|3f717709e0e1e4d8|104863|file|local|vector|||0.719||
 aggregate_kriging_model_to_ASGS|function|1f7585aeb5e5b0e0|||||||||||||||
+app_data_dir|object|21851952ded014e0|||||||||||||||
 app_locations_and_times|stem|71ebefa0b721712e|b1c8cc308eee02c4|8def2ef84e3833f4|1635295773|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/QLD_locations_with_RSQ_times.csv|t19806.2711974937s|734ae9969a284a07|73583|file|local|vector|||1.593||
-app_markers|stem|bee56fa653981a14|882f87cf9940dce8|209582dc02518662|-310036408|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/l_markers.rds|t19880.3475760119s|eab4217444e752d9|18343|file|local|vector|||1.703||
-app_palette|stem|01b87fadd88f3eab|e24316a13bb70c3f|588df085936a9b10|1089662940|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/palette_list.rds|t19883.2887139501s|cd4311c7b6c04eb7|20340529|file|local|vector|||2.438||
-app_polygons|stem|e7d123b9aec4e861|5c835e7fc326dfb4|fac77f55835876ba|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19875.4977091281s|f5319271863f1aa5|1670214|file|local|vector|||30.531|repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant|
-app_qld_boundary|stem|e1d4d3d4ccc389e9|c7bc03799c2af346|4bec838fcbc00c2f|-1801628714|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/state_boundary.rds|t19883.2420441036s|2d1fa8c30ff622b4|14106|file|local|vector|||2.359||
+app_markers|stem|bee56fa653981a14|882f87cf9940dce8|9662ee0c00586e1c|-310036408|C:/Users/n10891277/R_projects/iTRAQI-analyses/app/app/data/l_markers.rds|t19889.1657718445s|eab4217444e752d9|18343|file|local|vector|||0.079||
+app_palette|stem|01b87fadd88f3eab|e24316a13bb70c3f|54fb5adc1ee3c359|1089662940|C:/Users/n10891277/R_projects/iTRAQI-analyses/app/app/data/palette_list.rds|t19889.1658030796s|cd4311c7b6c04eb7|20340529|file|local|vector|||1.969||
+app_polygons|stem|e7d123b9aec4e861|5c835e7fc326dfb4|f9d759b7e1e24eca|292954876|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t19889.1657263881s|f5319271863f1aa5|1670214|file|local|vector|||36.062|repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant|
+app_qld_boundary|stem|e1d4d3d4ccc389e9|c7bc03799c2af346|88f41d67fb07171e|-1801628714|C:/Users/n10891277/R_projects/iTRAQI-analyses/app/app/data/state_boundary.rds|t19889.1653079145s|2d1fa8c30ff622b4|14106|file|local|vector|||3||
 app_raster|stem|c2cbf9546e160981|b13b86c57469fee5|b8786adeabdd75a5|-1751902619|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/raster_points.rds|t19806.2605021909s||6312158|file|local|vector|||1.594||promise already under evaluation recursive default argument reference or earlier problems
-app_rasters|stem|c31f84f47f2831bd|b13b86c57469fee5|6e278b5c140235a8|1306936721||t0s|f4066a65ff755f48|0|file|local|vector|||2.313||
-app_scale_fxs|stem|47ecf1ccca263e87|514b0a88839ebf2b|7de5bf253de54b9c|-280546199|C:/Users/n10891277/R_projects/iTRAQI-analyses/output/scale_fxs.rds|t19883.288524579s|4507f817a74add28|26762|file|local|vector|||3.422||
+app_rasters|stem|c31f84f47f2831bd|b13b86c57469fee5|a64629c37b44022e|1306936721||t0s|f4066a65ff755f48|0|file|local|vector|||3.078||
+app_scale_fxs|stem|2405c6a20a77ff6d|514b0a88839ebf2b|90aef993fa2e8eda|-280546199|C:/Users/n10891277/R_projects/iTRAQI-analyses/app/app/data/scale_fxs.rds|t19889.1657710062s|d5cbc85b19816673|26776|file|local|vector|||0.015||
 breaks_to_labels|function|15aa190f0fc9cc8c|||||||||||||||
 cell_size_agg|object|e9200b1fe25d1e1c|||||||||||||||
 CELL_SIZE_METERS|object|42b194eec038fae9|||||||||||||||
@@ -18,9 +19,9 @@ centre_renaming|function|d61b6b45dcc868b6|||||||||||||||
 centres_file|stem|6f822eeadc97db80|4f42a08c732bb99e|ef46db3751d8e999|2130286199|data/inputs-for-visualisations/centres.csv|t19234.15736239s|86d2144d56b732f9|1576|file|local|vector|||2.188||
 clean_acute_centre|function|75df2008a64da3da|||||||||||||||
 create_app_locs_and_times|function|23dab7c0938eb810|||||||||||||||
-create_app_polygons|function|3576cf83bde61418|||||||||||||||
+create_app_polygons|function|bb56c1cce4c120d1|||||||||||||||
 create_app_raster|function|0b82a3103b41e1e2|||||||||||||||
-create_app_rasters|function|626998230c1c46f0|||||||||||||||
+create_app_rasters|function|159ea612fefcb874|||||||||||||||
 crs_for_analyses|object|fe82103152f115e2|||||||||||||||
 d_acute|stem|67d5ad81c2771409|ccdab38e1eb4f139|914043714e556400|-916123321||t19745.2668215612s|b6caf4b88c88ffc1|5816|rds|local|vector|||1.047||
 d_acute_kriged_for_agg|stem|275eb1d34fc93263|3cde109066d112e5|56860192605d2e6f|1692583633||t19784.3498093136s|7c7cec4b16412559|38225665|rds|local|vector|||314.703||
@@ -54,12 +55,12 @@ d_sa2_2021_acute_time|stem|a530f678831a7d77|58d77be4345836b4|d9d12797d7382cb2|-2
 d_sa2_2021_rehab_time|stem|6178fa12e10509c8|385475d9a53253ea|f916518d2275aa52|-1336517495||t19784.5013017141s|c4b14a92b662feb7|14172|rds|local|vector|||6615.234||
 d_silver|stem|d5574d937ce0095f|167d7c4466639c6f|44984d486e505a2b|-319598435||t19726.9486245728s|e4d169a5a28eccc4|14320|rds|local|vector|||0.781||
 d_times|stem||8d7b12920e0335bc|0cb59c3551e15da6|1113975319||t19727.8907070989s||0|rds|local|vector|||1.391||ℹ In argument acute_care_transit_location  ifelse....Caused by error object acute_care_transit_location not found
-dl_file_2011_SA1|stem|e611a05a756a745e|c73c624a65c574a5|db819387c4a4ef43|-1856657953||t19866.4680069206s|a02a8e2007330cdf|142|rds|local|vector|||5.906||
-dl_file_2011_SA2|stem|f9a244600528d73a|0f53620abaa5c273|11c691f4a2a33607|1524720294||t19866.4689279124s|a02a8e2007330cdf|142|rds|local|vector|||1.656||
-dl_file_2016_SA1|stem|ad7f31a9753b56e3|318005c7d0d6257a|09e1b5f9b4ba8ec2|1207637311||t19866.4689801003s|a02a8e2007330cdf|142|rds|local|vector|||11.469||
-dl_file_2016_SA2|stem|abeae3967edbe9aa|f14d2038173d5785|196c48b247ce6662|-920840127||t19866.4689010983s|a02a8e2007330cdf|142|rds|local|vector|||4.969||
-dl_file_2021_SA1|stem|9537a5aedac5e4a7|fc65d6c0177574d8|5b64089fac993f26|-951599162||t19866.4689835387s|a02a8e2007330cdf|142|rds|local|vector|||7.609||
-dl_file_2021_SA2|stem|f75457f420d6d63c|3727cca5cf950f47|44cdca0626657119|960287913||t19866.4689049598s|a02a8e2007330cdf|142|rds|local|vector|||0.344||
+dl_file_2011_SA1|stem|ce7d91407bf5cdca|c73c624a65c574a5|43a6bf790526dcfc|-1856657953||t19889.1654304016s|f3963c450082b208|143|rds|local|vector|||12.766||
+dl_file_2011_SA2|stem|3ca32d76313bf106|0f53620abaa5c273|0ef53660b64a793f|1524720294||t19889.1653618042s|f3963c450082b208|143|rds|local|vector|||6.219||
+dl_file_2016_SA1|stem|35e7b21fd0138e89|318005c7d0d6257a|0d58378ceb70a6ee|1207637311||t19889.1654471633s|f3963c450082b208|143|rds|local|vector|||11.156||
+dl_file_2016_SA2|stem|962d2abe0f0a79d5|f14d2038173d5785|d5003df924afc503|-920840127||t19889.1653880127s|f3963c450082b208|143|rds|local|vector|||1.797||
+dl_file_2021_SA1|stem|07c90d4002c29b5e|fc65d6c0177574d8|fb23bd20913bd0cf|-951599162||t19889.165410489s|f3963c450082b208|143|rds|local|vector|||1.844||
+dl_file_2021_SA2|stem|a7c2241400e9ac15|3727cca5cf950f47|38b55f49d0059ecb|960287913||t19889.1654141228s|f3963c450082b208|143|rds|local|vector|||0.235||
 dl_file_frontpages_dir|object|6a4652569d411b2c|||||||||||||||
 do_kriging_model|function|ace866b402004851|||||||||||||||
 download_input_shapes|function|3d203b015805f2df|||||||||||||||
@@ -123,7 +124,7 @@ l_travel_times|stem|89633cd7b43debad|8d7b12920e0335bc|5c9b399301d1371f|880071042
 major_regional_services_map|stem|89641fbb78f90ee1|5ee6004191178fd8|6b1db647fe90ab68|-1777432472||t19875.4977658087s|6935d04907feb3d2|146|rds|local|vector|||0.828|Removed 1 rows containing missing values geom_point.|
 make_acute_maps|function|0621d7dcc6064b92|||||||||||||||
 make_continuous_acute_map|function|269bdce1a46702cb|||||||||||||||
-make_download_file|function|e593343a9499dae9|||||||||||||||
+make_download_file|function|20199cab48c460c9|||||||||||||||
 make_inset_maps|function|02b8fb68eff93a87|||||||||||||||
 make_itraqi_counts_tbls|function|57e426593d10308e|||||||||||||||
 make_itraqi_sa1_map|function|a6f74a136cc15085|||||||||||||||
@@ -158,10 +159,10 @@ remoteness_files_files|stem|f4657ed37a25cf40|f5ca3075331905f3|ef46db3751d8e999|-
 rename_travel_time_df|function|82572c667aa9ceb3|||||||||||||||
 rsq_locations_file|stem|72685425b2fb4cb6|7c2c0922575a2b28|ef46db3751d8e999|-3892719|data/inputs-for-visualisations/rsq_locations.csv|t19221.9976706623s|17fd65357607abf9|576|file|local|vector|||1.297||
 rsq_maps|stem|640a4e2523c1fca4|765ca2014d1ef285|7cf20ddf76bed36f|1296509518||t19875.497779303s|c303d0aa7a9c897f|156|rds|local|vector|||0.703||
-save_app_markers|function|64fd386a97cf593f|||||||||||||||
-save_app_palette|function|3e75f24dac6a9f85|||||||||||||||
-save_app_scale_fxs|function|0219a035886410a9|||||||||||||||
-save_qld_boundary|function|6d2deebd7ff599b6|||||||||||||||
+save_app_markers|function|c936c4cb9c53573d|||||||||||||||
+save_app_palette|function|5a64a397d94773ca|||||||||||||||
+save_app_scale_fxs|function|4f0852cf0addbd8c|||||||||||||||
+save_qld_boundary|function|77d7de5e7820d4df|||||||||||||||
 seifa_files|pattern|5cfc04b4c3634603|887c54425a6ada27||-1920692518||||112005632|file|local|vector||seifa_files_0fd258b0*seifa_files_3df8e749*seifa_files_b0acac7a*seifa_files_cab70577|0.016||
 seifa_files_0fd258b0|branch|ca67916bf2742b10|887c54425a6ada27|ef46db3751d8e999|927023566|data/remoteness_and_seifa_data/2011_sa1_seifa.xls|t19409.0793720087s|c62dc507448a4207|53460992|file|local|vector|seifa_files||0||
 seifa_files_3df8e749|branch|fbea7dee06d6d9d0|887c54425a6ada27|ef46db3751d8e999|56803531|data/remoteness_and_seifa_data/2011_sa2_seifa.xls|t19409.0793722171s|7c6c151c2bab7198|2412544|file|local|vector|seifa_files||0.016||

@@ -1,6 +1,6 @@
 create_app_rasters <- function(rehab, acute) {
   save_paths <- list(
-    raster_points = file.path(output_dir, "raster_points.rds"),
+    raster_points = file.path(app_data_dir, "raster_points.rds"),
     acute_raster = file.path(output_dir, "acute_raster.rds"),
     rehab_raster = file.path(output_dir, "rehab_raster.rds")
   )

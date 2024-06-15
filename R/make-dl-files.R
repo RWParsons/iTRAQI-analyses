@@ -7,8 +7,8 @@ make_download_file <- function(year,
                                get_index_function,
                                front_page_dir = dl_file_frontpages_dir) {
   # make output path
-  if (!dir.exists(file.path(output_dir, "download-data"))) {
-    dir.create(file.path(output_dir, "download-data"))
+  if (!dir.exists(file.path(app_data_dir, "download-data"))) {
+    dir.create(file.path(app_data_dir, "download-data"))
   }
 
   front_page_path <- str_subset(
@@ -16,7 +16,7 @@ make_download_file <- function(year,
     glue("ASGS {year} {asgs}")
   )
   download_data_file <- file.path(
-    output_dir,
+    app_data_dir,
     "download-data",
     str_replace(basename(front_page_path), "front page ", "")
   )

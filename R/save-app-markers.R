@@ -44,7 +44,7 @@ save_app_markers <- function(vis_shapes, d_centre_coords) {
     d_towns = d_towns
   )
   
-  saveRDS(l, file.path(output_dir, "l_markers.rds"))
+  saveRDS(l, file.path(app_data_dir, "l_markers.rds"))
   
-  file.path(output_dir, "l_markers.rds")
+  file.path(app_data_dir, "l_markers.rds")
 }
