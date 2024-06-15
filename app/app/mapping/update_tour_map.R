@@ -1,5 +1,7 @@
 box::use(
   dplyr,
+  leaflet,
+  shinyjs,
 )
 
 
@@ -33,6 +35,58 @@ show_tour <- function(proxy_map, tab, map_content, r_layers) {
     selected_layer = selected_layer,
     r_layers = r_layers
   )
+
+  pan_map_tour(proxy_map, tab)
+}
+
+qld_bounds <- list(
+  lng1 = 137.725724,
+  lat1 = -28.903687,
+  lng2 = 151.677076,
+  lat2 = -10.772608
+)
+
+
+pan_map_tour <- function(proxy_map, tab) {
+  if (!tab %in% c(3, 4, 5)) {
+    return()
+  }
+
+  if (tab == 3) {
+    proxy_map |>
+      leaflet$flyTo(lng = 142.93, lat = -11.15, zoom = 8)
+
+    shinyjs$delay(6000, {
+      proxy_map |>
+        leaflet$flyToBounds(
+          lng1 = qld_bounds$lng1, lat1 = qld_bounds$lat1,
+          lng2 = qld_bounds$lng2, lat2 = qld_bounds$lat2
+        )
+    })
+  }
+
+  if (tab == 4) {
+    proxy_map |>
+      leaflet$flyToBounds(
+        lng1 = 152.78,
+        lat1 = -27.12,
+        lng2 = 153.7,
+        lat2 = -28.15
+      )
+
+    shinyjs$delay(6000, {
+      proxy_map |>
+        leaflet$flyTo(lng = 146.76, lat = -19.32, zoom = 8)
+    })
+  }
+
+  if (tab == 5) {
+    proxy_map |>
+      leaflet$flyToBounds(
+        lng1 = qld_bounds$lng1, lat1 = qld_bounds$lat1,
+        lng2 = qld_bounds$lng2, lat2 = qld_bounds$lat2
+      )
+  }
 }
 
 
