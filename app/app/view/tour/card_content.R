@@ -42,7 +42,7 @@ content <- list(
       '<img src="static/images/tour-3-ambulance.png" alt="ambulance-image" style="width:{(img_width-15)*(5/9)}px;">',
       "</div>"
     ),
-    '<img src="static/images/rsq.png" width="50"/>         : Aeromedical bases (n=13)',
+    '<img src="static/images/rsq.png" width="50"/>         : Aeromedical locations (n=13)',
     '<img src="static/images/qas.png" width="50"/>   : Queensland Ambulance (n=302)'
   ),
   t4 = paste(
