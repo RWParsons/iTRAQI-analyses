@@ -71,8 +71,7 @@ content <- list(
   t8 = paste(
     sep = separator,
     "<h3>Building iTRAQI &#8211; visualising access to rehabilitation</h3>",
-    "Patients commence their rehabilitation care at the centre where they received acute care (initial rehabilitation unit) and then may be transferred to a centre closer to where they live (subsequent rehabilitation unit).",
-    "Rehabilitation time includes two drive time calculations from each locality <img src='static/images/town-marker.png' width='25'/>: (1) to the acute care centre where they received their initial care (Townsville/South-East QLD) <img src='static/images/acute-centre.png' width='25'/> and (2) to the closest in-patient rehabilitation unit <img src='static/images/rehab-centre.png' width='25'/>. These were calculated using road networks and off-peak driving conditions using ArcGIS Online. The average of the travel time to the initial and subsequent rehabilitation units (can be the same centre if the initial unit is closest) was used to represent the rehabilitation travel time for each locality. These travel times were then interpolated to provide coverage for all of Queensland.",
+    "There are five rehabilitation units in Queensland public hospitals where TBI patients can receive specific brain injury rehabilitation following their acute care. Rehabilitation time is calculated as the time it takes to drive from each locality <img src='static/images/town-marker.png' width='25'/> to the closest public, in-patient rehabilitation unit <img src='static/images/rehab-centre.png' width='25'/>. These were calculated using road networks and off-peak driving conditions using ArcGIS Online. These travel times were then interpolated to provide coverage for all of Queensland.",
     "<br>CLICK on a rehabilitation destination for facility details."
   ),
   t9 = paste(
