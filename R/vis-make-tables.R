@@ -25,7 +25,8 @@ make_itraqi_counts_tbls <- function(iTRAQI_list) {
     remoteness = factor(remoteness_labels, levels = remoteness_labels)
   )
 
-  itraqi_counts_by_remoteness <- d_itraqi |>
+  itraqi_counts_by_remoteness <- iTRAQI_list$qld_SA1s |>
+    as_tibble() |> 
     left_join(d_remoteness_labels, by = "ra") |>
     group_by(index, remoteness) |>
     summarize(n = n()) |>
@@ -33,7 +34,7 @@ make_itraqi_counts_tbls <- function(iTRAQI_list) {
     pivot_wider(names_from = remoteness, values_from = n) |>
     mutate(across(!index, format_numeric_col))
 
-  cnts_by_ra_file_path <- file.path(output_dir, "counts_by_remoteness_level.csv")
+  cnts_by_ra_file_path <- file.path(output_dir, "sa1_counts_by_remoteness_level.csv")
   write.csv(itraqi_counts_by_remoteness, file = cnts_by_ra_file_path, row.names = FALSE)
 
   # make table for ocunts by SEIFA
@@ -43,7 +44,8 @@ make_itraqi_counts_tbls <- function(iTRAQI_list) {
     seifa = factor(seifa_labels, levels = seifa_labels)
   )
 
-  itraqi_counts_by_seifa <- d_itraqi |>
+  itraqi_counts_by_seifa <- iTRAQI_list$qld_SA1s |>
+    as_tibble() |> 
     left_join(d_seifa_labels, by = "seifa_quintile") |>
     group_by(index, seifa) |>
     summarize(n = n()) |>
@@ -51,7 +53,7 @@ make_itraqi_counts_tbls <- function(iTRAQI_list) {
     pivot_wider(names_from = seifa, values_from = n) |>
     mutate(across(!index, format_numeric_col))
 
-  cnts_by_seifa_file_path <- file.path(output_dir, "counts_by_seifa_level.csv")
+  cnts_by_seifa_file_path <- file.path(output_dir, "sa1_counts_by_seifa_level.csv")
   write.csv(itraqi_counts_by_seifa, file = cnts_by_seifa_file_path, row.names = FALSE)
 
   list(
