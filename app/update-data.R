@@ -13,7 +13,10 @@ app_data_dir <- here$here("app/data")
 
 app_src_dir <- here$here("app/static")
 
-dl_data <- file.path("download-data", list.files(file.path(analyses_output_dir, "download-data")))
+dl_data <- file.path(
+  "download-data",
+  list.files(file.path(analyses_output_dir, "download-data"))
+)
 
 outputs_to_move <- c(
   "l_markers.rds",
@@ -28,12 +31,12 @@ outputs_to_move <- c(
 )
 
 
-x <- purrr$map(
+purrr$map(
   outputs_to_move,
   \(fname) {
-    # browser()
-    # analyses_outfile <- readRDS(file.path(analyses_output_dir, fname))
-    analyses_outfile_hash <- rlang$hash_file(file.path(analyses_output_dir, fname))
+    analyses_outfile_hash <- rlang$hash_file(
+      file.path(analyses_output_dir, fname)
+    )
     if (fname %in% list.files(app_data_dir)) {
       app_file_hash <- rlang$hash_file(file.path(app_data_dir, fname))
 

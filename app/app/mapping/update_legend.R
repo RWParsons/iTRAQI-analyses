@@ -1,7 +1,6 @@
 box::use(
   leaflegend,
   leaflet,
-  shiny,
   stringr,
 )
 
@@ -41,7 +40,10 @@ add_aria_legend <- \(map) {
     map = map,
     position = legend_position,
     pal = scales_and_palettes$pal_aria,
-    values = factor(scales_and_palettes$ra_text_choices, levels = scales_and_palettes$ra_text_choices),
+    values = factor(
+      scales_and_palettes$ra_text_choices,
+      levels = scales_and_palettes$ra_text_choices
+    ),
     layerId = "ariaLegend"
   )
 }

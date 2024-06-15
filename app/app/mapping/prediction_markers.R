@@ -18,7 +18,6 @@ box::use(
 
 #' @export
 add_prediction_marker <- function(proxy_map, map_click) {
-  # browser()
   lat <- map_click$lat
   lng <- map_click$lng
 
@@ -26,7 +25,6 @@ add_prediction_marker <- function(proxy_map, map_click) {
     return()
   }
   # add marker and popup
-
   acute_pred <- get_pred_time(lng = lng, lat = lat, care_type = "acute")$pred
   rehab_pred <- get_pred_time(lng = lng, lat = lat, care_type = "rehab")$pred
 
@@ -50,7 +48,9 @@ add_prediction_marker <- function(proxy_map, map_click) {
       layerId = "map_click_marker"
     )
 
-  shinyjs$runjs(sprintf("setTimeout(() => open_popup('%s'), 500)", "map_click_marker"))
+  shinyjs$runjs(
+    sprintf("setTimeout(() => open_popup('%s'), 500)", "map_click_marker")
+  )
 }
 
 
@@ -96,7 +96,7 @@ prediction_marker_tags <- function() {
         paste(
           "var mapsPlaceholder = [];",
           "L.Map.addInitHook(function () {",
-          "   mapsPlaceholder.push(this); // Use whatever global scope variable you like.",
+          "   mapsPlaceholder.push(this);",
           "});",
           sep = "\n"
         )

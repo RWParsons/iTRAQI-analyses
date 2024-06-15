@@ -1,5 +1,4 @@
 box::use(
-  bslib,
   dplyr,
   ggplot2,
   shiny,

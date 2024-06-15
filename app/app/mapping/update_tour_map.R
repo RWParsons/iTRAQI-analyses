@@ -1,16 +1,9 @@
 box::use(
   dplyr,
-  leaflet,
-  leafgl,
-  sf,
-  stringr,
-  withr,
 )
 
 
 box::use(
-  app / logic / constants,
-  app / logic / load_shapes,
   app / logic / scales_and_palettes,
   app / logic / wrangle_data,
   app / mapping / update_map_content,
@@ -19,13 +12,11 @@ box::use(
 
 #' @export
 show_tour <- function(proxy_map, tab, map_content, r_layers) {
-  # TODO: trigger changes to map (via calls to update_map_content module mostly)
-  # browser()
-
-  print(tab)
-  print(map_content)
   # update markers
-  update_map_content$update_map_markers(proxy_map = proxy_map, markers = map_content)
+  update_map_content$update_map_markers(
+    proxy_map = proxy_map,
+    markers = map_content
+  )
 
   selected_layer <- get_shapes_from_map_content(map_content)
 

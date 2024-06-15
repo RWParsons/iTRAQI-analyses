@@ -4,7 +4,6 @@ box::use(
 )
 
 box::use(
-  app / logic / constants,
   app / logic / load_shapes,
   app / logic / scales_and_palettes,
   app / logic / utils,

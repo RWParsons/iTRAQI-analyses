@@ -1,7 +1,6 @@
 box::use(
   leaflet,
   leafgl,
-  sf,
 )
 
 box::use(
@@ -83,24 +82,49 @@ make_base_map <- function(show_default_markers = TRUE) {
 
 #' @export
 add_map_content <- function(proxy_map, map_content) {
-  for (sh_idx in 1:length(map_content)) {
+  for (sh_idx in seq_along(length(map_content))) {
     sh <- map_content[[sh_idx]]
     if (sh$type == "polygon") {
       proxy_map <- proxy_map |>
-        leafgl$addGlPolygons(data = sh$polygon, layerId = sh$layerid, pane = "layers", group = "layers")
+        leafgl$addGlPolygons(
+          data = sh$polygon,
+          layerId = sh$layerid,
+          pane = "layers",
+          group = "layers"
+        )
     }
 
     if (sh$type == "linestring") {
       proxy_map <- proxy_map |>
-        leafgl$addGlPolylines(data = sh$linestring, layerId = sh$layerid, group = "layers")
+        leafgl$addGlPolylines(
+          data = sh$linestring,
+          layerId = sh$layerid,
+          group = "layers"
+        )
     }
   }
 }
 
 
 centre_icons <- leaflet$iconList(
-  acute = leaflet$makeIcon(iconUrl = "static/images/acute-centre.png", iconWidth = 50, iconHeight = 50),
-  rehab = leaflet$makeIcon(iconUrl = "static/images/rehab-centre.png", iconWidth = 40, iconHeight = 40),
-  rsq = leaflet$makeIcon(iconUrl = "static/images/rsq.png", iconWidth = 50, iconHeight = 30),
-  qas = leaflet$makeIcon(iconUrl = "static/images/qas.png", iconWidth = 10, iconHeight = 10)
+  acute = leaflet$makeIcon(
+    iconUrl = "static/images/acute-centre.png",
+    iconWidth = 50,
+    iconHeight = 50
+  ),
+  rehab = leaflet$makeIcon(
+    iconUrl = "static/images/rehab-centre.png",
+    iconWidth = 40,
+    iconHeight = 40
+  ),
+  rsq = leaflet$makeIcon(
+    iconUrl = "static/images/rsq.png",
+    iconWidth = 50,
+    iconHeight = 30
+  ),
+  qas = leaflet$makeIcon(
+    iconUrl = "static/images/qas.png",
+    iconWidth = 10,
+    iconHeight = 10
+  )
 )

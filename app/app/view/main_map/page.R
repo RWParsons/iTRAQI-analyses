@@ -1,13 +1,8 @@
 # main_map page
 box::use(
   bslib,
-  dplyr,
-  ggplot2,
-  leafgl,
   leaflet,
   shiny,
-  shinyWidgets,
-  sf,
   waiter,
 )
 
@@ -18,7 +13,6 @@ box::use(
   mm = app / mapping,
   app / view / main_map / interactive_plot,
   app / view / main_map / make_top_cards,
-  app / logic / load_shapes,
   app / logic / wrangle_data,
 )
 
@@ -47,13 +41,6 @@ server <- function(id) {
     output$map <- mm$make_base_map()
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
     layers_rv <- shiny$reactiveValues(current_grp = "A", rasters = c())
-
-    map_content <- list(
-      list(
-        type = "polygon",
-        polygon = load_shapes$stacked_sa1_sa2_polygon_geom
-      )
-    )
 
     d_poly <- shiny$reactive({
       # these inputs are from the controls

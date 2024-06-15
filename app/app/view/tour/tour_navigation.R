@@ -4,8 +4,6 @@ box::use(
 )
 
 box::use(
-  app / logic / constants,
-  app / logic / scales_and_palettes,
   app / view / tour / card_content,
   app / view / tour / map_content,
   mm = app / mapping,

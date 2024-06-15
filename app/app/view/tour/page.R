@@ -10,8 +10,6 @@ box::use(
   # all the same functions in both modules so making generic names like "create map" and "update map" with generic inputs etc
   mm = app / mapping,
   app / view / tour / tour_navigation,
-  app / logic / load_shapes,
-  app / logic / wrangle_data,
 )
 
 
@@ -37,7 +35,6 @@ server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map(show_default_markers = FALSE)
     proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
-    # layers_rv <- shiny$reactiveValues(current_grp = "A", rasters = c())
     tour_navigation$make_tour_nav_server(id = "nav", proxymap())
   })
 }

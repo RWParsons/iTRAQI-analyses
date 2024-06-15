@@ -4,7 +4,6 @@ box::use(
   leafgl,
   sf,
   stringr,
-  withr,
 )
 
 
@@ -32,7 +31,10 @@ add_clicked_point <- function(proxy_map, d_clicked) {
 
   if (nrow(d_clicked_top) > 0) {
     d_popup_add <- load_shapes$stacked_sa1_sa2_polygon_geom |>
-      dplyr$inner_join(dplyr$select(d_clicked_top, CODE, selected_popup), by = "CODE")
+      dplyr$inner_join(
+        dplyr$select(d_clicked_top, CODE, selected_popup),
+        by = "CODE"
+      )
 
     suppressWarnings({
       d_coords <- d_popup_add |>
@@ -82,16 +84,27 @@ update_map_markers <- function(proxy_map, markers) {
 }
 
 #' @export
-update_map_shapes <- function(proxy_map, d_selection, selected_layer, r_layers) {
+update_map_shapes <- function(proxy_map,
+                              d_selection,
+                              selected_layer,
+                              r_layers) {
   layer_type <- utils$get_layer_type(selected_layer)
   selected_layer <- utils$get_standard_layer_name(selected_layer)
 
   if (layer_type == "none") {
     show_nothing(proxy_map = proxy_map, r_layers = r_layers)
   } else if (layer_type == "polygon") {
-    show_polygon(proxy_map = proxy_map, d_selection = d_selection, r_layers = r_layers)
+    show_polygon(
+      proxy_map = proxy_map,
+      d_selection = d_selection,
+      r_layers = r_layers
+    )
   } else if (layer_type == "raster") {
-    show_raster(proxy_map = proxy_map, selected_layer = selected_layer, r_layers = r_layers)
+    show_raster(
+      proxy_map = proxy_map,
+      selected_layer = selected_layer,
+      r_layers = r_layers
+    )
   }
 
   update_legend$update_legend(
@@ -151,8 +164,6 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
     dplyr$inner_join(d_codes_selected, by = "CODE")
 
   fcolor_palette <- scales_and_palettes$get_palette(d_selection$outcome)
-
-  # browser()
 
   proxy_map |> leaflet$hideGroup(grp_add)
 
