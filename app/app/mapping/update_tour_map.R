@@ -94,6 +94,8 @@ get_shapes_from_map_content <- function(map_content) {
   dplyr$case_when(
     "sa1_index" %in% map_content ~ "sa1_index",
     "sa1_aria" %in% map_content ~ "sa1_aria",
+    "acute_time" %in% map_content ~ "acute_time",
+    "rehab_time" %in% map_content ~ "rehab_time",
     .default = "none"
   )
 }
