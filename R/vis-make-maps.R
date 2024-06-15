@@ -297,9 +297,10 @@ make_legends <- function(iTRAQI_list, utils) {
     scale_fill_gradientn(
       colours = iTRAQI_list$palNum_hours(iTRAQI_list$bins / 60),
       values = scales::rescale(iTRAQI_list$bins / 60),
-      breaks = seq(0, 20, 5)
+      breaks = seq(0, 20, 2)
     ) +
-    labs(fill = "")
+    labs(fill = "") +
+    theme(legend.key.height = unit(5, "line"))
 
   continuous_legend <- cowplot::get_legend(plot_with_continuous_legend)
   continuous_legend_path <- file.path(utils$out_dir, "continuous_legend.jpeg")

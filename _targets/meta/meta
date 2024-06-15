@@ -110,7 +110,7 @@ inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|6dbd1c29a6aa20fd|1618372214||t
 iTRAQI_acute_continuous_map|stem|8918cde785e5e4a6|4746fe8c9f8065d2|6a2b743cfbd45f86|29494645||t19805.2445014188s|ae3ca543e47cf4fd|166|rds|local|vector|||3.078||
 iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|7756f1d6c4912088|206967308||t19889.2406048891s|ae3ca543e47cf4fd|166|rds|local|vector|||3.984||
 iTRAQI_index_counts_tbl|stem|a743647a79bd692b|d57bd319170d08e2|cd910488a7222ea4|1128743655||t19806.1611449963s|22b4442571f78ea6|657|rds|local|vector|||0.813||
-iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|29cd3bc59e1a7e94|-1228347186||t19889.2405467344s|af2f698bb96276c8|148|rds|local|vector|||3.531||
+iTRAQI_legends|stem|f653617587a60336|2eb810a937c63cee|3f0dbf5dfdcc16a4|-1228347186||t19889.2499307867s|af2f698bb96276c8|148|rds|local|vector|||3.547||
 itraqi_list|stem|52e26d87581372b8|b0bc70d7b56caee2|7d885c613f99a996|-1855879146||t19889.2400875673s|22357292cb71aa7e|25450950|rds|local|vector|||2.328||
 iTRAQI_rehab_maps|stem|e1261ccb6bf56ab6|fd02f3040beca726|6700e89c3189f5f1|140306304||t19889.2405041936s|3c9f22cdd675fcde|167|rds|local|vector|||7||
 iTRAQI_sa1_map|stem|4919f2c5defb5a00|2303afe4478a8ce8|81fc8284ad0c22d5|-505862102||t19889.240598575s|24d52ebf1535bba2|123|rds|local|vector|||3.547||
@@ -129,7 +129,7 @@ make_inset_maps|function|02b8fb68eff93a87|||||||||||||||
 make_itraqi_counts_tbls|function|e90bf4a578a63fbe|||||||||||||||
 make_itraqi_sa1_map|function|a6f74a136cc15085|||||||||||||||
 make_itraqi_sa2_map|function|00fa39e5f6d1d81d|||||||||||||||
-make_legends|function|081a1863c69fbd6e|||||||||||||||
+make_legends|function|c67e9a3a8ee5b09a|||||||||||||||
 make_major_regional_services_map|function|dba0946fecf37e25|||||||||||||||
 make_palette_table|function|c9c9c814d15db31e|||||||||||||||
 make_qas_map|function|f83dbbad1ea764fd|||||||||||||||
