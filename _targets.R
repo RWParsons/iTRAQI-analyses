@@ -374,6 +374,8 @@ list(
       asgs = "SA1",
       d_acute = d_sa1_2021_acute_time,
       d_rehab = d_sa1_2021_rehab_time,
+      d_remoteness = l_remoteness_dlist$asgs_2021_sa1,
+      d_seifa = l_seifa_dlist$seifa_2021_sa1,
       get_index_function = f_get_iTRAQI_index
     )
   ),
@@ -384,6 +386,8 @@ list(
       asgs = "SA2",
       d_acute = d_sa2_2021_acute_time,
       d_rehab = d_sa2_2021_rehab_time,
+      d_remoteness = l_remoteness_dlist$asgs_2021_sa2,
+      d_seifa = l_seifa_dlist$seifa_2021_sa2,
       get_index_function = f_get_iTRAQI_index
     )
   ),

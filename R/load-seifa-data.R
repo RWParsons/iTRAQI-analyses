@@ -56,8 +56,29 @@ get_seifa_data <- function(seifa_files) {
     rename("SA2_CODE2011" = 1, "state" = 2, "rank" = 3, "decile" = 4, "percentile" = 5) |>
     mutate(across(all_of(c("decile", "percentile")), as.numeric)) |>
     mutate(quintile = quintile_from_decile(decile))
+  
+  seifa_2021_sa1 <- readxl::read_xlsx(
+    seifa_files[str_detect(basename(seifa_files), "2021_sa1")],
+    sheet = "Table 3",
+    skip = 5
+  ) |> 
+    select(SA1_CODE2021 = 1, state = 9, decile = 6, percentile = 7) |> 
+    mutate(across(all_of(c("decile", "percentile")), as.numeric)) |>
+    mutate(quintile = quintile_from_decile(decile))
+  
+  seifa_2021_sa2 <- readxl::read_xlsx(
+    seifa_files[str_detect(basename(seifa_files), "2021_sa2")],
+    sheet = "Table 3",
+    skip = 5
+  ) |> 
+    select(SA2_CODE2021 = 1, state = 10, decile = 7, percentile = 8) |> 
+    mutate(across(all_of(c("decile", "percentile")), as.numeric)) |>
+    mutate(quintile = quintile_from_decile(decile))
+  
 
   list(
+    seifa_2021_sa1 = seifa_2021_sa1,
+    seifa_2021_sa2 = seifa_2021_sa2,
     seifa_2016_sa1 = seifa_2016_sa1,
     seifa_2016_sa2 = seifa_2016_sa2,
     seifa_2011_sa1 = seifa_2011_sa1,
