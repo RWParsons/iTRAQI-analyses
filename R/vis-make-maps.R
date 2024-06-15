@@ -187,8 +187,7 @@ make_itraqi_sa2_map <- function(iTRAQI_list, utils) {
   p <-
     ggplot() +
     geom_sf(
-      data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA2s$index),
-      col = NA
+      data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA2s$index)
     )
   p <- utils$add_common_plot_features(p, add_dots_for_cities = F)
 
@@ -201,8 +200,7 @@ make_itraqi_sa1_map <- function(iTRAQI_list, utils) {
   p <-
     ggplot() +
     geom_sf(
-      data = iTRAQI_list$qld_SA1s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA1s$index),
-      col = NA
+      data = iTRAQI_list$qld_SA1s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA1s$index)
     )
   p <- utils$add_common_plot_features(p, add_dots_for_cities = F)
 
