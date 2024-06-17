@@ -58,21 +58,21 @@ make_rsq_maps <- function(shapes, utils) {
       size = utils$out_dpi / 300 * 15,
       vjust = 0,
       family = "EmojiOne"
-    ) + 
+    ) +
     geom_text(
       data = filter(shapes$rsq_locations, method == "plane"),
       aes(x = x, y = y, label = fontawesome("fa-plane")),
       size = utils$out_dpi / 300 * 15,
       family = "fontawesome-webfont"
     )
-  
+
   p <- utils$add_common_plot_features(p, add_dots_for_cities = FALSE)
-  
+
   helicopter_and_fixed_wing_file_path <- file.path(utils$out_dir, "rsq-helicopter_and_fixed-wing_locations.jpeg")
   ggsave(plot = p, helicopter_and_fixed_wing_file_path, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
-  
-  
-  
+
+
+
   c(fixed_wing_file_path, helicopter_file_path, helicopter_and_fixed_wing_file_path)
 }
 
@@ -116,23 +116,9 @@ make_inset_maps <- function(shapes, centre_coords, utils, medal_icon_paths) {
     filter(centre_name %in% centres_keep)
 
 
-  p <-
-    ggplot() +
+  p <- ggplot() +
     geom_sf(data = shapes$qld_boundary, fill = utils$qld_fill, col = "transparent") +
-    ggstar::geom_star(
-      data = filter(rehab_centres_df, rehab_level == "silver"),
-      aes(x = x, y = y),
-      starshape = 1,
-      size = 3,
-      fill = "grey"
-    ) +
-    ggstar::geom_star(
-      data = filter(rehab_centres_df, rehab_level == "gold"),
-      aes(x = x, y = y),
-      starshape = 1,
-      size = 3,
-      fill = "gold"
-    )
+    geom_point(data = rehab_centres_df, aes(x = x, y = y), col = "darkgreen", shape = 10, size = 2)
 
   p1 <- utils$add_common_plot_features(p, add_dots_for_cities = F) +
     geom_rect(
@@ -145,19 +131,17 @@ make_inset_maps <- function(shapes, centre_coords, utils, medal_icon_paths) {
 
   p1
 
-  rehab_centres_labels <-
-    rehab_centres_df %>%
+  rehab_centres_labels <- rehab_centres_df |>
     rename(label = centre_name)
 
-  p2 <-
-    utils$add_common_plot_features(
-      p,
-      cities_data = rehab_centres_labels,
-      add_dots_for_cities = F,
-      text_hjust = 0,
-      text_size = utils$out_dpi / 300 * 14,
-      nudge_labels_x = 0.03
-    ) +
+  p2 <- utils$add_common_plot_features(
+    p,
+    cities_data = rehab_centres_labels,
+    add_dots_for_cities = F,
+    text_hjust = 0,
+    text_size = utils$out_dpi / 300 * 14,
+    nudge_labels_x = 0.03
+  ) +
     coord_sf(
       xlim = inset_limits$x,
       ylim = inset_limits$y

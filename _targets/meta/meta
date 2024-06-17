@@ -106,7 +106,7 @@ get_vis_datasets|function|6edfe006b94a3520|||||||||||||||
 gg|function|9eb4e57db553eb17|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
 index_palette_table|stem|debc7de85244be73|a8df915eafb52551|1f7f2e0ed987beba|1831416846||t19889.2404555814s|237f91a00ac3de41|125|rds|local|vector|||4.375||
-inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|6dbd1c29a6aa20fd|1618372214||t19889.2026513922s|97f5d5ebb4412369|161|rds|local|vector|||2.688||
+inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|b6cad3025509a447|1618372214||t19891.2274880081s|97f5d5ebb4412369|161|rds|local|vector|||3.438||
 iTRAQI_acute_continuous_map|stem|8918cde785e5e4a6|4746fe8c9f8065d2|6a2b743cfbd45f86|29494645||t19805.2445014188s|ae3ca543e47cf4fd|166|rds|local|vector|||3.078||
 iTRAQI_acute_maps|stem|8918cde785e5e4a6|4746fe8c9f8065d2|7756f1d6c4912088|206967308||t19889.2406048891s|ae3ca543e47cf4fd|166|rds|local|vector|||3.984||
 iTRAQI_index_counts_tbl|stem|a743647a79bd692b|d57bd319170d08e2|cd910488a7222ea4|1128743655||t19806.1611449963s|22b4442571f78ea6|657|rds|local|vector|||0.813||
@@ -125,7 +125,7 @@ major_regional_services_map|stem|89641fbb78f90ee1|5ee6004191178fd8|3ccad96dd59b5
 make_acute_maps|function|0621d7dcc6064b92|||||||||||||||
 make_continuous_acute_map|function|269bdce1a46702cb|||||||||||||||
 make_download_file|function|20199cab48c460c9|||||||||||||||
-make_inset_maps|function|02b8fb68eff93a87|||||||||||||||
+make_inset_maps|function|71eac8c8387d0429|||||||||||||||
 make_itraqi_counts_tbls|function|e90bf4a578a63fbe|||||||||||||||
 make_itraqi_sa1_map|function|00047f325babb639|||||||||||||||
 make_itraqi_sa2_map|function|e7a0e1765ea8c8b0|||||||||||||||
