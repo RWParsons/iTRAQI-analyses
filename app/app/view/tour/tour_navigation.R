@@ -61,7 +61,7 @@ make_tour_nav_server <- function(id, proxy_map) {
 
       mm$show_tour(
         proxy_map = proxy_map,
-        tab = current_tour_tab(),
+        r_tab = current_tour_tab,
         map_content = map_content$get_map_layers(tab = current_tour_tab()),
         r_layers = shiny$isolate(layers_rv)
       )
