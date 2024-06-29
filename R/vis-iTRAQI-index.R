@@ -15,8 +15,7 @@ get_iTRAQI_vis_objs <- function(shapes,
   palNum5 <- colorNumeric(c(palBin(bins[5]), palBin(bins[6])), domain = 240:300, na.color = "transparent")
   palNum6 <- colorNumeric(c(palBin(bins[6]), palBin(bins[7])), domain = 300:360, na.color = "transparent")
   palNum7 <- colorNumeric(c(palBin(bins[7]), palBin(bins[8])), domain = 360:900, na.color = "transparent")
-  palNum8 <- colorNumeric(c(palBin(bins[8]), "#000000"), domain = 900:1200, na.color = "transparent")
-  # palNum9 <- colorNumeric(c(palBin(bins[9]), "#000000"), domain = 900:1200, na.color = "transparent")
+  palNum8 <- colorNumeric(c(palBin(bins[8]), "#5F004E"), domain = 900:1200, na.color = "transparent")
 
   palNum <- function(x) {
     suppressWarnings(case_when(
@@ -28,11 +27,10 @@ get_iTRAQI_vis_objs <- function(shapes,
       x < 360 ~ palNum6(x),
       x < 900 ~ palNum7(x),
       x < 1200 ~ palNum8(x),
-      x >= 1200 ~ "#000000",
+      x >= 1200 ~ "#5F004E",
       TRUE ~ "transparent"
     ))
   }
-
   palNum_hours <- function(x) {
     palNum(x * 60)
   }
