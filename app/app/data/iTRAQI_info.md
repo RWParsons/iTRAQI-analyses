@@ -23,19 +23,17 @@ This version is only for **moderate-to-severe traumatic brain injuries**.
 
 ## About
 
-iTRAQI (injury Treatment and Rehabilitation Accessibility Queensland Index) allows users to explore the minimum travel times to acute care for moderate-to-severe traumatic brain injuries under ideal but realistic scenarios, as well as driving time to in-patient rehabilitation facilities.
+iTRAQI (injury Treatment and Rehabilitation Accessibility Queensland Index) allows users to explore the average travel times to acute care for moderate-to-severe traumatic brain injuries under ideal but realistic scenarios, as well as one-way driving time to public, in-patient rehabilitation facilities.
 
 Users can:
 
 - Predict travel time from any location in Queensland.
-- Discover the routes taken to get to acute care for 441 specific locations.
-- Consider how travel time varies for different levels of rehabilitation care.
+- Discover the routes taken to get to acute care for 441 specific locations
 - Explore how travel times interact with remoteness and socioeconomic status for small regions through filtering.
-- Download estimates by small regions for census year boundaries (2011, 2016 and 2021). 
+- Download estimates by small regions for census year boundaries (2011, 2016 and 2021).
 - Learn more through the interactive tour.
 
-
-iTRAQI is a collaborative project involving Jamieson Trauma Institute (JTI), Queensland University of Technology (QUT) and representatives from Queensland Ambulance Service (QAS) and Retrieval Services Queensland (RSQ), supported by the Australian Research Council through the ARC Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS) and QUT’s Centre for Data Science, with additional input from government, community members and clinicians.  
+iTRAQI is a collaborative project involving the Jamieson Trauma Institute (JTI), Queensland University of Technology (QUT) and representatives from Queensland Ambulance Service (QAS) and Retrieval Services Queensland (RSQ), supported by the Australian Research Council through the ARC Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS), QUT's Centre for Data Science, and the Emergency Medicine Foundation, with additional input from government, community members and clinicians.
 
 
 <details>
