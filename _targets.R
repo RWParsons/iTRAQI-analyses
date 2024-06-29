@@ -307,13 +307,13 @@ list(
     ),
     format = "file"
   ),
-  tar_target(
-    app_locations_and_times,
-    create_app_locs_and_times(
-      l_travel_times
-    ),
-    format = "file"
-  ),
+  # tar_target(
+  #   app_locations_and_times,
+  #   create_app_locs_and_times(
+  #     l_travel_times
+  #   ),
+  #   format = "file"
+  # ),
 
   # make download data
   ## 2011
@@ -538,6 +538,8 @@ list(
     app_markers,
     save_app_markers(
       vis_shapes = vis_shapes,
+      d_times = l_travel_times$d_times,
+      get_index_function = f_get_iTRAQI_index,
       d_centre_coords = d_centre_coords
     ),
     format = "file"
