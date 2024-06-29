@@ -65,47 +65,68 @@ iTRAQI is a collaborative project involving the Jamieson Trauma Institute (JTI),
 
 <details>
   <summary>Methods</summary>
-For 441 locations, travel time was calculated to acute care, and driving time to rehabilitation units. These were interpolated using ordinary kriging to cover all of Queensland as a continuous measure. The commonly used geographic boundaries of statistical areas 1 and statistical areas 2 under the Australian Statistical Geography standard had values calculated (median and range) for ease of using with other data. The map shows ASGS 2016 boundaries, but downloads are available for 2011 and 2021 boundaries also.
+For 441 locations, travel time was calculated to acute care, and one-way driving time to rehabilitation units. These were interpolated using ordinary kriging to cover all of Queensland as a continuous measure. The median, maximum and minimum times were then calculated for the commonly used geographic boundaries of statistical areas 1 and statistical areas 2 (under the Australian Statistical Geography Standard). The maps display the 2016 ASGS boundaries, but downloads are also available for 2011 and 2021 boundaries.
 
 <h3>Transport to rehabilitation</h3>
-Based on driving times, calculated using ArcGIS Online for speed limits, road networks and traffic conditions.
+Based on driving times, calculated using ArcGIS Online, using established speed limits and road networks, and using ‘off-peak’ traffic conditions.
 
 <h3>Transport to acute care</h3>
 This was a mix of air and road retrievals, as would be considered in practice.
- 
-Road transport assumptions included: 
-  
-  1. Patient assumed to have met the Queensland Ambulance Service, pre-hospital trauma by-pass guideline. 
-  2. One hour road transport boundaries calculated using off-peak and non-emergency driving conditions. 
-  3. Response to an acute incident location has the following assumptions:
-  
-      a. All locations include a 15-minute coordination time (irrespective of response organisation or platform). This accounts for:  
-          1. National Triple Zero (000) call routing to the ambulance service in Queensland;
-          2. Time for an Emergency Medical Dispatcher to answer the call;
-          3. Triple Zero (000) call-taking procedure and/or RSQ coordination;
-          4. Dispatch of ambulance or aeromedical platform (i.e. notification of responding platform/service);
-          5. Time for health professionals to respond (i.e. receive an alert, walk to the ambulance/platform, set up navigation, etc.); and
-          6. Up to 10 minutes of road travel time.
-      
-      b. Where ArcGIS Pro calculated an ambulance road transport time of greater than 10 minutes, the additional travel (beyond 10 minutes) time was included (i.e. if the total travel time to an incident was 15 minutes, 5 minutes travel time was added to point 3.a).
-      
-  4. Transport destination assumptions:
-      
-      a. Directly transport to a major trauma service if road transport time is within 60 minutes.
-      b. If greater than 60 minutes drive time to a major trauma service, transport to the highest-level regional trauma service if within 60 minutes. 
-      c. If greater than 60 minutes road transport from a major or regional trauma service, transport to the closest hospital. In the event this occurs, immediately notify Retrieval Services Queensland. 
-  
-  5. Limited consideration given to pre-hospital and aeromedical expertise where the incident occurred at the one-hour road drive time boundary of a major or regional trauma service.
-  
-  6. Road transport time was included only if the initial destination was a regional or major trauma service.
-  
+
+Road transport assumptions: 
+<ol type="1">
+<li> Patient assumed to have met the Queensland Ambulance Service, pre-hospital trauma by-pass guideline.
+<li> One hour road transport boundaries calculated using off-peak and non-emergency driving conditions.
+<li> Response to an acute incident location has the following assumptions:
+   <ol type="a">
+   <li>All locations include a 15-minute coordination time (irrespective of response organisation or platform). This accounts for:
+       <ol type="1">
+       <li> National Triple Zero (000) call routing to the ambulance service in Queensland;
+       <li> Time for an Emergency Medical Dispatcher to answer the call;
+       <li> Triple Zero (000) call-taking procedure and/or RSQ coordination;
+       <li> Dispatch of primary ambulance or aeromedical platform (i.e. notification of responding platform/service);
+       <li> Time for health professionals to respond (i.e. receive an alert, walk to the ambulance/platform, set up navigation, etc.); and
+       <li> Up to 10 minutes of road travel time.
+       </ol> 
+   <li> Where ArcGIS Pro calculated an ambulance road transport time of greater than 10 minutes, the additional travel (beyond 10 minutes) time was included (i.e. if the total travel time to an incident was 15 minutes, 5 minutes travel time was added to point 3.a).
+   </ol>
+   <li>Transport destination assumptions:
+       <ol type="a">
+       <li> Directly transport to a major trauma service (also referred to as a ‘neurosurgical centre’ in the case of moderate-severe TBI) if road transport time is within 60 minutes.
+       <li> If greater than 60 minutes road transport time to a major trauma service, transport to the highest-level regional trauma service if within 60 minutes.
+       <li> If greater than 60 minutes road transport from a major or regional trauma service, transport to the closest hospital. In the event this occurs, immediately notify Retrieval Services Queensland.
+       </ol>
+<li> Every road ambulance response was assigned 20 minutes of time on-scene for paramedics to assess, manage and extricate the patient.
+<li> Limited consideration given to pre-hospital and aeromedical expertise where the incident occurred at the one-hour road drive time boundary of a major or regional trauma service.
+<li> Road transport time was included only if the initial destination was a regional or major trauma service.
+</ol>
+
+Aeromedical transport assumptions:
+<ol type="1">
+<li> An aeromedical response (fixed wing, rotary wing, or a combination) is available at the closest home base, with no duty hours or weather restrictions, based on current aircraft locations and types.
+<li> Transport as rapidly as possible to either Brisbane, Gold Coast or Townsville airports for fixed wing responses, or PAH, RBWH, GCUH or TUH for rotary wing responses.
+    <ol type="a">
+    <li> The in-flight time for each aeromedical leg was provided by RFDS or the RSQ Rotary Advisor, based on aircraft type at each base and calculated times based on direct flight paths
+    </ol>
+<li>Standardised response times were estimated by one of the investigators (CG) and validated by consensus opinion from other senior medical staff at RSQ. These included:
+    <ol type="a">
+    <li> Coordination and tasking by RSQ (see 3a above under ‘Road transport assumptions)
+    <li> Response times by aeromedical teams [rotary wing (15 minutes) and fixed wing (60 minutes)]
+    <li> Standardised on-scene times [rotary wing (60 minutes) and fixed wing (120 minutes)]
+    <li> Where a patient was initially transported to a regional trauma service, 120 minutes was added to the patient journey. This time allows for initial triage, assessment and management of the patient at the regional trauma service prior to transport to a major trauma service
+    </ol>
+<li> No restrictions to destination facilities, such as access block.
+</ol>
+
 <h3>Limitations</h3>
 Specific assumptions were made which may not be met in certain circumstances:
 
-  1.	Suitable aircraft are considered available for deployment and appropriately staffed at the nearest RSQ location.
-  2.	Ambulances are considered to drive at the posted speed limit. 
-  3.	Standard times for emergency response coordination and deployment were applied, but these may vary.
-  4.	Isochrones could have given better driving times than interpolating from specific points, but ArcGIS only allowed these to be calculated up to 5 hours driving time, which was too short for our needs.
+<ol type="1">
+<li> Suitable aircraft are considered available for deployment and appropriately staffed at the nearest RSQ location.
+<li> Ambulances are considered to drive at the posted speed limit. 
+<li> Standard times for emergency response coordination and deployment were applied, but these may vary.
+<li> Isochrones could have given better driving times than interpolating from specific points, but ArcGIS only allowed these to be calculated up to 5 hours driving time, which was too short for our needs.
+</ol>
   
   <b>Full details available in the [technical report](https://eprints.qut.edu.au/235026/).</b>
 </details>
