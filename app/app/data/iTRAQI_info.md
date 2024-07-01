@@ -53,7 +53,7 @@ iTRAQI is a collaborative project involving the Jamieson Trauma Institute (JTI),
   
   Here you can download excel files that contain aggregated travel time to both acute and rehabilitation care separately, along with the iTRAQI index, for each statistical area level 1 and 2 (SA1 and SA2). They also include correspondence with the Socio-Economic Indexes for Areas (SEIFA) quintiles and the five remoteness areas (based on the Accessibility/Remoteness Index of Australia).
 
-These are available for the 2011, 2016 and 2021 editions of the Australian Statistical Geography Standard (ASGS). See <https://maps.abs.gov.au/> to compare geographic boundaries under different editions. The interactive maps displayed in this site use the 2016 ASGS SA1 and SA2 boundaries.
+These are available for the 2011, 2016 and 2021 editions of the Australian Statistical Geography Standard (ASGS). See [https://maps.abs.gov.au/](https://maps.abs.gov.au/){target="_blank"} to compare geographic boundaries under different editions. The interactive maps displayed in this site use the 2016 ASGS SA1 and SA2 boundaries.
 
 If the download button downloads an html file initially, check that the tab you were previously on has loaded properly and then re-try.
   
@@ -126,7 +126,7 @@ Specific assumptions were made which may not be met in certain circumstances:
 <li> Isochrones could have given better driving times than interpolating from specific points, but ArcGIS only allowed these to be calculated up to 5 hours driving time, which was too short for our needs.
 </ol>
   
-  <b>Full details available in the [technical report](https://eprints.qut.edu.au/235026/).</b>
+  <b>Full details available in the [technical report](https://eprints.qut.edu.au/235026/){target="_blank"}.</b>
 </details>
 
 
@@ -164,12 +164,11 @@ Specific assumptions were made which may not be met in certain circumstances:
 
 ## Resources
 
-[Technical report](https://eprints.qut.edu.au/235026/) for full details on methods.
+[Technical report](https://eprints.qut.edu.au/235026/){target="_blank"} for full details on methods.
 
-[Interactive maps ebook](https://rwparsons.github.io/interactive-maps/) for details on developing the app using R and Shiny.
+[Interactive maps ebook](https://rwparsons.github.io/interactive-maps/){target="_blank"} for details on developing the app using R and Shiny.
 
 
 ### Contact us
-If you have additional questions about iTRAQI, contact us through the webform at: https://healthequity.link/contact/ 
-
+If you have additional questions about iTRAQI, contact us through the webform at: [https://healthequity.link/contact/](https://healthequity.link/contact/){target="_blank"}
 
