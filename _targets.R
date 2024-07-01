@@ -543,5 +543,10 @@ list(
       d_centre_coords = d_centre_coords
     ),
     format = "file"
+  ),
+  tar_target(
+    hex_logo,
+    create_hex(itraqi_list),
+    format = "file"
   )
 )

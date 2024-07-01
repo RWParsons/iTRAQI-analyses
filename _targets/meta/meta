@@ -23,6 +23,7 @@ create_app_locs_and_times|function|23dab7c0938eb810|||||||||||||||
 create_app_polygons|function|5d736687468d00a0|||||||||||||||
 create_app_raster|function|0b82a3103b41e1e2|||||||||||||||
 create_app_rasters|function|159ea612fefcb874|||||||||||||||
+create_hex|function|2284e4e40ae5b9c9|||||||||||||||
 crs_for_analyses|object|fe82103152f115e2|||||||||||||||
 d_acute|stem|67d5ad81c2771409|ccdab38e1eb4f139|914043714e556400|-916123321||t19745.2668215612s|b6caf4b88c88ffc1|5816|rds|local|vector|||1.047||
 d_acute_kriged_for_agg|stem|275eb1d34fc93263|3cde109066d112e5|56860192605d2e6f|1692583633||t19784.3498093136s|7c7cec4b16412559|38225665|rds|local|vector|||314.703||
@@ -106,6 +107,7 @@ get_travel_times|function|40b8ccb161d09656|||||||||||||||
 get_vis_datasets|function|6edfe006b94a3520|||||||||||||||
 gg|function|9eb4e57db553eb17|||||||||||||||
 gold_locs|object|66c403e3c86cdcfb|||||||||||||||
+hex_logo|stem|31e76ebde8a11b9c|1db4010e1dc8dcab|ac066e17516455f5|-390263566|www/iTRAQI-hex.png|t19905.4361052072s|a0b9afbcbcebae37|60020|file|local|vector|||2.203|Using ragg device as default. Ignoring type and antialias arguments|
 index_palette_table|stem|debc7de85244be73|a8df915eafb52551|276eae28bfb16e68|1831416846||t19903.1770649131s|237f91a00ac3de41|125|rds|local|vector|||4.187||
 inset_maps|stem|f51dffb7c099ecf5|ab623e80ec6aa06a|8b9a6a2ad7731918|1618372214||t19903.1760169086s|97f5d5ebb4412369|161|rds|local|vector|||1.719||
 iTRAQI_acute_continuous_map|stem|8918cde785e5e4a6|4746fe8c9f8065d2|6a2b743cfbd45f86|29494645||t19805.2445014188s|ae3ca543e47cf4fd|166|rds|local|vector|||3.078||
