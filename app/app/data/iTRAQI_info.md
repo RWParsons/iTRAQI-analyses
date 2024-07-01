@@ -51,13 +51,11 @@ iTRAQI is a collaborative project involving the Jamieson Trauma Institute (JTI),
   
   <h3>Downloads</h3>
   
-  Here you can download excel files that contain aggregated travel time to both acute and rehabilitation care separately, along with the iTRAQI index, for each statistical area level 1 and 2 (SA1 and SA2). They also include the Socio-Economic Indexes for Areas (SEIFA)  and remoteness (Accessibility/Remoteness Index of Australia quintiles) indices for each ar ea, and some details on the Methods used.
-  
-  These are available for the 2011, 2016 and 2021 editions of the Australian Statistical Geography Standard (ASGS). See https://maps.abs.gov.au/ to compare geographic boundaries under different editions. Note that SEIFA and remoteness indices are not yet available for 2021. 
-  
-  The interactive maps displayed in this site use the 2016 ASGS SA1 and SA2 boundaries.
+  Here you can download excel files that contain aggregated travel time to both acute and rehabilitation care separately, along with the iTRAQI index, for each statistical area level 1 and 2 (SA1 and SA2). They also include correspondence with the Socio-Economic Indexes for Areas (SEIFA) quintiles and the five remoteness areas (based on the Accessibility/Remoteness Index of Australia).
 
-  If the download button downloads an html file initially, check that the tab you were previously on has loaded properly and then re-try.
+These are available for the 2011, 2016 and 2021 editions of the Australian Statistical Geography Standard (ASGS). See <https://maps.abs.gov.au/> to compare geographic boundaries under different editions. The interactive maps displayed in this site use the 2016 ASGS SA1 and SA2 boundaries.
+
+If the download button downloads an html file initially, check that the tab you were previously on has loaded properly and then re-try.
   
 </details>
 

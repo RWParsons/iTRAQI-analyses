@@ -1,6 +1,7 @@
 box::use(
   bslib,
   here,
+  rmarkdown,
   shiny,
 )
 
