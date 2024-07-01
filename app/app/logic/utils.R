@@ -40,7 +40,7 @@ clean_marker_group_name <- function(x) {
     x == "Towns" ~ "towns",
     x == "Acute centres" ~ "acute_centres",
     x == "Rehab centres" ~ "rehab_centres",
-    x == "Aeromedical bases" ~ "rsq",
+    x == "Aeromedical locations" ~ "rsq",
     x == "QAS response locations" ~ "qas",
     .default = x
   )

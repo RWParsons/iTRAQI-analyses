@@ -7,7 +7,7 @@ all_base_layers <- c(
   "Towns",
   "Acute centres",
   "Rehab centres",
-  "Aeromedical bases",
+  "Aeromedical locations",
   "QAS response locations"
 )
 
