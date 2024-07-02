@@ -13,6 +13,7 @@ box::use(
   mm = app / mapping,
   app / view / main_map / interactive_plot,
   app / view / main_map / make_top_cards,
+  app / logic / constants,
   app / logic / wrangle_data,
 )
 
@@ -28,7 +29,11 @@ ui <- function(id) {
         waiter$autoWaiter(html = waiter$spin_solar()),
         mm$mapOutput(ns("map")),
         make_top_cards$make_controls_ui(ns = ns),
-        interactive_plot$interactive_plot_ui(id = ns("plot"))
+        interactive_plot$interactive_plot_ui(id = ns("plot")),
+        shiny$absolutePanel(
+          bottom = 5, left = 20,
+          shiny$tags$div(constants$on_map_citation)
+        )
       )
     )
   )
