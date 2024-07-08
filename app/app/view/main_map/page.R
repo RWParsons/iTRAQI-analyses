@@ -10,7 +10,7 @@ box::use(
 box::use(
   # mapping module - might change this to rdeck if it's possible - they will need to have
   # all the same functions in both modules so making generic names like "create map" and "update map" with generic inputs etc
-  mm = app / mapping,
+  mm = app / mapping / leaflet,
   app / view / main_map / interactive_plot,
   app / view / main_map / make_top_cards,
   app / logic / constants,

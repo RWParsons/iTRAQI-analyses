@@ -8,7 +8,7 @@ box::use(
 box::use(
   app / logic / scales_and_palettes,
   app / logic / wrangle_data,
-  app / mapping / update_map_content,
+  app / mapping / leaflet / update_map_content,
 )
 
 

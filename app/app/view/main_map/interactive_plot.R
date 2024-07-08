@@ -8,7 +8,7 @@ box::use(
 box::use(
   app / logic / scales_and_palettes,
   app / logic / utils,
-  mm = app / mapping,
+  mm = app / mapping / leaflet,
 )
 
 

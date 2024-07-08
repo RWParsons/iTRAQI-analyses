@@ -12,7 +12,7 @@ box::use(
   app / logic / load_shapes,
   app / logic / scales_and_palettes,
   app / logic / utils,
-  app / mapping / update_legend,
+  app / mapping / leaflet / update_legend,
 )
 
 plot_interaction_groups <- c("clicked_point", "brushed_points")
