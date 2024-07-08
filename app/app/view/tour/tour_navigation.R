@@ -6,7 +6,7 @@ box::use(
 box::use(
   app / view / tour / card_content,
   app / view / tour / map_content,
-  mm = app / mapping / leaflet,
+  mm = app / mapping / mapgl,
 )
 
 
