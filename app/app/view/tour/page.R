@@ -1,6 +1,5 @@
 box::use(
   bslib,
-  leaflet,
   shiny,
   waiter,
 )
@@ -39,7 +38,7 @@ ui <- function(id) {
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map(show_default_markers = FALSE)
-    proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
+    proxymap <- shiny$reactive(mm$get_map_proxy("map"))
     tour_navigation$make_tour_nav_server(id = "nav", proxymap())
   })
 }

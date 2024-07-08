@@ -1,6 +1,7 @@
 #' @export
 box::use(
   app / mapping / leaflet / ui[...],
+  app / mapping / leaflet / server[...],
   app / mapping / leaflet / make_map[...],
   app / mapping / leaflet / update_map_content[...],
   app / mapping / leaflet / prediction_markers[...],

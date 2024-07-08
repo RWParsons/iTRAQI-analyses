@@ -1,7 +1,6 @@
 # main_map page
 box::use(
   bslib,
-  leaflet,
   shiny,
   waiter,
 )
@@ -44,7 +43,7 @@ ui <- function(id) {
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
     output$map <- mm$make_base_map()
-    proxymap <- shiny$reactive(leaflet$leafletProxy("map"))
+    proxymap <- shiny$reactive(mm$get_map_proxy("map"))
     layers_rv <- shiny$reactiveValues(current_grp = "A", rasters = c())
 
     d_poly <- shiny$reactive({
