@@ -5,5 +5,7 @@ if (file.exists("renv")) {
   message("No 'renv' directory found; renv won't be activated.")
 }
 
+Sys.setenv(MAPBOX_PUBLIC_TOKEN=keyring::key_get("mapbox", "rex.parsons94@gmail.com"))
+
 # Allow absolute module imports (relative to the app root).
 options(box.path = getwd())
