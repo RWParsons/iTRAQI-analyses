@@ -29,8 +29,8 @@ stacked_sa1_sa2_data <- readRDS(file.path(
 ))
 
 #' @export
-raster_layers <- readRDS(file.path(constants$data_dir, "raster_points.rds")) |>
-  purrr$map(~ tidyterra$as_spatraster(.x, crs = 4326))
+raster_layers <- readRDS(file.path(constants$data_dir, "raster_points.rds"))# |>
+  # purrr$map(~ tidyterra$as_spatraster(.x, crs = 4326))
 
 #' @export
 l_markers <- readRDS(file.path(constants$data_dir, "l_markers.rds"))

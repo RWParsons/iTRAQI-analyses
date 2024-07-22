@@ -1,7 +1,8 @@
 box::use(
   dplyr,
-  leaflet,
-  leafgl,
+  # leaflet,
+  # leafgl,
+  mapgl,
   sf,
   stringr,
 )
@@ -88,6 +89,7 @@ update_map_shapes <- function(proxy_map,
                               d_selection,
                               selected_layer,
                               r_layers) {
+  # if(selected_layer != "None") browser()
   layer_type <- utils$get_layer_type(selected_layer)
   selected_layer <- utils$get_standard_layer_name(selected_layer)
 
@@ -150,20 +152,28 @@ show_raster <- function(proxy_map, selected_layer, r_layers) {
 }
 
 show_polygon <- function(proxy_map, d_selection, r_layers) {
-  grp_remove <- r_layers$current_grp
-  grp_add <- swap_polygon_grp(r_layers$current_grp)
+    # mapgl$set_filter(
+    #   proxy_map,
+    #   "polygons",
+    #   list(">=", mapgl$get_column("value_rehab"), 100)
+    # )
 
-  d_codes_selected <- d_selection$data |>
-    dplyr$filter(selected) |>
-    dplyr$select(dplyr$any_of(c("CODE", "selected_col", "selected_popup")))
+  return()
 
-  poly_add <- load_shapes$stacked_sa1_sa2_polygon_geom |>
-    dplyr$inner_join(d_codes_selected, by = "CODE")
-
-  linestring_add <- load_shapes$stacked_sa1_sa2_linestring_geom |>
-    dplyr$inner_join(d_codes_selected, by = "CODE")
-
-  fcolor_palette <- scales_and_palettes$get_palette(d_selection$outcome)
+  # grp_remove <- r_layers$current_grp
+  # grp_add <- swap_polygon_grp(r_layers$current_grp)
+  #
+  # d_codes_selected <- d_selection$data |>
+  #   dplyr$filter(selected) |>
+  #   dplyr$select(dplyr$any_of(c("CODE", "selected_col", "selected_popup")))
+  #
+  # poly_add <- load_shapes$stacked_sa1_sa2_polygon_geom |>
+  #   dplyr$inner_join(d_codes_selected, by = "CODE")
+  #
+  # linestring_add <- load_shapes$stacked_sa1_sa2_linestring_geom |>
+  #   dplyr$inner_join(d_codes_selected, by = "CODE")
+  #
+  # fcolor_palette <- scales_and_palettes$get_palette(d_selection$outcome)
 
   # proxy_map |> leaflet$hideGroup(grp_add)
 
@@ -189,11 +199,11 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
     #   )
   }
 
-  proxy_map |>
-    # leaflet$showGroup(grp_add) |>
-    remove_or_hide_grp(grp_remove)
+  # proxy_map |>
+  #   # leaflet$showGroup(grp_add) |>
+  #   remove_or_hide_grp(grp_remove)
 
-  r_layers$current_grp <- grp_add
+  # r_layers$current_grp <- grp_add
 }
 
 

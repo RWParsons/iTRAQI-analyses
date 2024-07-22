@@ -15,10 +15,10 @@ box::use(
 ui <- function(id) {
   ns <- shiny$NS(id)
   bslib$page_navbar(
-    bslib$nav_panel(
-      title = "Tour",
-      tour$ui(ns("tour"))
-    ),
+    # bslib$nav_panel(
+    #   title = "Tour",
+    #   tour$ui(ns("tour"))
+    # ),
     bslib$nav_panel(
       title = "Maps",
       main_map$ui(ns("maps"))
@@ -37,7 +37,7 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
-    tour$server("tour")
+    # tour$server("tour")
     main_map$server("maps")
     downloads$server("downloads")
     information$server("information")

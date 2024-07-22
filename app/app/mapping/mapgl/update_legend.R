@@ -11,15 +11,15 @@ box::use(
 
 #' @export
 update_legend <- function(proxy_map, selected_layer, layer_type) {
-  proxy_map |> leaflet$clearControls()
-
-  if (stringr$str_detect(selected_layer, "index")) {
-    proxy_map |> add_itraqi_legend()
-  } else if (stringr$str_detect(selected_layer, "aria")) {
-    proxy_map |> add_aria_legend()
-  } else if (layer_type != "none") {
-    proxy_map |> add_continuous_legend()
-  }
+  # proxy_map |> leaflet$clearControls()
+#
+  # if (stringr$str_detect(selected_layer, "index")) {
+  #   proxy_map |> add_itraqi_legend()
+  # } else if (stringr$str_detect(selected_layer, "aria")) {
+  #   proxy_map |> add_aria_legend()
+  # } else if (layer_type != "none") {
+  #   proxy_map |> add_continuous_legend()
+  # }
 }
 
 legend_position <- "topleft"
