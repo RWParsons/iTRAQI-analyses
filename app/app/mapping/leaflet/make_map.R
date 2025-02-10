@@ -75,7 +75,6 @@ make_base_map <- function(show_default_markers = TRUE) {
     ) |>
     leaflet$hideGroup(utils$clean_marker_group_name(marker_grps_hide))
 
-
   leaflet$renderLeaflet(m)
 }
 

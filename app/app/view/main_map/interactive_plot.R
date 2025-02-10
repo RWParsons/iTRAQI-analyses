@@ -54,6 +54,9 @@ interactive_plot_server <- function(id, d_poly, selected_layer, proxy_map) {
 
     output$plot_ui <- shiny$renderUI({
       shiny$req(input$show_plot_checkbox)
+      if(is.null(input$show_plot_checkbox)) {
+        return()
+      }
       if (!input$show_plot_checkbox) {
         return()
       }
@@ -69,6 +72,7 @@ interactive_plot_server <- function(id, d_poly, selected_layer, proxy_map) {
 
     shiny$observeEvent(list(input$plot_brush, input$plot_click), {
       shiny$req(d_poly())
+      if(is.null(d_poly())) return()
 
       mm$clear_plot_interactions(proxy_map)
 
@@ -115,5 +119,6 @@ back_trans_data <- function(d) {
   rehab_var <- ifelse(d$outcome == "rehab", "selected_col", "value_rehab")
   acute_var <- ifelse(d$outcome == "acute", "selected_col", "value_acute")
 
+  if(is.null(d)) return()
   d$data |> dplyr$rename(rehab := rehab_var, acute := acute_var)
 }
