@@ -20,23 +20,28 @@ make_base_map <- function(show_default_markers = TRUE, ...) {
     dplyr::mutate(
       id = dplyr::row_number(),
       col = scales_and_palettes$get_palette("acute")(pred)
-    ) #|>
-    # dplyr::sample_n(size = 50)
+    )
 
-  dput(acute_raster)
+  acute_raster <- load_shapes$raster_layers$acute_raster |>
+    dplyr::mutate(
+      pred_norm = round(pred / max(pred), digits = 4),
+      pred_col_grp = as.numeric(cut(pred_norm, breaks = seq(from = 0, to = 1, length.out = 255)))
+    ) |>
+    group_by(pred_col_grp) |>
+    mutate(col = scales_and_palettes$get_palette("acute")(pred[1])) |>
+    ungroup()
 
-  tb <- data.frame(value = acute_raster$id, col = scales_and_palettes$get_palette("acute")(acute_raster$pred))
+  tb <- distinct(acute_raster, value = pred_col_grp, col) |> as.data.frame()
 
-  test_raster <- tidyterra::as_spatraster(dplyr::select(acute_raster, x, y, id), crs = 4326)
+  test_raster <- tidyterra::as_spatraster(dplyr::select(acute_raster, x, y, value = pred_col_grp), crs = 4326)
 
   terra::coltab(test_raster) <- tb
 
-  terra::coltab(test_raster)[[1]][terra::coltab(test_raster)[[1]] == 255] <- 254
+    # terra::coltab(test_raster)[[1]][terra::coltab(test_raster)[[1]] == 255] <- 254
 
+  # try making the coltb go for values from 0 to 255 (255 rows)
   # browser()
-
   # plot(test_raster)
-
   # test_raster <- rast(ncols = 100, nrows = 100, vals = 1:5)
 
 
@@ -66,7 +71,7 @@ make_base_map <- function(show_default_markers = TRUE, ...) {
 }
 
 add_image_source <- function(map, id, url = NULL, data = NULL, coordinates = NULL, colors = NULL) {
-  browser()
+  # browser()
   if (!is.null(data)) {
     if (inherits(data, "RasterLayer")) {
       data <- terra::rast(data)
@@ -90,6 +95,7 @@ add_image_source <- function(map, id, url = NULL, data = NULL, coordinates = NUL
         } else if (length(colors) < 256) {
           colors <- grDevices::colorRampPalette(colors)(256)
         }
+        # browser()
 
         data <- data / max(terra::values(data), na.rm = TRUE) * 254
         data <- round(data)

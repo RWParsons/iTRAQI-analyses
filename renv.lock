@@ -2304,7 +2304,7 @@
     },
     "sf": {
       "Package": "sf",
-      "Version": "1.0-15",
+      "Version": "1.0-19",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
