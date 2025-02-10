@@ -88,6 +88,7 @@ add_map_content <- function(proxy_map, map_content) {
         leafgl$addGlPolygons(
           data = sh$polygon,
           layerId = sh$layerid,
+          fillOpacity = 1,
           pane = "layers",
           group = "layers"
         )

@@ -107,8 +107,8 @@ interactive_plot_server <- function(id, d_poly, selected_layer, proxy_map) {
           x = "Rehab time (minutes)"
         ) +
         ggplot2$scale_alpha_manual(values = c(0, 0.5), limits = c(FALSE, TRUE)) +
-        ggplot2$scale_y_continuous(breaks = seq(0, 1000, by = 120)) +
-        ggplot2$scale_x_continuous(breaks = seq(0, 1500, by = 120)) +
+        ggplot2$scale_y_continuous(breaks = seq(0, 1000, by = 120), limits = c(0, NA)) +
+        ggplot2$scale_x_continuous(breaks = seq(0, 1500, by = 120), limits = c(0, NA)) +
         ggplot2$theme(legend.position = "none")
     })
   })

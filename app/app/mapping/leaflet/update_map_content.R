@@ -174,6 +174,7 @@ show_polygon <- function(proxy_map, d_selection, r_layers) {
         pane = "layers",
         group = grp_add,
         popup = poly_add$selected_popup,
+        fillOpacity = 1,
         fillColor = fcolor_palette(poly_add$selected_col)
       )
   }
