@@ -34,4 +34,4 @@ data_dir <- here$here("app/data")
 downloads_dir <- file.path(data_dir, "download-data")
 
 #' @export
-on_map_citation <- "iTRAQI: injury Treatment & Rehabilitation Accessibility Queensland Index, 2023, Version 2.0."
+on_map_citation <- "iTRAQI: injury Treatment & Rehabilitation Accessibility Queensland Index, 2024, Version 2.0."
