@@ -85,14 +85,14 @@ server <- function(id) {
 
     shiny$observe({
       shiny$req(input$map_marker_click)
-      if(!utils$get_layer_type(input$layer_selection) %in% c("polygon", "none")) {
+      if (!utils$get_layer_type(input$layer_selection) %in% c("polygon", "none")) {
         mm$handle_marker_click(proxy_map = proxymap(), marker_click = input$map_marker_click)
       }
     })
 
     shiny$observeEvent(input$map_click, {
       shiny$req(input$map_click)
-      if(!utils$get_layer_type(input$layer_selection) %in% c("polygon", "none")) {
+      if (!utils$get_layer_type(input$layer_selection) %in% c("polygon", "none")) {
         mm$add_prediction_marker(proxy_map = proxymap(), input$map_click)
       }
     })
