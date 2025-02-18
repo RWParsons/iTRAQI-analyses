@@ -97,6 +97,12 @@ iTRAQI_sa1_map|stem|59470c774b277ed4|c026c3fd43cd001f|3bd0286c079c4359|-11973371
 d_sa1_2011_rehab_time|stem|36b7926263f9af31|a02a6b9ec2730d81|89fce6a0b539b54b|1387151815||t20130.3034400492s|s266401b|266401|rds|local|vector|||3372.5||
 d_sa1_2011_acute_time|stem|941deb8965d33312|2397eb0a6af50412|5ca0bfdc14e03264|-1776168988||t20130.3036627877s|s269688b|269688|rds|local|vector|||3415.453||
 d_sa2_2011_rehab_time|stem|e94a86bd2479063c|406ff4b1a689e36c|89fce6a0b539b54b|-1888187261||t20130.3042289433s|s13626b|13626|rds|local|vector|||3400.984||
+dl_file_2021_SA2|stem|eb951562463c05da|2115941940b90bd1|68ecfacdc32ed44d|2146564832||t20130.4607354014s|s150b|150|rds|local|vector|||6.235||
+dl_file_2011_SA2|stem|ef9a8e3c5fe98f58|7a43708c461146f1|4a0eb91ba5807b87|1523082836||t20130.4607559824s|s150b|150|rds|local|vector|||7.375||
+dl_file_2016_SA2|stem|82b600f06208576e|19b0253f4e6aba34|04c498e7a491a074|458811843||t20130.4607837496s|s150b|150|rds|local|vector|||2.031||
+dl_file_2021_SA1|stem|27fc4901274957fe|95995223ca05424d|31bbb7a6f8e5aefd|1534005196||t20130.4608098253s|s150b|150|rds|local|vector|||13||
+dl_file_2011_SA1|stem|695474d7003137b3|f70dc656b9505771|27b018387f1ac9d3|-1504303554||t20130.4608133461s|s150b|150|rds|local|vector|||12.64||
+dl_file_2016_SA1|stem|9067edbfbbc09288|ff3b6f0560b96598|9a2f658c7aed7803|-1218223514||t20130.4608209394s|s150b|150|rds|local|vector|||7.188||
 seifa_scale_to_text|function|8d2f113271e61c4c
 make_qas_map|function|63e0d0ee6c9e6b41
 app_data_dir|object|c3f2585572bcd585
@@ -115,7 +121,7 @@ quintile_from_decile|function|7672f2fc2764a16a
 output_dir|object|d3928a42f63d622a
 get_popup_glue|function|e39aa75698d7ab36
 remove_empty_polygons|function|d963164d4bbe72df
-.Random.seed|object|92585be91f4099ec
+.Random.seed|object|c53ac99d6840d617
 cell_size_agg|object|4a979d670600e22c
 get_plotting_utils|function|952aaffbd507b4b2
 format_numeric_col|function|dea2ea3d5fbdb46a
@@ -124,8 +130,8 @@ breaks_to_labels|function|790646b0fcfc648b
 get_icons|function|4f880ed8a0974503
 get_remoteness_data|function|453e9cb2a5cdf029
 gg|function|f774720c43d4dd79
-seifa_text_to_value|function|78a83a9ce62cec2f
 ra_text_to_value|function|896209d56a050ff5
+seifa_text_to_value|function|78a83a9ce62cec2f
 get_index_f|function|f8f85d0c83be6f5f
 get_new_tt_names|function|f32f7ca50609bbb8
 make_rehab_maps|function|779266fa6f278022
@@ -133,6 +139,7 @@ read_rehab_data|function|d7e9ba0018cf94ee
 clean_acute_centre|function|fbb8f043e7bcdd78
 make_inset_maps|function|bd2a20fdea521287
 make_towns_map|function|106cc3b2f28ffabb
+make_app_pdfs|function|5829fa6d92ea35e0
 ra_scale_to_text|function|b74dd26ceeaff5c3
 dl_file_frontpages_dir|object|97442745ae09dbbd
 create_hex|function|e6e0c5bc4b38d996
@@ -162,9 +169,4 @@ read_acute_pathways|function|89f26aed17499fe4
 save_app_scale_fxs|function|e3d5557052a2d6ed
 get_travel_time_sheet_data|function|65ff4e0534af7ebf
 make_download_file|function|5b6e5e31c87bc739
-dl_file_2021_SA2|stem|eb951562463c05da|2115941940b90bd1|68ecfacdc32ed44d|2146564832||t20130.4607354014s|s150b|150|rds|local|vector|||6.235||
-dl_file_2011_SA2|stem|ef9a8e3c5fe98f58|7a43708c461146f1|4a0eb91ba5807b87|1523082836||t20130.4607559824s|s150b|150|rds|local|vector|||7.375||
-dl_file_2016_SA2|stem|82b600f06208576e|19b0253f4e6aba34|04c498e7a491a074|458811843||t20130.4607837496s|s150b|150|rds|local|vector|||2.031||
-dl_file_2021_SA1|stem|27fc4901274957fe|95995223ca05424d|31bbb7a6f8e5aefd|1534005196||t20130.4608098253s|s150b|150|rds|local|vector|||13||
-dl_file_2011_SA1|stem|695474d7003137b3|f70dc656b9505771|27b018387f1ac9d3|-1504303554||t20130.4608133461s|s150b|150|rds|local|vector|||12.64||
-dl_file_2016_SA1|stem|9067edbfbbc09288|ff3b6f0560b96598|9a2f658c7aed7803|-1218223514||t20130.4608209394s|s150b|150|rds|local|vector|||7.188||
+app_map_pdfs|stem|0f25cb6b1ebf84d9|f85072c796804a95|0c516283bfe1aa91|-134183480||t20137.291567353s|s80b|80|rds|local|vector|||4.437|Multiple components found returning the first one. To return all, use return_all  TRUE.. Multiple components found returning the first one. To return all, use return_all  TRUE.|

@@ -1,8 +1,14 @@
 library(targets)
 library(tarchetypes)
+library(tidyverse)
+library(sf)
+library(glue)
+library(leaflet)
+library(emojifont)
+library(flextable)
+
 
 tar_option_set(
-  packages = c("tidyverse", "sf", "glue", "leaflet", "emojifont", "flextable"),
   format = "rds",
   controller = crew::crew_controller_local(workers = 4)
 )
@@ -519,6 +525,10 @@ list(
   ),
 
   # other content for app
+  tar_target(
+    app_map_pdfs,
+    make_app_pdfs(itraqi_list, plotting_utils)
+  ),
   tar_target(
     app_qld_boundary,
     save_qld_boundary(d_input_shapes$qld_state_boundary),
