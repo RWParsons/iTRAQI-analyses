@@ -21,7 +21,7 @@ make_categories_table <- function(acute_breaks, rehab_breaks) {
 
   rehab_table <- make_cat_and_label_table(
     labels = breaks_to_labels(rehab_breaks),
-    header_text = "Averaged Rehabilitation driving time (initial + subsequent)",
+    header_text = "Rehabilitation driving time",
     cat_type = "letter"
   )
 
@@ -72,13 +72,13 @@ breaks_to_labels <- function(x) {
     purrr$map(~ stringr$str_extract(.x, "[0-9]+")) |>
     purrr$map(\(.x) {
       if (is.na(.x[1])) {
-        c <- paste0("<", .x[2])
+        xx <- paste0("<", .x[2])
       } else if (is.na(.x[2])) {
-        c <- paste0(">", .x[1])
+        xx <- paste0(.x[1], "+")
       } else {
-        c <- paste0(.x[1], " – ", .x[2])
+        xx <- paste0(.x[1], " to ", .x[2])
       }
-      c
+      xx
     }) |>
     unlist()
 }
