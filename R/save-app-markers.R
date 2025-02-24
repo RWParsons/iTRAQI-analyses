@@ -30,7 +30,7 @@ save_app_markers <- function(vis_shapes,
         "<b>Acute care destination: </b>{acute_care_centre} {acute_care_transit}<br>",
         "<b>Time to acute care (minutes): </b>{acute_time}<br>",
         "<b>Initial rehab care destination: </b>{gold_rehab_centre}<br>",
-        "<b>Average time to rehab care (minutes): </b>{round(rehab_time)}<br>"
+        "<b>Driving time to rehab care (minutes): </b>{round(rehab_time)}<br>"
       )
     ) |> 
     select(name = location, all_of(marker_cols))
