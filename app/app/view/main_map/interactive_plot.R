@@ -1,4 +1,5 @@
 box::use(
+  bslib,
   dplyr,
   ggplot2,
   shiny,
@@ -6,6 +7,7 @@ box::use(
 )
 
 box::use(
+  app / logic / itraqi_categories_table,
   app / logic / scales_and_palettes,
   app / logic / utils,
   mm = app / mapping / leaflet,
@@ -45,11 +47,20 @@ interactive_plot_server <- function(id, d_poly, selected_layer, proxy_map) {
         left = 150,
         right = "auto",
         bottom = "auto",
-        width = 120,
+        width = 350,
         height = 50,
         chkbox,
-        shiny$uiOutput(ns("plot_ui"))
+        shiny$uiOutput(ns("plot_ui")),
+        shiny$uiOutput(ns("itraqi_categories_table"))
       )
+    })
+
+    output$itraqi_categories_table <- shiny$renderUI({
+      if (stringr$str_detect(utils$get_standard_layer_name(selected_layer()), "index")) {
+        shiny$renderUI({
+          bslib$card(itraqi_categories_table$itraqi_categories_table)
+        })
+      }
     })
 
     output$plot_ui <- shiny$renderUI({

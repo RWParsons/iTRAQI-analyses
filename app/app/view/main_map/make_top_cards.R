@@ -7,7 +7,6 @@ box::use(
 box::use(
   app / logic / constants,
   app / logic / scales_and_palettes,
-  app / logic / itraqi_categories_table,
 )
 
 #' @export
@@ -100,8 +99,7 @@ make_controls_ui <- function(ns) {
             shiny$htmlOutput(ns("itraqi_index_included"))
           )
         )
-      ),
-      shiny$uiOutput(ns("itraqi_categories_table"))
+      )
     )
   )
 }
@@ -110,17 +108,6 @@ make_controls_ui <- function(ns) {
 #' @export
 make_controls_server <- function(id) {
   shiny$moduleServer(id, function(input, output, session) {
-    output$itraqi_categories_table <- shiny$renderUI({
-      shiny$req(input$layer_selection)
-
-      if (!stringr$str_detect(input$layer_selection, "Index")) {
-        return()
-      }
-      shiny$renderUI({
-        bslib$card(itraqi_categories_table$itraqi_categories_table)
-      })
-    })
-
     # base layers
     shiny$observeEvent(input$base_layers_all_btn, {
       if (length(input$base_layers) != length(constants$all_base_layers)) {
