@@ -284,7 +284,7 @@ make_legends <- function(iTRAQI_list, utils) {
     ) +
     labs(fill = "") +
     theme(legend.key.height = unit(2, "line"))
-  
+
   continuous_legend <- cowplot::get_legend(plot_with_continuous_legend)
   continuous_legend_path <- file.path(utils$out_dir, "continuous_legend.jpeg")
   ggsave(continuous_legend_path, plot = continuous_legend, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
