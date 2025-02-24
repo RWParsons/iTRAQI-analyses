@@ -3,7 +3,7 @@ box::use(
 )
 
 box::use(
-  app / logic / index_table,
+  app / logic / itraqi_categories_table,
 )
 
 #' @export
@@ -82,8 +82,7 @@ content <- list(
     sep = separator,
     "<h3>Building iTRAQI – aggregation into categories</h3>",
     "Travel time to acute and rehabilitation care was categorised and combined to form iTRAQI. iTRAQI can be displayed by small areas, using Statistical Areas (SA) level 1 (shown here) or Level 2.",
-    # TODO: fix up html table to come from pipeline output
-    index_table$itraqi_categories_table
+    itraqi_categories_table$itraqi_categories_table
   ),
   t10 = paste(
     sep = separator,
