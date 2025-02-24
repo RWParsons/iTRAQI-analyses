@@ -1,28 +1,35 @@
 save_app_markers <- function(vis_shapes,
-                             d_times, 
-                             get_index_function, 
+                             d_times,
+                             get_index_function,
                              d_centre_coords) {
-  marker_cols <- c("x", "y", "popup")
+  marker_cols <- c("name" = "qas_location", "name" = "centre_name", "name" = "rsq_location", "x", "y", "popup")
 
-  d_acute_centres <- d_centre_coords |>
+  d_centres <- d_centre_coords |>
     as_tibble() |>
+    mutate(
+      care_type_text = if_else(care_type == "acute", "Acute & Rehabilitation care", "Rehabilitation care"),
+      popup = glue(
+        "<b>Centre name: </b>{centre_name}<br>",
+        "<b>Care type: </b>{care_type_text}<br>",
+        "<b>Address: </b>{address}<br>"
+      )
+    )
+
+  d_acute_centres <- d_centres |>
     filter(care_type == "acute") |>
-    mutate(popup = "placeholder acute centre popup") |>
-    select(name = centre_name, all_of(marker_cols))
+    select(any_of(marker_cols))
 
-  d_rehab_centres <- d_centre_coords |>
-    as_tibble() |>
+  d_rehab_centres <- d_centres |>
     filter(care_type == "rehab") |>
-    mutate(popup = "placeholder rehab centre popup") |>
-    select(name = centre_name, all_of(marker_cols))
+    select(any_of(marker_cols))
 
-  d_towns <- d_times |> 
+  d_towns <- d_times |>
     mutate(
       iTRAQI_index = get_index_function(acute_mins = acute_time, rehab_mins = rehab_time),
       acute_care_transit = ifelse(
         is.na(acute_care_transit_location),
-        '', 
-        paste0('(via ', acute_care_transit_location, ')')
+        "",
+        paste0("(via ", acute_care_transit_location, ")")
       ),
       popup = glue(
         "<b>Location: </b>{location}<br>",
@@ -32,24 +39,24 @@ save_app_markers <- function(vis_shapes,
         "<b>Initial rehab care destination: </b>{gold_rehab_centre}<br>",
         "<b>Driving time to rehab care (minutes): </b>{round(rehab_time)}<br>"
       )
-    ) |> 
-    select(name = location, all_of(marker_cols))
+    ) |>
+    select(name = location, any_of(marker_cols))
 
   d_qas_locations <- vis_shapes$qas_locations |>
     as_tibble() |>
-    mutate(popup = glue::glue("<b>Location: </b>", "{qas_location}<br>")) |>
-    select(name = qas_location, all_of(marker_cols))
+    mutate(popup = glue("<b>Location: </b>", "{qas_location}<br>")) |>
+    select(any_of(marker_cols))
 
   d_rsq_locations <- vis_shapes$rsq_locations |>
     as_tibble() |>
     mutate(
       type = str_to_sentence(ifelse(type == "both", "plane and helicopter", type)),
-      popup = glue::glue(
+      popup = glue(
         "<b>Location: </b>", "{rsq_location}<br>",
         "<b>Service: </b>", "{type}"
       )
     ) |>
-    select(name = rsq_location, all_of(marker_cols)) |>
+    select(any_of(marker_cols)) |>
     distinct()
 
 
