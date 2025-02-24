@@ -855,7 +855,7 @@
     },
     "leafgl": {
       "Package": "leafgl",
-      "Version": "0.1.1",
+      "Version": "0.2.2",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
@@ -866,7 +866,7 @@
         "leaflet",
         "sf"
       ],
-      "Hash": "d6b521a3382490f766de5fedf95fc1af"
+      "Hash": "7c6bdc5be0f1aa26f8f876649159058e"
     },
     "leaflegend": {
       "Package": "leaflegend",
