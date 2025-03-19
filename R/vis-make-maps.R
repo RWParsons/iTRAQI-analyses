@@ -171,7 +171,8 @@ make_itraqi_sa2_map <- function(iTRAQI_list, utils) {
   p <-
     ggplot() +
     geom_sf(
-      data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA2s$index)
+      data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA2s$index),
+      col = "transparent"
     )
   p <- utils$add_common_plot_features(p, add_dots_for_cities = F)
 
@@ -184,7 +185,7 @@ make_itraqi_sa1_map <- function(iTRAQI_list, utils) {
   p <-
     ggplot() +
     geom_sf(
-      data = iTRAQI_list$qld_SA1s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA1s$index)
+      data = iTRAQI_list$qld_SA1s, fill = iTRAQI_list$paliTRAQI(iTRAQI_list$qld_SA1s$index), col = "transparent"
     )
   p <- utils$add_common_plot_features(p, add_dots_for_cities = F)
 
@@ -206,19 +207,19 @@ make_acute_maps <- function(iTRAQI_list, utils) {
   ggsave(continuous_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
   p <- ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$value_acute))
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$value_acute), col = "transparent")
   p <- utils$add_common_plot_features(p)
   sa2_median_map_path <- file.path(utils$out_dir, "acute-time-median-SA2s.jpeg")
   ggsave(sa2_median_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
   p <- ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$acute_min))
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$acute_min), col = "transparent")
   p <- utils$add_common_plot_features(p)
   sa2_min_map_path <- file.path(utils$out_dir, "acute-time-min-SA2s.jpeg")
   ggsave(sa2_min_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
   p <- ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$acute_max))
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$acute_max), col = "transparent")
   p <- utils$add_common_plot_features(p)
   sa2_max_map_path <- file.path(utils$out_dir, "acute-time-max-SA2s.jpeg")
   ggsave(sa2_max_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
@@ -244,19 +245,19 @@ make_rehab_maps <- function(iTRAQI_list, utils) {
   ggsave(continuous_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
   p <- ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$value_rehab))
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$value_rehab), col = "transparent")
   p <- utils$add_common_plot_features(p)
   sa2_median_map_path <- file.path(utils$out_dir, "rehab-time-median-SA2s.jpeg")
   ggsave(sa2_median_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
   p <- ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$rehab_min))
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$rehab_min), col = "transparent")
   p <- utils$add_common_plot_features(p)
   sa2_min_map_path <- file.path(utils$out_dir, "rehab-time-min-SA2s.jpeg")
   ggsave(sa2_min_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
 
   p <- ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$rehab_max))
+    geom_sf(data = iTRAQI_list$qld_SA2s, fill = iTRAQI_list$palNum(iTRAQI_list$qld_SA2s$rehab_max), col = "transparent")
   p <- utils$add_common_plot_features(p)
   sa2_max_map_path <- file.path(utils$out_dir, "rehab-time-max-SA2s.jpeg")
   ggsave(sa2_max_map_path, plot = p, height = utils$out_height, width = utils$out_width, dpi = utils$out_dpi)
@@ -295,7 +296,7 @@ make_legends <- function(iTRAQI_list, utils) {
 
   plot_with_index_legend <-
     ggplot() +
-    geom_sf(data = iTRAQI_list$qld_SA2s, aes(fill = index)) +
+    geom_sf(data = iTRAQI_list$qld_SA2s, aes(fill = index), col = "transparent") +
     scale_fill_manual(values = iTRAQI_pal_vec, breaks = sort(names(iTRAQI_pal_vec))) +
     labs(fill = "iTRAQI Index")
 

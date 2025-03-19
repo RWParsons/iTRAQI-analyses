@@ -75,7 +75,6 @@ d_sa2_2016_rehab_time|stem|0f38e177b9bde815|6a69a3bd19e5f9f5|89fce6a0b539b54b|-1
 app_polygons|stem|be8c186740d3ef17|32a5e135af2a4a4c|26a10f68a7efccc5|1135028427|C:/Users/parsonrr/Documents/R_projects/iTRAQI-analyses/output/stacked_SA1_and_SA2_polygons.rds|t20130.2639438258s|s1702141b|1702141|file|local|vector|||34.766|repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant. repeating attributes for all subgeometries for which they may not be constant|
 vis_shapes|stem|88007984e39fa949|1caee6fb29e501f8|526bc00a484dbc0d|-219071267||t20130.2639773255s|s5461035b|5461035|rds|local|vector|||1.031||
 itraqi_list|stem|5fbc2ccdaa748f6a|bbcbaad08a54000d|35cb66d2be49af37|-500714066||t20130.2640706638s|s25450981b|25450981|rds|local|vector|||1.015||
-iTRAQI_sa2_map|stem|2a7e405ab733cd69|f4c0655433978bfd|e35caebe753e1bca|338710188||t20130.2641012481s|s131b|131|rds|local|vector|||1.016||
 d_sa1_2021_rehab_time|stem|e151541bca9d4650|c371f81cc597f409|89fce6a0b539b54b|1037323187||t20130.264248145s|s302043b|302043|rds|local|vector|||3498.39||
 d_sa2_2021_acute_time|stem|c76e239aa0755bba|7d4a8f8a51b2e39b|5ca0bfdc14e03264|2056923501||t20130.2648132665s|s14292b|14292|rds|local|vector|||3540.579||
 d_sa2_2021_rehab_time|stem|8bc36e51d30648a2|8575b32d1010d243|89fce6a0b539b54b|403998578||t20130.3005217293s|s14172b|14172|rds|local|vector|||3193.359||
@@ -86,13 +85,9 @@ major_regional_services_map|stem|08153578a25db0f5|cd64ad1eab3b1430|2626c3df2358a
 inset_maps|stem|f9fa5ed01b4610df|b94877ba4ec5318d|47cb983c32288626|-928854341||t20130.300923129s|s164b|164|rds|local|vector|||4.25||
 index_palette_table|stem|de5297ee94fc729b|3fa51d07c16f9e2e|3c36a4203df66eb6|-1397556489||t20130.3010424321s|s133b|133|rds|local|vector|||4.25||
 app_palette|stem|927b8c28639b425d|ba1c603f9933b91c|a2595f0dc020a111|-1480258511|C:/Users/parsonrr/Documents/R_projects/iTRAQI-analyses/app/app/data/palette_list.rds|t20130.3011332605s|s20521933b|20521933|file|local|vector|||4.75||
-iTRAQI_rehab_maps|stem|f94c93e425ee9985|ab2e45f9e797e26f|b5f09b356c005263|451585328||t20130.3012721725s|s170b|170|rds|local|vector|||8.828||
 iTRAQI_tables|stem|a57b1f26510847e5|1813735280b28ed8|5b272d08c77ca61c|1334404649||t20130.3013506925s|s806b|806|rds|local|vector|||3.812||
-iTRAQI_legends|stem|9300a98c6a904131|3fef4cc26b2ebb3d|b34ec553588dbd30|1544684543||t20130.3014510661s|s155b|155|rds|local|vector|||5.703|Multiple components found returning the first one. To return all, use return_all  TRUE.. Multiple components found returning the first one. To return all, use return_all  TRUE.|
 hex_logo|stem|0886ccf3ef001594|04dd6bf89c725544|77a409391301eb02|-1601215336|www/iTRAQI-hex.png|t20130.301532529s|s60020b|60020|file|local|vector|||4.062|1m22mUsing ragg device as default. Ignoring type and antialias arguments|
 app_scale_fxs|stem|97311d579d138b4f|4e8d1a42b064ea19|1d2f2933f7c8e3c0|783313167|C:/Users/parsonrr/Documents/R_projects/iTRAQI-analyses/app/app/data/scale_fxs.rds|t20130.3015748483s|s26943b|26943|file|local|vector|||0.735||
-iTRAQI_acute_maps|stem|6dad1fc39affa0ce|f896deeb011fb0bd|53256cdd724b549d|208207711||t20130.3017126855s|s169b|169|rds|local|vector|||8.875||
-iTRAQI_sa1_map|stem|59470c774b277ed4|c026c3fd43cd001f|3bd0286c079c4359|-1197337112||t20130.301850378s|s131b|131|rds|local|vector|||8.844||
 d_sa1_2011_rehab_time|stem|36b7926263f9af31|a02a6b9ec2730d81|89fce6a0b539b54b|1387151815||t20130.3034400492s|s266401b|266401|rds|local|vector|||3372.5||
 d_sa1_2011_acute_time|stem|941deb8965d33312|2397eb0a6af50412|5ca0bfdc14e03264|-1776168988||t20130.3036627877s|s269688b|269688|rds|local|vector|||3415.453||
 d_sa2_2011_rehab_time|stem|e94a86bd2479063c|406ff4b1a689e36c|89fce6a0b539b54b|-1888187261||t20130.3042289433s|s13626b|13626|rds|local|vector|||3400.984||
@@ -103,17 +98,18 @@ dl_file_2021_SA1|stem|27fc4901274957fe|95995223ca05424d|31bbb7a6f8e5aefd|1534005
 dl_file_2011_SA1|stem|695474d7003137b3|f70dc656b9505771|27b018387f1ac9d3|-1504303554||t20130.4608133461s|s150b|150|rds|local|vector|||12.64||
 dl_file_2016_SA1|stem|9067edbfbbc09288|ff3b6f0560b96598|9a2f658c7aed7803|-1218223514||t20130.4608209394s|s150b|150|rds|local|vector|||7.188||
 app_map_pdfs|stem|0f25cb6b1ebf84d9|f85072c796804a95|0c516283bfe1aa91|-134183480||t20137.291567353s|s80b|80|rds|local|vector|||4.437|Multiple components found returning the first one. To return all, use return_all  TRUE.. Multiple components found returning the first one. To return all, use return_all  TRUE.|
+app_markers|stem|e17cb70f311d1d90|14486de5ccf6b9c5|eab64af84058cb7b|-2039476631|C:/Users/parsonrr/Documents/R_projects/iTRAQI-analyses/app/app/data/l_markers.rds|t20143.2487523574s|s28478b|28478|file|local|vector|||1.5||
 seifa_scale_to_text|function|8d2f113271e61c4c
 make_qas_map|function|63e0d0ee6c9e6b41
 app_data_dir|object|c3f2585572bcd585
 platinum_locs|object|14562b7f96d15b5b
 CELL_SIZE_METERS|object|d887885b74fc7404
 get_iTRAQI_vis_objs|function|3d07b030143f7633
-make_itraqi_sa1_map|function|25c40ae9fa68f641
+make_itraqi_sa1_map|function|e57514b363ad7dcf
 do_kriging_model|function|51d9c159f1bad57c
 get_island_times|function|3656f7bcccbb736a
 get_vis_datasets|function|7025f5c454260488
-make_legends|function|6571a47e39eb8ecc
+make_legends|function|3d53c596c7fba6dc
 centre_renaming|function|f6e53dec1921be67
 crs_for_analyses|object|0f6dd03bc350d53a
 make_rsq_maps|function|c9b91f11d5f5c69c
@@ -121,7 +117,7 @@ quintile_from_decile|function|7672f2fc2764a16a
 output_dir|object|d3928a42f63d622a
 get_popup_glue|function|e39aa75698d7ab36
 remove_empty_polygons|function|d963164d4bbe72df
-.Random.seed|object|c5e409cd36832752
+.Random.seed|object|90811c8e14ed9ffc
 cell_size_agg|object|4a979d670600e22c
 get_plotting_utils|function|952aaffbd507b4b2
 format_numeric_col|function|dea2ea3d5fbdb46a
@@ -134,7 +130,7 @@ ra_text_to_value|function|896209d56a050ff5
 seifa_text_to_value|function|78a83a9ce62cec2f
 get_index_f|function|f8f85d0c83be6f5f
 get_new_tt_names|function|f32f7ca50609bbb8
-make_rehab_maps|function|779266fa6f278022
+make_rehab_maps|function|88aca14bbbfaf4a5
 read_rehab_data|function|d7e9ba0018cf94ee
 clean_acute_centre|function|fbb8f043e7bcdd78
 make_inset_maps|function|bd2a20fdea521287
@@ -144,10 +140,10 @@ ra_scale_to_text|function|b74dd26ceeaff5c3
 dl_file_frontpages_dir|object|97442745ae09dbbd
 create_hex|function|e6e0c5bc4b38d996
 make_major_regional_services_map|function|17a239051185af91
-make_itraqi_sa2_map|function|9c4adb063ab04282
+make_itraqi_sa2_map|function|900dcee75a0c3ca9
 cell_size_raster|object|e5c9a6fdb44b1d4f
 future_gold_and_cairns_locs|object|7dc55c3aba9bc186
-make_acute_maps|function|af0ff0ee907ac3ad
+make_acute_maps|function|3dc8f6b1ccfe08f7
 silver_locs|object|9e7431109157d2b4
 get_ids|function|6fe3a9b2a00bd397
 future_gold_locs|object|233fa3a3cc7456f5
@@ -169,4 +165,8 @@ read_acute_pathways|function|89f26aed17499fe4
 save_app_scale_fxs|function|e3d5557052a2d6ed
 get_travel_time_sheet_data|function|65ff4e0534af7ebf
 make_download_file|function|5b6e5e31c87bc739
-app_markers|stem|e17cb70f311d1d90|14486de5ccf6b9c5|eab64af84058cb7b|-2039476631|C:/Users/parsonrr/Documents/R_projects/iTRAQI-analyses/app/app/data/l_markers.rds|t20143.2487523574s|s28478b|28478|file|local|vector|||1.5||
+iTRAQI_sa2_map|stem|2a7e405ab733cd69|f4c0655433978bfd|e8f7158b5318159c|338710188||t20163.9959067922s|s131b|131|rds|local|vector|||2.547||
+iTRAQI_rehab_maps|stem|f94c93e425ee9985|ab2e45f9e797e26f|e220aace09c3ca70|451585328||t20163.9959465886s|s170b|170|rds|local|vector|||6.125||
+iTRAQI_legends|stem|9300a98c6a904131|3fef4cc26b2ebb3d|b461121f543b9f78|1544684543||t20163.9959703912s|s155b|155|rds|local|vector|||2.828|Multiple components found returning the first one. To return all, use return_all  TRUE.. Multiple components found returning the first one. To return all, use return_all  TRUE.|
+iTRAQI_acute_maps|stem|6dad1fc39affa0ce|f896deeb011fb0bd|370ec1028a6ce6ec|208207711||t20163.995972031s|s169b|169|rds|local|vector|||5.797||
+iTRAQI_sa1_map|stem|59470c774b277ed4|c026c3fd43cd001f|be790dc76d5ce174|-1197337112||t20163.9959774682s|s131b|131|rds|local|vector|||5.422||
