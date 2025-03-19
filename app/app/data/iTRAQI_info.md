@@ -126,7 +126,7 @@ Specific assumptions were made which may not be met in certain circumstances:
 <li> Isochrones could have given better driving times than interpolating from specific points, but ArcGIS only allowed these to be calculated up to 5 hours driving time, which was too short for our needs.
 </ol>
   
-  <b>Full details available in the [technical report](https://eprints.qut.edu.au/235026/){target="_blank"}.</b>
+  <b>Full details available in the [technical report](https://eprints.qut.edu.au/256202/){target="_blank"}.</b>
 </details>
 
 
